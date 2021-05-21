@@ -1,0 +1,4 @@
+C:\Users\86188\Documents\mycode\C#\C#BH\LoginRegister\LoginRegister\obj\Debug\LoginRegister.csprojAssemblyReference.cache
+C:\Users\86188\Documents\mycode\C#\C#BH\LoginRegister\LoginRegister\obj\Debug\LoginRegister.Properties.Resources.resources
+C:\Users\86188\Documents\mycode\C#\C#BH\LoginRegister\LoginRegister\obj\Debug\LoginRegister.csproj.GenerateResource.cache
+C:\Users\86188\Documents\mycode\C#\C#BH\LoginRegister\LoginRegister\obj\Debug\LoginRegister.csproj.CoreCompileInputs.cache
