@@ -30,13 +30,13 @@ namespace LoginRegister
         private void InitializeComponent()
         {
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.buttonForget = new System.Windows.Forms.Button();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,42 +53,20 @@ namespace LoginRegister
             this.panelLogin.Size = new System.Drawing.Size(466, 441);
             this.panelLogin.TabIndex = 0;
             // 
-            // buttonLogin
+            // textBoxPassword
             // 
-            this.buttonLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLogin.Location = new System.Drawing.Point(199, 268);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
-            this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "登录";
-            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.textBoxPassword.Location = new System.Drawing.Point(199, 158);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(160, 25);
+            this.textBoxPassword.TabIndex = 4;
             // 
-            // buttonRegister
+            // textBoxUsername
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(0, 454);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
-            this.buttonRegister.TabIndex = 1;
-            this.buttonRegister.Text = "注册";
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            // 
-            // buttonForget
-            // 
-            this.buttonForget.Location = new System.Drawing.Point(391, 454);
-            this.buttonForget.Name = "buttonForget";
-            this.buttonForget.Size = new System.Drawing.Size(75, 23);
-            this.buttonForget.TabIndex = 2;
-            this.buttonForget.Text = "忘记密码";
-            this.buttonForget.UseVisualStyleBackColor = true;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(107, 78);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(52, 15);
-            this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "用户名";
+            this.textBoxUsername.Location = new System.Drawing.Point(199, 75);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(160, 25);
+            this.textBoxUsername.TabIndex = 3;
             // 
             // label2
             // 
@@ -99,20 +77,45 @@ namespace LoginRegister
             this.label2.TabIndex = 2;
             this.label2.Text = "密码";
             // 
-            // textBoxUsername
+            // usernameLabel
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(199, 75);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(160, 25);
-            this.textBoxUsername.TabIndex = 3;
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(107, 78);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(52, 15);
+            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.Text = "用户名";
             // 
-            // textBoxPassword
+            // buttonLogin
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(199, 158);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(160, 25);
-            this.textBoxPassword.TabIndex = 4;
+            this.buttonLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLogin.Location = new System.Drawing.Point(199, 268);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(75, 23);
+            this.buttonLogin.TabIndex = 0;
+            this.buttonLogin.Text = "登录";
+            this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.Location = new System.Drawing.Point(110, 454);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegister.TabIndex = 1;
+            this.buttonRegister.Text = "注册";
+            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
+            // buttonForget
+            // 
+            this.buttonForget.Location = new System.Drawing.Point(299, 454);
+            this.buttonForget.Name = "buttonForget";
+            this.buttonForget.Size = new System.Drawing.Size(75, 23);
+            this.buttonForget.TabIndex = 2;
+            this.buttonForget.Text = "忘记密码";
+            this.buttonForget.UseVisualStyleBackColor = true;
+            this.buttonForget.Click += new System.EventHandler(this.buttonForget_Click);
             // 
             // Form1
             // 
