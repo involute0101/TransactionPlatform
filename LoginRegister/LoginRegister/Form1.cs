@@ -15,6 +15,49 @@ namespace LoginRegister
         public Form1()
         {
             InitializeComponent();
+           
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            User user;
+            using (var db = new UserContext())
+            {
+                user = db.Users.SingleOrDefault(u => u.Username.Equals(usernameLabel.Text)  && u.Password.Equals(textBoxPassword.Text) );
+            }
+            if (user != null) 
+            { 
+                Console.WriteLine("登陆成功"); 
+                //用户界面
+            }
+            else
+            {
+                Console.WriteLine("登陆失败");
+                MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxPassword.Text = "";
+            }
+
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+           RegisterForm register = new RegisterForm();
+            register.ShowDialog();
+            if (register.DialogResult == DialogResult.OK) 
+            {
+                using (var db = new UserContext())
+                {
+                    //往数据库中添加新用户
+                    db.Users.Add(register.newUser);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        private void buttonForget_Click(object sender, EventArgs e)
+        {
+            ForgetPassword forget = new ForgetPassword();
+            forget.Show();
         }
     }
 }
