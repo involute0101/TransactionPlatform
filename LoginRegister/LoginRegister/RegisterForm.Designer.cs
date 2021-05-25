@@ -41,11 +41,18 @@ namespace LoginRegister
             this.textBoxSurePassword = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.labelSex = new System.Windows.Forms.Label();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.groupBoxRegister.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxRegister
             // 
+            this.groupBoxRegister.BackColor = System.Drawing.Color.Pink;
+            this.groupBoxRegister.Controls.Add(this.radioButtonFemale);
+            this.groupBoxRegister.Controls.Add(this.radioButtonMale);
+            this.groupBoxRegister.Controls.Add(this.labelSex);
             this.groupBoxRegister.Controls.Add(this.buttonRegister);
             this.groupBoxRegister.Controls.Add(this.labelPhoneNumber);
             this.groupBoxRegister.Controls.Add(this.labelEmail);
@@ -67,76 +74,84 @@ namespace LoginRegister
             // 
             // buttonRegister
             // 
+            this.buttonRegister.BackColor = System.Drawing.Color.HotPink;
+            this.buttonRegister.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonRegister.Location = new System.Drawing.Point(227, 405);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegister.Size = new System.Drawing.Size(100, 40);
             this.buttonRegister.TabIndex = 10;
             this.buttonRegister.Text = "注册";
-            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // labelPhoneNumber
             // 
             this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Location = new System.Drawing.Point(109, 297);
+            this.labelPhoneNumber.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPhoneNumber.Location = new System.Drawing.Point(106, 329);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(52, 15);
+            this.labelPhoneNumber.Size = new System.Drawing.Size(65, 17);
             this.labelPhoneNumber.TabIndex = 9;
             this.labelPhoneNumber.Text = "手机号";
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(106, 235);
+            this.labelEmail.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelEmail.Location = new System.Drawing.Point(103, 267);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(37, 15);
+            this.labelEmail.Size = new System.Drawing.Size(46, 17);
             this.labelEmail.TabIndex = 8;
             this.labelEmail.Text = "邮箱";
             // 
             // labelSurePassword
             // 
             this.labelSurePassword.AutoSize = true;
-            this.labelSurePassword.Location = new System.Drawing.Point(106, 171);
+            this.labelSurePassword.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSurePassword.Location = new System.Drawing.Point(103, 203);
             this.labelSurePassword.Name = "labelSurePassword";
-            this.labelSurePassword.Size = new System.Drawing.Size(67, 15);
+            this.labelSurePassword.Size = new System.Drawing.Size(84, 17);
             this.labelSurePassword.TabIndex = 7;
             this.labelSurePassword.Text = "确认密码";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(106, 109);
+            this.labelPassword.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelPassword.Location = new System.Drawing.Point(103, 141);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(37, 15);
+            this.labelPassword.Size = new System.Drawing.Size(46, 17);
             this.labelPassword.TabIndex = 6;
             this.labelPassword.Text = "密码";
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(103, 53);
+            this.labelUsername.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelUsername.Location = new System.Drawing.Point(103, 33);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(52, 15);
+            this.labelUsername.Size = new System.Drawing.Size(65, 17);
             this.labelUsername.TabIndex = 5;
             this.labelUsername.Text = "用户名";
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(227, 288);
+            this.textBoxPhone.Location = new System.Drawing.Point(224, 320);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(193, 25);
             this.textBoxPhone.TabIndex = 4;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(227, 226);
+            this.textBoxEmail.Location = new System.Drawing.Point(224, 258);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(193, 25);
             this.textBoxEmail.TabIndex = 3;
             // 
             // textBoxSurePassword
             // 
-            this.textBoxSurePassword.Location = new System.Drawing.Point(227, 162);
+            this.textBoxSurePassword.Location = new System.Drawing.Point(224, 194);
             this.textBoxSurePassword.Name = "textBoxSurePassword";
             this.textBoxSurePassword.PasswordChar = '*';
             this.textBoxSurePassword.Size = new System.Drawing.Size(193, 25);
@@ -144,7 +159,7 @@ namespace LoginRegister
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(227, 100);
+            this.textBoxPassword.Location = new System.Drawing.Point(224, 132);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(193, 25);
@@ -152,10 +167,45 @@ namespace LoginRegister
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(227, 44);
+            this.textBoxUsername.Location = new System.Drawing.Point(227, 24);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(193, 25);
             this.textBoxUsername.TabIndex = 0;
+            // 
+            // labelSex
+            // 
+            this.labelSex.AutoSize = true;
+            this.labelSex.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSex.Location = new System.Drawing.Point(142, 86);
+            this.labelSex.Name = "labelSex";
+            this.labelSex.Size = new System.Drawing.Size(46, 17);
+            this.labelSex.TabIndex = 11;
+            this.labelSex.Text = "性别";
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Checked = true;
+            this.radioButtonMale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonMale.Location = new System.Drawing.Point(224, 86);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonMale.TabIndex = 12;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "男";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonFemale.Location = new System.Drawing.Point(321, 86);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonFemale.TabIndex = 13;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "女";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // RegisterForm
             // 
@@ -185,5 +235,8 @@ namespace LoginRegister
         private System.Windows.Forms.Label labelSurePassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.RadioButton radioButtonFemale;
+        private System.Windows.Forms.RadioButton radioButtonMale;
+        private System.Windows.Forms.Label labelSex;
     }
 }

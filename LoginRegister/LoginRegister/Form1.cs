@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,33 +16,47 @@ namespace LoginRegister
         public Form1()
         {
             InitializeComponent();
-           
+            
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            User user;
             using (var db = new UserContext())
             {
-                user = db.Users.SingleOrDefault(u => u.Username.Equals(usernameLabel.Text)  && u.Password.Equals(textBoxPassword.Text) );
-            }
-            if (user != null) 
-            { 
-                Console.WriteLine("登陆成功"); 
-                //用户界面
-            }
-            else
-            {
-                Console.WriteLine("登陆失败");
-                MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBoxPassword.Text = "";
-            }
+                User user;
+                user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.Password.Equals(textBoxPassword.Text) );
+            
+                if (user != null) 
+                { 
+                    Console.WriteLine("登陆成功");
+                    //用户界面
+                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    DetailForm detailForm = new DetailForm();
+                    detailForm.user = user;
+                    detailForm.Biding();
+                    detailForm.ShowDialog();
+                    if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
+                    {
+                        user = detailForm.user;
+                        db.SaveChanges();
+                    }
+                 }
+                else
+                {
+                    Console.WriteLine("登陆失败");
+                    MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBoxPassword.Text = "";
+                }
+             }
+            
+            
 
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-           RegisterForm register = new RegisterForm();
+            
+            RegisterForm register = new RegisterForm();
             register.ShowDialog();
             if (register.DialogResult == DialogResult.OK) 
             {
