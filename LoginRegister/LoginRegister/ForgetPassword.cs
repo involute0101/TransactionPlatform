@@ -18,7 +18,7 @@ namespace LoginRegister
             InitializeComponent();
         }
 
-        private void buttonRetrieve_Click(object sender, EventArgs e)
+        private void buttonRetrieve_Click(object sender, EventArgs e)//用户信息匹配则用邮箱发送密码
         {
             User user;
             using (var db = new UserContext())

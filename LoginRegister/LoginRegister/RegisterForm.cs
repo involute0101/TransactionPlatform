@@ -16,17 +16,21 @@ namespace LoginRegister
         public RegisterForm()
         {
             InitializeComponent();
+            
         }
 
         public User newUser;
-        private void buttonRegister_Click(object sender, EventArgs e)
+        private void buttonRegister_Click(object sender, EventArgs e)//生成user对象
         {
             if(!check())return;
-            newUser = new User(textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, textBoxPhone.Text);
+            String sex;
+            if (radioButtonMale.Checked) sex = radioButtonMale.Text;
+            else sex = radioButtonFemale.Text;
+            newUser = new User(textBoxUsername.Text, sex,textBoxPhone.Text, textBoxPassword.Text, textBoxEmail.Text);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-        private bool check()
+        private bool check()//用户输入信息检测
         {
             //校验密码是否符合
             var regex = new Regex(@"

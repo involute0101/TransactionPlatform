@@ -16,7 +16,9 @@ namespace LoginRegister
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new DetailForm());
             Application.Run(new Form1());
+            
         }
     }
 }
