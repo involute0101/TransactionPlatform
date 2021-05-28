@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace LoginRegister
 {
-    public partial class RegisterForm : Form
+    public partial class RegisterForm : Form//注册界面
     {
         public RegisterForm()
         {
