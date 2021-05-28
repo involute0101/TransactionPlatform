@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LoginRegister
 {
-   public class User
+   public class User//用户类
     {
         public int UserId { get; set; }
         public String Username { get; set; }//用户名
