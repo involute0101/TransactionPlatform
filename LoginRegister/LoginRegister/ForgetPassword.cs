@@ -21,10 +21,12 @@ namespace LoginRegister
         private void buttonRetrieve_Click(object sender, EventArgs e)//用户信息匹配则用邮箱发送密码
         {
             User user;
-            using (var db = new UserContext())
+            /*using (var db = new UserContext())
             {
                 user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.PhoneNumber.Equals(textBoxPhone.Text));
-            }
+            }*/
+            user = UserService.GetUser(textBoxUsername.Text, textBoxPhone.Text);
+
             if (user == null) {  
                 MessageBox.Show("查找用户失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
