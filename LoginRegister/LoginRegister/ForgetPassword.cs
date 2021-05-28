@@ -25,10 +25,11 @@ namespace LoginRegister
             {
                 user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.PhoneNumber.Equals(textBoxPhone.Text));
             }*/
-            user = UserService.GetUser(textBoxUsername.Text, textBoxPhone.Text);
+            user = UserService.GetUser(textBoxUsername.Text, textBoxEmail.Text,textBoxPhone.Text);
 
             if (user == null) {  
                 MessageBox.Show("查找用户失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             //成功查找到用户，向其注册邮箱发送密码
             //wkklavis@163.com向用户邮箱发送验证邮件

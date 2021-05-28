@@ -44,3 +44,5 @@ C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\obj\Debug
 C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\obj\Debug\LoginRegister.exe
 C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\obj\Debug\LoginRegister.pdb
 C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\obj\Debug\LoginRegister.DetailForm.resources
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\Newtonsoft.Json.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\Newtonsoft.Json.xml
