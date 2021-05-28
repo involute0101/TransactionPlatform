@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace LoginRegister
 {
-    public partial class DetailForm : Form
+    public partial class DetailForm : Form//个人用户界面
     {
         public User user;
         public DetailForm()
