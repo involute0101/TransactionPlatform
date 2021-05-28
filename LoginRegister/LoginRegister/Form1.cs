@@ -21,16 +21,23 @@ namespace LoginRegister
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            using (var db = new UserContext())
-            {
-                User user;
-                user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.Password.Equals(textBoxPassword.Text) );
+            /*using (var db = new UserContext())
+            {*/
+            //用户登录主界面
+            User user = UserService.GetUser(textBoxUsername.Text);
+
+            //个人信息主页部分
+            string oldname = user.Username;
+            
+            //user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.Password.Equals(textBoxPassword.Text) );
             
                 if (user != null) 
                 { 
                     Console.WriteLine("登陆成功");
                     //用户界面
-                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+             //     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+
                     DetailForm detailForm = new DetailForm();
                     detailForm.user = user;
                     detailForm.Biding();
@@ -38,7 +45,8 @@ namespace LoginRegister
                     if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
                     {
                         user = detailForm.user;
-                        db.SaveChanges();
+                    UserService.ModifyUser(oldname, user);
+            //            db.SaveChanges();
                     }
                  }
                 else
@@ -47,7 +55,7 @@ namespace LoginRegister
                     MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBoxPassword.Text = "";
                 }
-             }
+            // }
             
             
 
@@ -60,12 +68,14 @@ namespace LoginRegister
             register.ShowDialog();
             if (register.DialogResult == DialogResult.OK) 
             {
-                using (var db = new UserContext())
+                UserService.RegisterUser(register.newUser);
+                
+                /*using (var db = new UserContext())
                 {
                     //往数据库中添加新用户
                     db.Users.Add(register.newUser);
                     db.SaveChanges();
-                }
+                }*/
             }
         }
 

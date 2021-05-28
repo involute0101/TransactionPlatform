@@ -19,14 +19,6 @@ namespace LoginRegister
         public DetailForm()
         {
             InitializeComponent();
-
-            /*GraphicsPath gp = new GraphicsPath();
-            gp.AddEllipse(pictureBox1.ClientRectangle);
-            Region region = new Region(gp);
-            pictureBox1.Region = region;
-            gp.Dispose();
-            region.Dispose();*/
-
         }
 
         public void Biding()//用户数据显示
@@ -51,7 +43,7 @@ namespace LoginRegister
                 return;
             }
             pictureBoxHead.Load(ofd.FileName);
-
+            user.Image = ofd.FileName;
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
