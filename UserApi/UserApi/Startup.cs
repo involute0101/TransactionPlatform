@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +24,14 @@ namespace UserApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 23));
+            services.AddDbContextPool<UserContext>(
+                options => options.UseMySql(Configuration.GetConnectionString("UserDatabase"), serverVersion)
+                .EnableSensitiveDataLogging() // These two calls are optional but help
+                .EnableDetailedErrors()       // with debugging (remove for production).
+                );
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
