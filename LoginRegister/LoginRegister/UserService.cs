@@ -13,7 +13,7 @@ namespace LoginRegister
     {
         public static int LoginUser(string username, string password)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/login?" +
+            string baseUrl = "https://localhost:5001/User/login?" +
             "userName" + username + "&&password=" + password;
             HttpClient client = new HttpClient();
 
@@ -23,7 +23,7 @@ namespace LoginRegister
 
         public static bool RegisterUser(User user_reg)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/register?";
+            string baseUrl = "https://localhost:5001/User/register?";
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -38,12 +38,13 @@ namespace LoginRegister
         public static bool RegisterUser(string username, string sex, string password,
              string email, string phone)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/register?";
+            string baseUrl = "https://localhost:5001/User/register?";
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             User user_reg = new User(username,sex ,phone,password, email);
+
             HttpContent content = new StringContent(JsonConvert.SerializeObject(user_reg), Encoding.UTF8, "application/json");
             var task = client.PostAsync(baseUrl, content);
             task.Wait();
@@ -55,7 +56,7 @@ namespace LoginRegister
 
         public static User GetUser(string username)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/getUser?" +
+            string baseUrl = "https://localhost:5001/User/getUser?" +
                 "username=" + username;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
@@ -66,11 +67,12 @@ namespace LoginRegister
             return user;
         }
 
-        public static User GetUser(string username,string phone)
+        public static User GetUser(string username,string email,string phone)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/getUserInfoByUserId?" +
-                "username=" + username +
-                "phone=" + phone;
+            string baseUrl = "https://localhost:5001/User/forget?" +
+                "username=" + username+
+                "&&email=" + email +
+                "&&phone=" + phone;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -82,7 +84,7 @@ namespace LoginRegister
 
         public static void ModifyUser(int userId, User user)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/alterPersonalInfo?" + "userId=" + userId;
+            string baseUrl = "https://localhost:5001/User/modifyUser?" + "userId=" + userId;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
