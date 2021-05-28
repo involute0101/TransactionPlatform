@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace LoginRegister
 {
-    public partial class ForgetPassword : Form
+    public partial class ForgetPassword : Form//忘记密码界面
     {
         public ForgetPassword()
         {
