@@ -9,6 +9,8 @@ using UserApi.Models;
 
 namespace UserApi.Controllers
 {
+    [Area("PI")]
+    [Route("PI/[controller]/[action]")]
     public class HomeController : Controller
     {
        /* private readonly ILogger<HomeController> _logger;
