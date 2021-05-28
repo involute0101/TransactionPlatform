@@ -80,14 +80,14 @@ namespace LoginRegister
             return user;
         }
 
-        public static void ModifyUser(string oldName, User newuser)
+        public static void ModifyUser(int userId, User user)
         {
-            string baseUrl = "https://localhost:5001/api/hunter/user/alterPersonalInfo?" + "username=" + oldName;
+            string baseUrl = "https://localhost:5001/api/hunter/user/alterPersonalInfo?" + "userId=" + userId;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpContent content = new StringContent(JsonConvert.SerializeObject(newuser), Encoding.UTF8, "application/json");
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
             var task = client.PutAsync(baseUrl, content);
             // User user1 = JsonConvert.DeserializeObject<User>(task.Result.ToString());
 

@@ -27,7 +27,7 @@ namespace LoginRegister
             User user = UserService.GetUser(textBoxUsername.Text);
 
             //个人信息主页部分
-            string oldname = user.Username;
+            
             
             //user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.Password.Equals(textBoxPassword.Text) );
             
@@ -45,8 +45,8 @@ namespace LoginRegister
                     if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
                     {
                         user = detailForm.user;
-                    UserService.ModifyUser(oldname, user);
-            //            db.SaveChanges();
+                        UserService.ModifyUser(user.UserId, user);
+            //          db.SaveChanges();
                     }
                  }
                 else
