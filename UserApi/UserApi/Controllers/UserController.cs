@@ -27,7 +27,7 @@ namespace UserApi.Controllers
 
         //"User/getUser"
         [HttpGet("getUser")]
-        public ActionResult<User> GetUserInfoByUserId(String username)
+        public ActionResult<User> GetUser(String username)
         {
             try
             {
@@ -39,13 +39,13 @@ namespace UserApi.Controllers
                 return BadRequest(e.InnerException.Message);
             }
         }
-        //"User/getUser"
-        [HttpGet("getUser")]
-        public ActionResult<User> GetUserInfoByUserId(String username,String phone)
+        //"User/forget"
+        [HttpGet("forget")]
+        public ActionResult<User> Forget(String username,String email,String phone)
         {
             try
             {
-                var user_temp = userDB.Users.FirstOrDefault(t => t.Username == username&&t.PhoneNumber==phone);
+                var user_temp = userDB.Users.FirstOrDefault(t => t.Username == username&&t.Email==email&&t.PhoneNumber==phone);
                 return user_temp;
             }
             catch (Exception e)
@@ -80,34 +80,8 @@ namespace UserApi.Controllers
             }
         }
 
-        //注册
-        //访问路径：/User/register?
-        [HttpPost("register")]
-        public ActionResult<User> Register(string username, string sex, string password,
-             string email, string phone)
-        {
-            User user = new User(username, sex, phone, password, email);
-            try
-            {
-                //查询用户名，邮箱是否重复
-                var user_temp1 = userDB.Users.FirstOrDefault(t => t.Username == user.Username);
-                var user_temp2 = userDB.Users.FirstOrDefault(t => t.Email == user.Email);
-                if (user_temp1 == null && user_temp2 == null)
-                {
-                    userDB.Users.Add(user);
-                    userDB.SaveChanges();
-                    return user;
-                }
-                else
-                    return NotFound();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.InnerException.Message);
-            }
-        }
-
-        //访问路径：/User/register?
+        
+        //访问路径：/User/login?
         //通过用户名登录
         [HttpGet("login")]
         public ActionResult<int> Login(String username, String password)

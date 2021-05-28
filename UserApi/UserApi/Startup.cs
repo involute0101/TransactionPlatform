@@ -41,14 +41,8 @@ namespace UserApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -59,6 +53,11 @@ namespace UserApi
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //添加了区域后，此规则不会自动创建！！！
+                endpoints.MapAreaControllerRoute(
+                       name: "areas", "areas",
+                       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
