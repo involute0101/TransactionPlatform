@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "dgSpecHash": "tBXrhVbMxKVqeUIZ3tmHfdwVc95syYq+qZgoAUOp3OLD8N6rkWqSB1i0edcekGLqWxTIXElqX3AVbWfPWmeMeg==",
+  "success": true,
+  "projectFilePath": "D:\\code\\C#\\TransactionPlatform\\Chat\\Chat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\86178\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.2\\microsoft.aspnet.signalr.2.4.2.nupkg.sha512",
+    "C:\\Users\\86178\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.2\\microsoft.aspnet.signalr.client.2.4.2.nupkg.sha512",
+    "C:\\Users\\86178\\.nuget\\packages\\microsoft.aspnet.signalr.core\\2.4.2\\microsoft.aspnet.signalr.core.2.4.2.nupkg.sha512",
+    "C:\\Users\\86178\\.nuget\\packages\\microsoft.aspnet.signalr.owin\\1.2.2\\microsoft.aspnet.signalr.owin.1.2.2.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\86178\\.nuget\\packages\\owin\\1.0.0\\owin.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“.NETCoreApp,Version=v3.1”还原包“Microsoft.AspNet.SignalR.Core 2.4.2”。此包可能与项目不完全兼容。",
+      "libraryId": "Microsoft.AspNet.SignalR.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“.NETCoreApp,Version=v3.1”还原包“Microsoft.AspNet.SignalR.Owin 1.2.2”。此包可能与项目不完全兼容。",
+      "libraryId": "Microsoft.AspNet.SignalR.Owin",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "已使用“.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8”而不是项目目标框架“.NETCoreApp,Version=v3.1”还原包“Owin 1.0.0”。此包可能与项目不完全兼容。",
+      "libraryId": "Owin",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
