@@ -11,9 +11,11 @@ namespace LoginRegister
 {
     class UserService//用户访问服务器类 
     {
+        private static String serverAddress = "http://localhost:5001/"; //服务器地址
+
         public static int LoginUser(string username, string password)
         {
-            string baseUrl = "https://localhost:5001/User/login?" +
+            string baseUrl = serverAddress+"User/login?" +
             "userName" + username + "&&password=" + password;
             HttpClient client = new HttpClient();
 
@@ -23,7 +25,7 @@ namespace LoginRegister
 
         public static bool RegisterUser(User user_reg)
         {
-            string baseUrl = "https://localhost:5001/User/register?";
+            string baseUrl = serverAddress+"User/register?";
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -38,7 +40,7 @@ namespace LoginRegister
         public static bool RegisterUser(string username, string sex, string password,
              string email, string phone)
         {
-            string baseUrl = "https://localhost:5001/User/register?";
+            string baseUrl = serverAddress+"User/register?";
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -56,7 +58,7 @@ namespace LoginRegister
 
         public static User GetUser(string username)
         {
-            string baseUrl = "https://localhost:5001/User/getUser?" +
+            string baseUrl = serverAddress+"User/getUser?" +
                 "username=" + username;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
@@ -69,7 +71,7 @@ namespace LoginRegister
 
         public static User GetUser(string username,string email,string phone)
         {
-            string baseUrl = "https://localhost:5001/User/forget?" +
+            string baseUrl = serverAddress+"User/forget?" +
                 "username=" + username+
                 "&&email=" + email +
                 "&&phone=" + phone;
@@ -84,7 +86,7 @@ namespace LoginRegister
 
         public static void ModifyUser(int userId, User user)
         {
-            string baseUrl = "https://localhost:5001/User/modifyUser?" + "userId=" + userId;
+            string baseUrl = serverAddress+"User/modifyUser?" + "userId=" + userId;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));

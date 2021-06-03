@@ -183,6 +183,12 @@
   <ItemGroup>
     <None Include="Resources\按钮.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WinForm\WinForm\WinForm.csproj">
+      <Project>{5952a2d1-2236-4658-acbe-d971643acc12}</Project>
+      <Name>WinForm</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

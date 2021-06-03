@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm;
 
 namespace LoginRegister
 {
@@ -34,21 +35,24 @@ namespace LoginRegister
                 if (user != null) 
                 { 
                     Console.WriteLine("登陆成功");
-                    //用户界面
-             //     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                //用户界面
+                //     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
 
 
-                    DetailForm detailForm = new DetailForm();
-                    detailForm.user = user;
-                    detailForm.Biding();
-                    detailForm.ShowDialog();
-                    if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
-                    {
-                        user = detailForm.user;
-                        UserService.ModifyUser(user.UserId, user);
-            //          db.SaveChanges();
-                    }
-                 }
+                /*DetailForm detailForm = new DetailForm();          
+                detailForm.user = user;
+                detailForm.Biding();
+                detailForm.ShowDialog();
+                if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
+                {
+                    user = detailForm.user;
+                    UserService.ModifyUser(user.UserId, user);
+        //          db.SaveChanges();
+                }*/
+                Form_Main form_Main = new Form_Main();
+                this.Hide();
+                form_Main.ShowDialog();               
+            }
                 else
                 {
                     Console.WriteLine("登陆失败");
