@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Chat",
-    "\\Chat\\bin",
-    "\\Chat\\bin\\Release"
+    "\\Api",
+    "\\Api\\WebApi"
   ],
-  "SelectedNode": "\\Chat\\Chat.sln",
+  "SelectedNode": "\\Api\\WebApi\\WebApi.sln",
   "PreviewInSolutionExplorer": false
 }
