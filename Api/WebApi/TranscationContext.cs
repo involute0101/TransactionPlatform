@@ -17,6 +17,8 @@ namespace WebApi
 
         public DbSet<User> Users { get; set; }
 
-        //public DbSet<Collect> collects { get; set; }
+        public DbSet<Good> Goods { get; set; }
+
+        public DbSet<Collect> Collects { get; set; }
     }
 }
