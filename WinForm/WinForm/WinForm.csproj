@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\LoginRegister\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityClass\Collect.cs" />
+    <Compile Include="EntityClass\Good.cs" />
+    <Compile Include="EntityClass\User.cs" />
     <Compile Include="FormConsult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,7 @@
     <Compile Include="RoundBtn.Designer.cs">
       <DependentUpon>RoundBtn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service\GoodService.cs" />
     <Compile Include="SubPageCenter.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +155,7 @@
     <EmbeddedResource Include="SubpageShop.resx">
       <DependentUpon>SubpageShop.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

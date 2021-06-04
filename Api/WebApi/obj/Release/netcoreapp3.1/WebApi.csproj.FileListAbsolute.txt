@@ -86,3 +86,9 @@ D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win
 D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.csproj.ResolveComReference.cache
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\System.Drawing.Common.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

@@ -38,8 +38,9 @@ namespace WinForm
             this.txtInfo = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.pictureBoxAdd = new System.Windows.Forms.PictureBox();
+            this.buttonPublish = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGood
@@ -63,7 +64,7 @@ namespace WinForm
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(20, 190);
+            this.lblInfo.Location = new System.Drawing.Point(20, 201);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(82, 15);
             this.lblInfo.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace WinForm
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(20, 290);
+            this.lblPrice.Location = new System.Drawing.Point(20, 305);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(52, 15);
             this.lblPrice.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace WinForm
             // lblNumber
             // 
             this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(20, 330);
+            this.lblNumber.Location = new System.Drawing.Point(20, 347);
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(52, 15);
             this.lblNumber.TabIndex = 4;
@@ -97,7 +98,7 @@ namespace WinForm
             // txtInfo
             // 
             this.txtInfo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtInfo.Location = new System.Drawing.Point(100, 185);
+            this.txtInfo.Location = new System.Drawing.Point(107, 191);
             this.txtInfo.Multiline = true;
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.Size = new System.Drawing.Size(690, 94);
@@ -105,33 +106,44 @@ namespace WinForm
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 285);
+            this.textBox3.Location = new System.Drawing.Point(80, 302);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(270, 25);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(80, 325);
+            this.textBox4.Location = new System.Drawing.Point(80, 344);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(270, 25);
             this.textBox4.TabIndex = 8;
             // 
-            // pictureBox
+            // pictureBoxAdd
             // 
-            this.pictureBox.BackgroundImage = global::WinForm.Properties.Resources.添加商品图片;
-            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox.Location = new System.Drawing.Point(30, 70);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox.TabIndex = 9;
-            this.pictureBox.TabStop = false;
+            this.pictureBoxAdd.Location = new System.Drawing.Point(23, 83);
+            this.pictureBoxAdd.Name = "pictureBoxAdd";
+            this.pictureBoxAdd.Size = new System.Drawing.Size(91, 85);
+            this.pictureBoxAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAdd.TabIndex = 10;
+            this.pictureBoxAdd.TabStop = false;
+            this.pictureBoxAdd.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // buttonPublish
+            // 
+            this.buttonPublish.Location = new System.Drawing.Point(323, 375);
+            this.buttonPublish.Name = "buttonPublish";
+            this.buttonPublish.Size = new System.Drawing.Size(127, 43);
+            this.buttonPublish.TabIndex = 11;
+            this.buttonPublish.Text = "确认发布";
+            this.buttonPublish.UseVisualStyleBackColor = true;
+            this.buttonPublish.Click += new System.EventHandler(this.buttonPublish_Click);
             // 
             // SubPagePublish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.buttonPublish);
+            this.Controls.Add(this.pictureBoxAdd);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtInfo);
@@ -142,8 +154,8 @@ namespace WinForm
             this.Controls.Add(this.lblPicture);
             this.Controls.Add(this.lblGood);
             this.Name = "SubPagePublish";
-            this.Size = new System.Drawing.Size(800, 380);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.Size = new System.Drawing.Size(800, 434);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +172,7 @@ namespace WinForm
         private System.Windows.Forms.TextBox txtInfo;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox pictureBoxAdd;
+        private System.Windows.Forms.Button buttonPublish;
     }
 }
