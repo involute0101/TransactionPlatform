@@ -20,5 +20,11 @@ namespace WebApi
         public DbSet<Good> Goods { get; set; }
 
         public DbSet<Collect> Collects { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<DoneDeal> DoneDeals { get; set; }
+
+        
     }
 }

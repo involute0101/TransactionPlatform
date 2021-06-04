@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.Models
 {
-    public class Collect
+    public class Collect//用户收藏表
     {
         public int CollectId { get; set; }
 
@@ -15,8 +15,6 @@ namespace WebApi.Models
         public int UserId { get; set; }
 
         public DateTime Time { get; set; }
-
-
 
         public Collect(int goodId, int userId, DateTime time)
         {

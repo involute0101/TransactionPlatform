@@ -9,6 +9,8 @@ namespace WebApi.Models
     public class Good
     {
         public int GoodId { get; set; }
+        
+        public int UserId { set; get; }//用户Id，外键，所属的用户
 
         public String GoodName { get; set; }
 
@@ -19,6 +21,8 @@ namespace WebApi.Models
 
         public int Price { get; set; }
 
-        public int count { get; set; }
+        public int Count { get; set; }
+
+        public string State { get; set; }//商品状态"在售"、"交易中"、"售罄"
     }
 }
