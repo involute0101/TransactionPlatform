@@ -19,9 +19,9 @@ namespace WinForm.EntityClass
 
 
 
-        public Collect(int postId, int userId, DateTime time)
+        public Collect(int goodId, int userId, DateTime time)
         {
-            GoodId = postId;
+            GoodId = goodId;
             UserId = userId;
             Time = time;
         }
