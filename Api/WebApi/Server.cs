@@ -1,9 +1,16 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
+using WebApi.Models;
+using WebApi.Tool;
 
 namespace WebApi
 {
@@ -18,7 +25,7 @@ namespace WebApi
         public Dictionary<string, Socket> clients = new Dictionary<string, Socket>();   // 存储连接到服务器的客户端信息
         public bool started = false;            // 标识当前是否启动了服务
 
-        public Server(Print print = null, string ipString = null, int port = -1)        //传入数字的构造函数
+        public Server(Print print = null, string ipString = null, int port = -1) //传入数字的构造函数
         {
             this.print = print;
             if (ipString != null) this.ipString = ipString;
@@ -77,7 +84,10 @@ namespace WebApi
                 {
                     print("客户端" + clientScoket.RemoteEndPoint.ToString() + "已连接");
                 }
-                new Thread(receiveData).Start(clientScoket);   // 在新的线程中接收客户端信息
+
+                if(CommunicationTool.INFOTYPE.Equals("Image")) new Thread(receiveImage).Start(clientScoket);//在新的线程中接收图片
+                else new Thread(receiveData).Start(clientScoket);   // 在新的线程中接收客户端信息
+
 
                 Thread.Sleep(1000);                            // 延时1秒后，接收连接请求
                 if (!started) return;
@@ -121,9 +131,10 @@ namespace WebApi
             Socket socket = (Socket)obj;
 
             string clientIp = socket.RemoteEndPoint.ToString();                 // 获取客户端标识 ip和端口
-            Console.WriteLine("测试：" + clientIp);
             if (!clients.ContainsKey(clientIp)) clients.Add(clientIp, socket);  // 将连接的客户端socket添加到clients中保存
             else clients[clientIp] = socket;
+
+            string goalIpPort = CommunicationTool.GOALIPPORT;  
 
             while (true)
             {
@@ -132,12 +143,10 @@ namespace WebApi
                     string str = Receive(socket);
                     if (!str.Equals(""))
                     {
-                        if (print != null) print("【" + clientIp + "】" + str);
-
-                        if (str.Equals("[.Shutdown]")) Environment.Exit(0); // 服务器退出                  
+                        Send(str, CommunicationTool.GOALIPPORT);      //转发信息
                     }
                 }
-                catch (Exception exception)
+                catch (Exception exception) //目标ip可能未连接
                 {
                     if (print != null) print("连接已自动断开，【" + clientIp + "】" + exception.Message);
 
@@ -168,6 +177,111 @@ namespace WebApi
             }
 
             return data;
+        }
+
+        //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        public void receiveImage(Object obj)
+        {
+            Socket socket = (Socket)obj;
+            string clientIp = socket.RemoteEndPoint.ToString();                 // 获取客户端标识 ip和端口
+            if (!clients.ContainsKey(clientIp)) clients.Add(clientIp, socket);  // 将连接的客户端socket添加到clients中保存
+            else clients[clientIp] = socket;
+
+            string goalIpPort = CommunicationTool.GOALIPPORT;
+
+            while (true)
+            {
+                try
+                {                  
+                    int len = socket.Available;
+                    byte[] bytes = new byte[len];
+                    socket.Receive(bytes);
+                    if (clients.ContainsKey(CommunicationTool.GOALIPPORT))
+                    {
+                        Socket goalSocket = clients[CommunicationTool.GOALIPPORT];
+
+                        try
+                        {
+                            if (goalSocket != null && bytes != null)
+                            {
+                                Console.WriteLine("转发图片");
+                                goalSocket.Send(bytes);           //转发图片                            
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                            clients.Remove(CommunicationTool.GOALIPPORT);
+                            if (print != null) print("客户端已断开，【" + CommunicationTool.GOALIPPORT + "】");
+                        }
+                    }
+                }
+                catch { }
+            }
+        }
+
+        //发送图片，字节数组
+        public void sendImage(Image img,string id)
+        {
+            byte[] imgByte = Serialize(img);
+
+            if (clients.ContainsKey(id))
+            {
+                Socket socket = clients[id];
+
+                try
+                {
+                    if (socket != null && imgByte != null)
+                    {                      
+                        socket.Send(imgByte);           //转发图片                            
+                    }                 
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    clients.Remove(id);
+                    if (print != null) print("客户端已断开，【" + id + "】");
+                }
+            }
+        }
+
+        //接收图片字节数组
+        public Image receiveImageBytes(Socket socket)
+        {
+            Image image = null;
+            byte[] bytes = null;
+            int len = socket.Available;
+            if (len > 0)
+            {
+                bytes = new byte[len];
+                int receiveNumber = socket.Receive(bytes);
+                image = (Image)Deserialize(bytes);
+            }
+            return image;
+        }
+
+        //序列化对象
+        public byte[] Serialize(object data)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            MemoryStream rems = new MemoryStream();
+            formatter.Serialize(rems, data);
+            return rems.GetBuffer();
+        }
+
+        //将字节反序列化成object
+        public object Deserialize(byte[] data)
+        {
+            Object obj = null;
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                MemoryStream rems = new MemoryStream(data);
+                data = null;
+                obj = formatter.Deserialize(rems);
+            }
+            catch (Exception ex) { }
+            return obj;
         }
 
         /// <summary>

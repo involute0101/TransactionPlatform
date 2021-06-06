@@ -111,6 +111,9 @@
     <Compile Include="DetailForm.Designer.cs">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityClass\Collect.cs" />
+    <Compile Include="EntityClass\CommunicationEntity.cs" />
+    <Compile Include="EntityClass\Good.cs" />
     <Compile Include="ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,9 +134,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="EntityClass\User.cs" />
     <Compile Include="UserContext.cs" />
-    <Compile Include="UserService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <EmbeddedResource Include="DetailForm.resx">
       <DependentUpon>DetailForm.cs</DependentUpon>
     </EmbeddedResource>

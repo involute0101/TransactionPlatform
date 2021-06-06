@@ -10,76 +10,202 @@ using System.Windows.Forms;
 
 namespace WinForm
 {
-    public partial class Form_Main : System.Windows.Forms.Form
+    public partial class Form_Main : Form
     {
-        public SubpageShop page_shop = new SubpageShop();
-        public SubPageCenter page_center = new SubPageCenter();
-        public SubPagePublish page_publish = new SubPagePublish();
+        private bool isSeller = false;
+        private bool modifyInfo = false;
+        private int pageChoice = 0;
+        private PageShop pageShop = new PageShop();
+        private PageRecord pageRecord = new PageRecord();
+        private PageFavorite pageFavorite = new PageFavorite();
+        private PageNews pageNews = new PageNews();
+        private Form_Publish publishForm;
 
         public Form_Main()
         {
             InitializeComponent();
         }
 
+        private void Form_Main_Load(object sender, EventArgs e)
+        {
+            btnChangeInfo.Location = new Point(this.Width - 155, 25);
+            shopTable.Height = panel7.Height - 40;
+            shopTable.Width = panel7.Width - 40;
+            goodsTable.Height = panel7.Height - 40;
+            goodsTable.Width = panel7.Width - 40;
+            btnState.Location = new Point(panel1.Width - 100, 2);
+            btnLogOut.Location = new Point(panel1.Width - 30, 2);
+            btnNews.Location = new Point(panel1.Width - 65, 2);
+            if (isSeller)
+            {
+                cmbChoice.Text = "预售商品";
+            }
+            else
+            {
+                cmbChoice.Text = "商城";
+            }
+            SwitchTable();
+        }
+
+        private void SwitchTable()
+        {
+            panel7.Controls.Clear();
+            if (cmbChoice.Text== "预售商品")
+            {
+                panel7.Controls.Add(goodsTable);
+            }
+            else
+            {
+                panel7.Controls.Add(shopTable);
+            }
+        }
+
+        private void PageLabelChange()
+        {
+            switch (pageChoice)
+            {
+                case 0:
+                    {
+                        this.btnCenter.ForeColor = System.Drawing.Color.Yellow;
+                        this.btnShop.ForeColor = System.Drawing.Color.White;
+                        this.btnRecord.ForeColor = System.Drawing.Color.White;
+                        this.btnFavorite.ForeColor = System.Drawing.Color.White;
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
+                        break;
+                    }
+                case 1: 
+                    {
+                        this.btnCenter.ForeColor = System.Drawing.Color.White;
+                        this.btnShop.ForeColor = System.Drawing.Color.Yellow;
+                        this.btnRecord.ForeColor = System.Drawing.Color.White;
+                        this.btnFavorite.ForeColor = System.Drawing.Color.White;
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        break;
+                    }
+                case 2:
+                    {
+                        this.btnCenter.ForeColor = System.Drawing.Color.White;
+                        this.btnShop.ForeColor = System.Drawing.Color.White;
+                        this.btnRecord.ForeColor = System.Drawing.Color.Yellow;
+                        this.btnFavorite.ForeColor = System.Drawing.Color.White;
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        break;
+                    }
+                case 3:
+                    {
+                        this.btnCenter.ForeColor = System.Drawing.Color.White;
+                        this.btnShop.ForeColor = System.Drawing.Color.White;
+                        this.btnRecord.ForeColor = System.Drawing.Color.White;
+                        this.btnFavorite.ForeColor = System.Drawing.Color.Yellow;
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        break;
+                    }
+                case 5:
+                    {
+                        this.btnCenter.ForeColor = System.Drawing.Color.White;
+                        this.btnShop.ForeColor = System.Drawing.Color.White;
+                        this.btnRecord.ForeColor = System.Drawing.Color.White;
+                        this.btnFavorite.ForeColor = System.Drawing.Color.White;
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息__选中_; break;
+                    }
+                default:break;
+            }
+        }
+
+        private void lblCenter_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            pageCenter.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageCenter);
+            pageChoice = 0;
+            PageLabelChange();
+        }
+
         private void btnShop_Click(object sender, EventArgs e)
         {
-            page_shop.Show();
             panel2.Controls.Clear();
-            panel2.Controls.Add(page_shop);
-            btnPublish.Unchecked();
+            pageShop.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageShop);
+            pageChoice = 1;
+            PageLabelChange();
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            pageRecord.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageRecord);
+            pageChoice = 2;
+            PageLabelChange();
+        }
+
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            pageFavorite.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageFavorite);
+            pageChoice = 3;
+            PageLabelChange();
+        }
+
+        private void btnNews_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            pageNews.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageNews);
+            pageChoice = 4;
+            PageLabelChange();
+        }
+
+        private void Form_Main_SizeChanged(object sender, EventArgs e)
+        {
+            shopTable.Height = panel7.Height - 40;
+            shopTable.Width = panel7.Width - 40;
+            goodsTable.Height = panel7.Height - 40;
+            goodsTable.Width = panel7.Width - 40;
+            btnLogOut.Location = new Point(panel1.Width - 30, 2);
+            btnNews.Location = new Point(panel1.Width - 65, 2);
+            btnState.Location = new Point(panel1.Width - 100, 2);
+            btnChangeInfo.Location= new Point(this.Width - 155, 25);
+        }
+
+        private void btnState_Click(object sender, EventArgs e)
+        {
+            if(btnState.ischecked)
+            {
+                cmbChoice.Text = "预售商品";
+            }
+            else
+            {
+                cmbChoice.Text = "商城";
+            }
+            SwitchTable();
         }
 
         private void btnPublish_Click(object sender, EventArgs e)
         {
-            page_publish.Show();
-            panel2.Controls.Clear();
-            panel2.Controls.Add(page_publish);
+            publishForm = new Form_Publish();
+            publishForm.ShowDialog();
         }
 
-
-        private void btnCenter_Click(object sender, EventArgs e)
+        private void btnChangeInfo_Click(object sender, EventArgs e)
         {
-            page_center.Show();
-            panel2.Controls.Clear();
-            panel2.Controls.Add(page_center);
-            btnPublish.Unchecked();
+            if(modifyInfo)
+            {
+                modifyInfo = false;
+                lblName.Save();
+                lblSex.Save();
+                lblPhone.Save();
+                lblMailBox.Save();
+            }
+            else
+            {
+                modifyInfo = true;
+                lblName.Modify();
+                lblSex.Modify();
+                lblPhone.Modify();
+                lblMailBox.Modify();
+            }
         }
-
-        protected override void OnSizeChanged(EventArgs e)
-        {
-            base.OnSizeChanged(e);
-            panel2.Height = this.Height - 77;
-        }
-
-
-        private void Form_Main_Load(object sender, EventArgs e)
-        {
-            panel2.Height = this.Height - 77;
-            panel2.Controls.Add(page_shop);
-            btnPublish.BringToFront();
-        }
-
-    }
-
-
-    //临时
-    public class User
-    {
-        public User()
-        {
-            this.name = "测试1";
-            this.sex = "男"; 
-            this.phone = "1234567890"; 
-            this.mailBox = "test1234@163.com";
-        }
-        public string name { get; set; }
-        public string sex { get; set; }
-        public string phone { get; set; }
-        public string mailBox { get; set; }
     }
 }
-
-
-
-
-

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForm;
+using WinForm.Tool;
 
 namespace LoginRegister
 {
@@ -49,6 +50,7 @@ namespace LoginRegister
                     UserService.ModifyUser(user.UserId, user);
         //          db.SaveChanges();
                 }*/
+                StaticVar.USERID = "" + user.UserId;
                 Form_Main form_Main = new Form_Main();
                 this.Hide();
                 form_Main.ShowDialog();               

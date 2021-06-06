@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApi.Models;
 
+
 namespace WebApi
 {
     public class TranscationContext : DbContext
@@ -20,5 +21,7 @@ namespace WebApi
         public DbSet<Good> Goods { get; set; }
 
         public DbSet<Collect> Collects { get; set; }
+
+        public DbSet<CommunicationEntity> CommunicationEntities { get; set; }
     }
 }
