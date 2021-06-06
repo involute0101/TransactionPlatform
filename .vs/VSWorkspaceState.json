@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\LoginRegister"
+    "\\LoginRegister",
+    "\\LoginRegister\\LoginRegister"
   ],
   "SelectedNode": "\\LoginRegister\\LoginRegister.sln",
   "PreviewInSolutionExplorer": false
