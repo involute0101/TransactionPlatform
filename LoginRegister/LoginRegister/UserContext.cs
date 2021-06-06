@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginRegister.EntityClass;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,5 +15,11 @@ namespace LoginRegister
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<UserContext>());
         }
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Good> Goods { get; set; }
+
+        public DbSet<Collect> Collects { get; set; }
+
+        public DbSet<CommunicationEntity> CommunicationEntities { get; set; }
     }
 }

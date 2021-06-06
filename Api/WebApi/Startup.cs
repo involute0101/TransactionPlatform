@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,6 +17,9 @@ namespace WebApi
     {
         public Startup(IConfiguration configuration)
         {
+            var builder = new ConfigurationBuilder()
+              .SetBasePath(Directory.GetCurrentDirectory())
+              .AddJsonFile("appsettings.json");
             Configuration = configuration;
         }
 
@@ -24,7 +28,7 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var serverVersion = new MySqlServerVersion(new Version(8, 0, 25));  //服务器8.0.25，本机8.0.22
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 22));  //服务器8.0.25，本机8.0.22
             services.AddDbContextPool<TranscationContext>(
                 options => options.UseMySql(Configuration.GetConnectionString("transactionDB"), serverVersion)
                 .EnableSensitiveDataLogging() 
