@@ -10,15 +10,18 @@ namespace WebApi.Models
     {
         public int GoodId { get; set; }
 
+        public int SellerId { get; set; }
+
         public String GoodName { get; set; }
 
-        public Image GoodImage { get;  }
-        public byte[] imageByte { get; set; }
+        public byte[] ImageByte { get; set; }
 
         public String GoodDetailDesc { get; set; }
 
         public int Price { get; set; }
 
         public int count { get; set; }
+
+        public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
     }
 }

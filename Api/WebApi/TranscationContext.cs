@@ -23,5 +23,9 @@ namespace WebApi
         public DbSet<Collect> Collects { get; set; }
 
         public DbSet<CommunicationEntity> CommunicationEntities { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<TransactionRecord> TransactionRecords { get; set; }
     }
 }

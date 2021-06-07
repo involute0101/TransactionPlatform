@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NPOI.Util;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -177,7 +178,7 @@ namespace WinForm.Tool
             if (len > 0)
             {
                 bytes = new byte[len];
-                int receiveNumber = socket.Receive(bytes);
+                int receiveNumber = socket.Receive(bytes);       //改
                 image = (Image)Deserialize(bytes);
             }
             return image;
@@ -186,67 +187,67 @@ namespace WinForm.Tool
         //序列化对象
         public byte[] Serialize(Image data)     //原来是Object参数   
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+            /*BinaryFormatter formatter = new BinaryFormatter();
             MemoryStream rems = new MemoryStream();
-            formatter.Serialize(rems, data);          
-            return rems.GetBuffer();
+            formatter.Serialize(rems, data);
+            return rems.GetBuffer();*/
             //以下为尝试
-            /*Image image = (Image)data;
-            ImageFormat format = image.RawFormat;
+            ImageFormat format = data.RawFormat;
             using (MemoryStream ms = new MemoryStream())
             {
                 if (format.Equals(ImageFormat.Jpeg))
                 {
-                    image.Save(ms, ImageFormat.Jpeg);
+                    data.Save(ms, ImageFormat.Jpeg);
                 }
                 else if (format.Equals(ImageFormat.Png))
                 {
-                    image.Save(ms, ImageFormat.Png);
+                    data.Save(ms, ImageFormat.Png);
                 }
                 else if (format.Equals(ImageFormat.Bmp))
                 {
-                    image.Save(ms, ImageFormat.Bmp);
+                    data.Save(ms, ImageFormat.Bmp);
                 }
                 else if (format.Equals(ImageFormat.Gif))
                 {
-                    image.Save(ms, ImageFormat.Gif);
+                    data.Save(ms, ImageFormat.Gif);
                 }
                 else if (format.Equals(ImageFormat.Icon))
                 {
-                    image.Save(ms, ImageFormat.Icon);
+                    data.Save(ms, ImageFormat.Icon);
                 }
                 byte[] buffer = new byte[ms.Length];
                 //Image.Save()会改变MemoryStream的Position，需要重新Seek到Begin
                 ms.Seek(0, SeekOrigin.Begin);
                 ms.Read(buffer, 0, buffer.Length);
                 return buffer;
-            }*/
-            //尝试2
-            
+
+            }
         }
 
         //将字节反序列化成object
-        public Object Deserialize(byte[] data)
+        public Object Deserialize(byte[] data)          
         {
-            for (int i = 0; i < data.Length; i++) Console.Write(data[i]);
-            Console.WriteLine("字节数组完毕");
-            Object obj = null;
-            try
-            {
-                BinaryFormatter formatter = new BinaryFormatter();
-                MemoryStream rems = new MemoryStream(data);
-                data = null;
-                obj = formatter.Deserialize(rems);
-            }
-            catch (Exception ex) { }
-            
-            return obj;
+            /*for (int i = 0; i < data.Length; i++) Console.Write(data[i]);
+             Console.WriteLine("字节数组完毕");
+             Object obj = null;
+             try
+             {              
+                 BinaryFormatter formatter = new BinaryFormatter();
+                 MemoryStream rems = new MemoryStream(data);
+                 data = null;
+                 obj = formatter.Deserialize(rems);
+             }
+             catch (Exception ex) 
+             {
+
+             }
+
+             return obj;*/
             //以下为尝试
-            /*MemoryStream ms = new MemoryStream(data);
+            MemoryStream ms = new MemoryStream(data);
             Image image = System.Drawing.Image.FromStream(ms);
-            return image;*/
-            //尝试2
-            
+            return (Object)image;
+
         }
 
         /// <summary>
