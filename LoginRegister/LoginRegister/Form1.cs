@@ -18,7 +18,7 @@ namespace LoginRegister
         public Form1()
         {
             InitializeComponent();
-            
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)

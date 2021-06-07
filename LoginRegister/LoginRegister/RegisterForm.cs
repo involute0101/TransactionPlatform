@@ -16,7 +16,8 @@ namespace LoginRegister
         public RegisterForm()
         {
             InitializeComponent();
-            
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         public User newUser;
