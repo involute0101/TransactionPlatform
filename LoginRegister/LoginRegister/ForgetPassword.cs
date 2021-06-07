@@ -16,6 +16,7 @@ namespace LoginRegister
         public ForgetPassword()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void buttonRetrieve_Click(object sender, EventArgs e)//用户信息匹配则用邮箱发送密码
@@ -43,8 +44,8 @@ namespace LoginRegister
             smtpClient.Host = "smtp.163.com";
             smtpClient.Send(mailMessage);
             Console.WriteLine(user.Password);
-
-
+            MessageBox.Show("验证成功，密码已发送至邮箱", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
     }
 }

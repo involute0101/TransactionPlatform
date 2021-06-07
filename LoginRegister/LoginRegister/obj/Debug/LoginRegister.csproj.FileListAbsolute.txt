@@ -93,3 +93,6 @@ D:\code\C#\TransactionPlatform\LoginRegister\LoginRegister\obj\Debug\LoginRegist
 D:\code\C#\TransactionPlatform\LoginRegister\LoginRegister\bin\Debug\WinForm.exe
 D:\code\C#\TransactionPlatform\LoginRegister\LoginRegister\bin\Debug\WinForm.pdb
 D:\code\C#\TransactionPlatform\LoginRegister\LoginRegister\bin\Debug\WinForm.exe.config
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\WinForm.exe
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\WinForm.pdb
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\WinForm.exe.config

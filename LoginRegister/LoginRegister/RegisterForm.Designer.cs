@@ -30,6 +30,9 @@ namespace LoginRegister
         private void InitializeComponent()
         {
             this.groupBoxRegister = new System.Windows.Forms.GroupBox();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.labelSex = new System.Windows.Forms.Label();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -41,9 +44,6 @@ namespace LoginRegister
             this.textBoxSurePassword = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.labelSex = new System.Windows.Forms.Label();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.groupBoxRegister.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,17 +67,52 @@ namespace LoginRegister
             this.groupBoxRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxRegister.Location = new System.Drawing.Point(0, 0);
             this.groupBoxRegister.Name = "groupBoxRegister";
-            this.groupBoxRegister.Size = new System.Drawing.Size(535, 509);
+            this.groupBoxRegister.Size = new System.Drawing.Size(482, 504);
             this.groupBoxRegister.TabIndex = 0;
             this.groupBoxRegister.TabStop = false;
             this.groupBoxRegister.Text = "注册";
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonFemale.Location = new System.Drawing.Point(321, 86);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonFemale.TabIndex = 13;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "女";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.Checked = true;
+            this.radioButtonMale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.radioButtonMale.Location = new System.Drawing.Point(224, 86);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonMale.TabIndex = 12;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.Text = "男";
+            this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // labelSex
+            // 
+            this.labelSex.AutoSize = true;
+            this.labelSex.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelSex.Location = new System.Drawing.Point(142, 86);
+            this.labelSex.Name = "labelSex";
+            this.labelSex.Size = new System.Drawing.Size(46, 17);
+            this.labelSex.TabIndex = 11;
+            this.labelSex.Text = "性别";
             // 
             // buttonRegister
             // 
             this.buttonRegister.BackColor = System.Drawing.Color.HotPink;
             this.buttonRegister.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRegister.Location = new System.Drawing.Point(227, 405);
+            this.buttonRegister.Location = new System.Drawing.Point(187, 404);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(100, 40);
             this.buttonRegister.TabIndex = 10;
@@ -172,46 +207,11 @@ namespace LoginRegister
             this.textBoxUsername.Size = new System.Drawing.Size(193, 25);
             this.textBoxUsername.TabIndex = 0;
             // 
-            // labelSex
-            // 
-            this.labelSex.AutoSize = true;
-            this.labelSex.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelSex.Location = new System.Drawing.Point(142, 86);
-            this.labelSex.Name = "labelSex";
-            this.labelSex.Size = new System.Drawing.Size(46, 17);
-            this.labelSex.TabIndex = 11;
-            this.labelSex.Text = "性别";
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Checked = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButtonMale.Location = new System.Drawing.Point(224, 86);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(45, 21);
-            this.radioButtonMale.TabIndex = 12;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "男";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.radioButtonFemale.Location = new System.Drawing.Point(321, 86);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(45, 21);
-            this.radioButtonFemale.TabIndex = 13;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "女";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 509);
+            this.ClientSize = new System.Drawing.Size(482, 504);
             this.Controls.Add(this.groupBoxRegister);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
