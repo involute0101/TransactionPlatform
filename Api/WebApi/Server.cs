@@ -204,7 +204,6 @@ namespace WebApi
                         {
                             if (goalSocket != null && bytes != null)
                             {
-                                Console.WriteLine("转发图片");
                                 goalSocket.Send(bytes);           //转发图片                            
                             }
                         }
