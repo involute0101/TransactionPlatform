@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace WinForm.Tool
 {
+    //通讯客户端
     class Client
     {
         public string ipString = "127.0.0.1";   // 服务器端ip

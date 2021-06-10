@@ -23,17 +23,20 @@ namespace WebApi.Controllers
             if (!server.started) server.start();
         }
 
+        //服务器端输出方式
         private static void ServerPrint(string info)
         {
             Console.WriteLine("收到：" + info);
         }
 
+        //唤醒服务器
         [HttpGet("notify")]
         public String startInfo()
         {
             return "Start success";
         }
 
+        //认证用户身份，保存IP地址和端口
         [HttpPost("identify")]
         public String ReceiveInfo([FromBody] Object body)
         {
@@ -56,6 +59,7 @@ namespace WebApi.Controllers
             return "success";
         }
 
+        //发送的聊天信息类型
         [HttpGet("infoType")]
         public String informationType(String infotype)
         {

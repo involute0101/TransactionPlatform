@@ -17,8 +17,6 @@ namespace WinForm.EntityClass
 
         public DateTime Time { get; set; }
 
-
-
         public Collect(int goodId, int userId, DateTime time)
         {
             GoodId = goodId;

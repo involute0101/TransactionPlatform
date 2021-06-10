@@ -11,10 +11,11 @@ namespace LoginRegister.EntityClass
     {
         public int GoodId { get; set; }
 
+        public int SellerId { get; set; }
+
         public String GoodName { get; set; }
 
-        public Image GoodImage { get; set; }
-        public byte[] imageByte { get; set; }
+        public String Image { get; set; }
 
         public String GoodDetailDesc { get; set; }
 
@@ -22,6 +23,17 @@ namespace LoginRegister.EntityClass
 
         public int count { get; set; }
 
+        public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
+        public Good() { }
+        public Good(string GoodName, String Image, string GoodDetailDesc, int Price, int count)
+        {
+            this.GoodName = GoodName;
+            this.Image = Image;
+            this.GoodDetailDesc = GoodDetailDesc;
+            this.Price = Price;
+            this.count = count;
+            State = "在售";
+        }
 
     }
 }
