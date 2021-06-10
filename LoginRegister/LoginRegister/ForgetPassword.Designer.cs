@@ -42,7 +42,7 @@ namespace LoginRegister
             // 
             // groupBoxForgetPassword
             // 
-            this.groupBoxForgetPassword.BackColor = System.Drawing.Color.LightGreen;
+            this.groupBoxForgetPassword.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxForgetPassword.Controls.Add(this.buttonRetrieve);
             this.groupBoxForgetPassword.Controls.Add(this.labelPhone);
             this.groupBoxForgetPassword.Controls.Add(this.labelEmail);
@@ -52,20 +52,23 @@ namespace LoginRegister
             this.groupBoxForgetPassword.Controls.Add(this.textBoxUsername);
             this.groupBoxForgetPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxForgetPassword.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxForgetPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxForgetPassword.Name = "groupBoxForgetPassword";
-            this.groupBoxForgetPassword.Size = new System.Drawing.Size(482, 504);
+            this.groupBoxForgetPassword.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxForgetPassword.Size = new System.Drawing.Size(362, 403);
             this.groupBoxForgetPassword.TabIndex = 0;
             this.groupBoxForgetPassword.TabStop = false;
             this.groupBoxForgetPassword.Text = "忘记密码";
             // 
             // buttonRetrieve
             // 
-            this.buttonRetrieve.BackColor = System.Drawing.Color.ForestGreen;
+            this.buttonRetrieve.BackColor = System.Drawing.Color.DimGray;
             this.buttonRetrieve.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.buttonRetrieve.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonRetrieve.Location = new System.Drawing.Point(182, 360);
+            this.buttonRetrieve.Location = new System.Drawing.Point(136, 288);
+            this.buttonRetrieve.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRetrieve.Name = "buttonRetrieve";
-            this.buttonRetrieve.Size = new System.Drawing.Size(100, 40);
+            this.buttonRetrieve.Size = new System.Drawing.Size(75, 32);
             this.buttonRetrieve.TabIndex = 6;
             this.buttonRetrieve.Text = "找回密码";
             this.buttonRetrieve.UseVisualStyleBackColor = false;
@@ -75,9 +78,10 @@ namespace LoginRegister
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelPhone.Location = new System.Drawing.Point(120, 246);
+            this.labelPhone.Location = new System.Drawing.Point(90, 197);
+            this.labelPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(103, 17);
+            this.labelPhone.Size = new System.Drawing.Size(82, 14);
             this.labelPhone.TabIndex = 5;
             this.labelPhone.Text = "注册手机号";
             // 
@@ -85,9 +89,10 @@ namespace LoginRegister
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelEmail.Location = new System.Drawing.Point(120, 147);
+            this.labelEmail.Location = new System.Drawing.Point(90, 118);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(46, 17);
+            this.labelEmail.Size = new System.Drawing.Size(37, 14);
             this.labelEmail.TabIndex = 4;
             this.labelEmail.Text = "邮箱";
             // 
@@ -95,39 +100,45 @@ namespace LoginRegister
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelUsername.Location = new System.Drawing.Point(117, 48);
+            this.labelUsername.Location = new System.Drawing.Point(88, 38);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(65, 17);
+            this.labelUsername.Size = new System.Drawing.Size(52, 14);
             this.labelUsername.TabIndex = 3;
             this.labelUsername.Text = "用户名";
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(232, 237);
+            this.textBoxPhone.Location = new System.Drawing.Point(174, 190);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(163, 25);
+            this.textBoxPhone.Size = new System.Drawing.Size(123, 21);
             this.textBoxPhone.TabIndex = 2;
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(232, 138);
+            this.textBoxEmail.Location = new System.Drawing.Point(174, 110);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(163, 25);
+            this.textBoxEmail.Size = new System.Drawing.Size(123, 21);
             this.textBoxEmail.TabIndex = 1;
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(232, 39);
+            this.textBoxUsername.Location = new System.Drawing.Point(174, 31);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(163, 25);
+            this.textBoxUsername.Size = new System.Drawing.Size(123, 21);
             this.textBoxUsername.TabIndex = 0;
             // 
             // ForgetPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 504);
+            this.BackgroundImage = global::LoginRegister.Properties.Resources.background;
+            this.ClientSize = new System.Drawing.Size(362, 403);
             this.Controls.Add(this.groupBoxForgetPassword);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ForgetPassword";
             this.Text = "ForgetPassword";
             this.groupBoxForgetPassword.ResumeLayout(false);
