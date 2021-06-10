@@ -1,9 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Api",
+    "\\Api\\WebApi",
+    "\\Api\\WebApi\\Controllers",
+    "\\Api\\WebApi\\Models",
     "\\LoginRegister",
-    "\\WinForm"
+    "\\WinForm",
+    "\\WinForm\\WinForm",
+    "\\WinForm\\WinForm\\EntityClass",
+    "\\WinForm\\WinForm\\Service"
   ],
-  "SelectedNode": "\\LoginRegister\\LoginRegister.sln",
+  "SelectedNode": "\\Api\\WebApi\\WebApi.sln",
   "PreviewInSolutionExplorer": false
 }

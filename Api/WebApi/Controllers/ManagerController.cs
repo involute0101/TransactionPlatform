@@ -111,8 +111,7 @@ namespace WebApi.Controllers
         }
 
 
-
-        //记录交易成功的帖子
+        //记录交易成功的商品
         [HttpPost("addTransactionRecord")]
         public ActionResult<TransactionRecord> AddDoneDeal([FromBody] Object body)
         {
