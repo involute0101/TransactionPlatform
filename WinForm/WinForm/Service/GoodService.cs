@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi.Models;
 using WinForm.EntityClass;
+using WinForm.Tool;
 
 namespace WinForm.Service
 {
     class GoodService
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
+
         //查询全部商品
         public static List<Good> GetAllGoods()
         {
@@ -24,9 +28,17 @@ namespace WinForm.Service
 
             var task = client.GetStringAsync(baseUrl);
             List<Good> goods = JsonConvert.DeserializeObject<List<Good>>(task.Result);
+            foreach (var g in goods)
+            {
+                MemoryStream ms = new MemoryStream(g.ImageByte);
+
+                g.Image = ImageTool.ResizeImage(new Bitmap(ms), new Size(200, 200));
+                ms.Close();
+            }
             return goods;
         }
-        //根据ID查询商品
+
+        //根据商品ID查询商品
         public static Good GetGoodByGoodId(int goodId)
         {
             string baseUrl = serverAddress + "Good/getGoodById?" +
@@ -39,6 +51,7 @@ namespace WinForm.Service
             Good good = JsonConvert.DeserializeObject<Good>(task.Result);
             return good;
         }
+
         //根据商品名查询商品
         public static List<Good> GetGoodByGoodName(string goodName)
         {
@@ -52,19 +65,28 @@ namespace WinForm.Service
             List<Good> goods = JsonConvert.DeserializeObject<List<Good>>(task.Result);
             return goods;
         }
-        //根据用户名查询商品
-        public static List<Good> GetGoodByUsername(string username)
+
+        //根据用户ID查询商品
+        public static List<Good> GetGoodByUserId(int userId)
         {
-            string baseUrl = serverAddress + "Good/getGoodByUsername?" +
-                "Username=" + username;
+            string baseUrl = serverAddress + "Good/getGoodByUserId?" +
+                "userId=" + userId;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             var task = client.GetStringAsync(baseUrl);
             List<Good> goods = JsonConvert.DeserializeObject<List<Good>>(task.Result);
+            foreach (var g in goods)
+            {
+                MemoryStream ms = new MemoryStream(g.ImageByte);
+
+                g.Image = ImageTool.ResizeImage(new Bitmap(ms), new Size(200, 200));
+                ms.Close();
+            }
             return goods;
         }
+
         //发布商品
         public static bool AddPost(Good good)
         {
@@ -82,6 +104,7 @@ namespace WinForm.Service
             else
                 return true;
         }
+
         //删除商品
         public static void DeletePost(int userId, int goodId)
         {
@@ -107,6 +130,7 @@ namespace WinForm.Service
             return;
         }
 
+        
     }
 }
 

@@ -67,68 +67,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultForm.cs">
+    <Compile Include="Form\ConsultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultForm.Designer.cs">
+    <Compile Include="Form\ConsultForm.Designer.cs">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityClass\Collect.cs" />
     <Compile Include="EntityClass\CommunicationEntity.cs" />
     <Compile Include="EntityClass\Good.cs" />
     <Compile Include="EntityClass\User.cs" />
-    <Compile Include="Form_Main.cs">
+    <Compile Include="Form\Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Main.Designer.cs">
+    <Compile Include="Form\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Publish.cs">
+    <Compile Include="Form\Form_Publish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Publish.Designer.cs">
+    <Compile Include="Form\Form_Publish.Designer.cs">
       <DependentUpon>Form_Publish.cs</DependentUpon>
     </Compile>
-    <Compile Include="GoodsTable.cs">
+    <Compile Include="Form\GoodsTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GoodsTable.Designer.cs">
+    <Compile Include="Form\GoodsTable.Designer.cs">
       <DependentUpon>GoodsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageBtn.cs">
+    <Compile Include="Form\ImageBtn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ImageBtn.Designer.cs">
+    <Compile Include="Form\ImageBtn.Designer.cs">
       <DependentUpon>ImageBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifiedLabel.cs">
+    <Compile Include="Form\ModifiedLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ModifiedLabel.Designer.cs">
+    <Compile Include="Form\ModifiedLabel.Designer.cs">
       <DependentUpon>ModifiedLabel.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageNews.cs">
+    <Compile Include="Form\PageNews.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PageNews.Designer.cs">
+    <Compile Include="Form\PageNews.Designer.cs">
       <DependentUpon>PageNews.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageShop.cs">
+    <Compile Include="Form\PageShop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PageShop.Designer.cs">
+    <Compile Include="Form\PageShop.Designer.cs">
       <DependentUpon>PageShop.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageRecord.cs">
+    <Compile Include="Form\PageRecord.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PageRecord.Designer.cs">
+    <Compile Include="Form\PageRecord.Designer.cs">
       <DependentUpon>PageRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="PageFavorite.cs">
+    <Compile Include="Form\PageFavorite.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PageFavorite.Designer.cs">
+    <Compile Include="Form\PageFavorite.Designer.cs">
       <DependentUpon>PageFavorite.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -137,48 +137,49 @@
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
     <Compile Include="Service\UserService.cs" />
-    <Compile Include="ShopTable.cs">
+    <Compile Include="Form\ShopTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ShopTable.Designer.cs">
+    <Compile Include="Form\ShopTable.Designer.cs">
       <DependentUpon>ShopTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="SwitchBtn.cs">
+    <Compile Include="Form\SwitchBtn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SwitchBtn.Designer.cs">
+    <Compile Include="Form\SwitchBtn.Designer.cs">
       <DependentUpon>SwitchBtn.cs</DependentUpon>
     </Compile>
     <Compile Include="Tool\Client.cs" />
+    <Compile Include="Tool\ImageTool.cs" />
     <Compile Include="Tool\StaticVar.cs" />
-    <EmbeddedResource Include="ConsultForm.resx">
+    <EmbeddedResource Include="Form\ConsultForm.resx">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Main.resx">
+    <EmbeddedResource Include="Form\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Publish.resx">
+    <EmbeddedResource Include="Form\Form_Publish.resx">
       <DependentUpon>Form_Publish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoodsTable.resx">
+    <EmbeddedResource Include="Form\GoodsTable.resx">
       <DependentUpon>GoodsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImageBtn.resx">
+    <EmbeddedResource Include="Form\ImageBtn.resx">
       <DependentUpon>ImageBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifiedLabel.resx">
+    <EmbeddedResource Include="Form\ModifiedLabel.resx">
       <DependentUpon>ModifiedLabel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PageNews.resx">
+    <EmbeddedResource Include="Form\PageNews.resx">
       <DependentUpon>PageNews.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PageShop.resx">
+    <EmbeddedResource Include="Form\PageShop.resx">
       <DependentUpon>PageShop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PageRecord.resx">
+    <EmbeddedResource Include="Form\PageRecord.resx">
       <DependentUpon>PageRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PageFavorite.resx">
+    <EmbeddedResource Include="Form\PageFavorite.resx">
       <DependentUpon>PageFavorite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -191,13 +192,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShopTable.resx">
+    <EmbeddedResource Include="Form\ShopTable.resx">
       <DependentUpon>ShopTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SwitchBtn.resx">
+    <EmbeddedResource Include="Form\SwitchBtn.resx">
       <DependentUpon>SwitchBtn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WinForm.EntityClass.Good.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

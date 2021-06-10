@@ -30,6 +30,9 @@ namespace WinForm
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnState = new WinForm.ImageBtn();
+            this.btnNews = new WinForm.ImageBtn();
+            this.btnLogOut = new WinForm.ImageBtn();
             this.btnFavorite = new WinForm.SwitchBtn();
             this.btnRecord = new WinForm.SwitchBtn();
             this.btnShop = new WinForm.SwitchBtn();
@@ -58,10 +61,11 @@ namespace WinForm
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnState = new WinForm.ImageBtn();
-            this.btnNews = new WinForm.ImageBtn();
-            this.btnLogOut = new WinForm.ImageBtn();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             this.panel2.SuspendLayout();
             this.pageCenter.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -73,9 +77,6 @@ namespace WinForm
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNews)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +94,47 @@ namespace WinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 35);
             this.panel1.TabIndex = 0;
+            // 
+            // btnState
+            // 
+            this.btnState.ChangeState = true;
+            this.btnState.Image = global::WinForm.Properties.Resources.买家;
+            this.btnState.ImageChecked = global::WinForm.Properties.Resources.卖家;
+            this.btnState.ImageNormal = global::WinForm.Properties.Resources.买家;
+            this.btnState.Location = new System.Drawing.Point(900, 2);
+            this.btnState.Name = "btnState";
+            this.btnState.Size = new System.Drawing.Size(30, 30);
+            this.btnState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnState.TabIndex = 1;
+            this.btnState.TabStop = false;
+            this.btnState.Click += new System.EventHandler(this.btnState_Click);
+            // 
+            // btnNews
+            // 
+            this.btnNews.ChangeState = false;
+            this.btnNews.Image = global::WinForm.Properties.Resources.消_息;
+            this.btnNews.ImageChecked = global::WinForm.Properties.Resources.消_息;
+            this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
+            this.btnNews.Location = new System.Drawing.Point(935, 2);
+            this.btnNews.Name = "btnNews";
+            this.btnNews.Size = new System.Drawing.Size(30, 30);
+            this.btnNews.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNews.TabIndex = 4;
+            this.btnNews.TabStop = false;
+            this.btnNews.Click += new System.EventHandler(this.btnNews_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.ChangeState = false;
+            this.btnLogOut.Image = global::WinForm.Properties.Resources.退出登录;
+            this.btnLogOut.ImageChecked = global::WinForm.Properties.Resources.退出登录;
+            this.btnLogOut.ImageNormal = global::WinForm.Properties.Resources.退出登录;
+            this.btnLogOut.Location = new System.Drawing.Point(970, 2);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(30, 30);
+            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLogOut.TabIndex = 1;
+            this.btnLogOut.TabStop = false;
             // 
             // btnFavorite
             // 
@@ -194,6 +236,7 @@ namespace WinForm
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.cmbChoice);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 280);
@@ -400,46 +443,15 @@ namespace WinForm
             this.label2.TabIndex = 4;
             this.label2.Text = "性别：";
             // 
-            // btnState
+            // button1
             // 
-            this.btnState.ChangeState = true;
-            this.btnState.Image = global::WinForm.Properties.Resources.买家;
-            this.btnState.ImageChecked = global::WinForm.Properties.Resources.卖家;
-            this.btnState.ImageNormal = global::WinForm.Properties.Resources.买家;
-            this.btnState.Location = new System.Drawing.Point(900, 2);
-            this.btnState.Name = "btnState";
-            this.btnState.Size = new System.Drawing.Size(30, 30);
-            this.btnState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnState.TabIndex = 1;
-            this.btnState.TabStop = false;
-            this.btnState.Click += new System.EventHandler(this.btnState_Click);
-            // 
-            // btnNews
-            // 
-            this.btnNews.ChangeState = false;
-            this.btnNews.Image = global::WinForm.Properties.Resources.消_息;
-            this.btnNews.ImageChecked = global::WinForm.Properties.Resources.消_息;
-            this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
-            this.btnNews.Location = new System.Drawing.Point(935, 2);
-            this.btnNews.Name = "btnNews";
-            this.btnNews.Size = new System.Drawing.Size(30, 30);
-            this.btnNews.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNews.TabIndex = 4;
-            this.btnNews.TabStop = false;
-            this.btnNews.Click += new System.EventHandler(this.btnNews_Click);
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.ChangeState = false;
-            this.btnLogOut.Image = global::WinForm.Properties.Resources.退出登录;
-            this.btnLogOut.ImageChecked = global::WinForm.Properties.Resources.退出登录;
-            this.btnLogOut.ImageNormal = global::WinForm.Properties.Resources.退出登录;
-            this.btnLogOut.Location = new System.Drawing.Point(970, 2);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(30, 30);
-            this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnLogOut.TabIndex = 1;
-            this.btnLogOut.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(935, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "刷新";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Main
             // 
@@ -455,6 +467,9 @@ namespace WinForm
             this.SizeChanged += new System.EventHandler(this.Form_Main_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             this.panel2.ResumeLayout(false);
             this.pageCenter.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -469,9 +484,6 @@ namespace WinForm
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChangeInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNews)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -510,6 +522,7 @@ namespace WinForm
         private ModifiedLabel lblSex;
         private ModifiedLabel lblMailBox;
         private ModifiedLabel lblPhone;
+        private System.Windows.Forms.Button button1;
     }
 }
 

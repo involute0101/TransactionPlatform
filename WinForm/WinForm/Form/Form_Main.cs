@@ -49,7 +49,7 @@ namespace WinForm
             lblSex.InputText = user.Sex;
             lblPhone.InputText = user.PhoneNumber;
             lblMailBox.InputText = user.Email;
-            picHead.Load(user.Image);
+            //picHead.Load(user.Image);             //pictureBox需要Location
             //
             if (isSeller)
             {
@@ -68,7 +68,7 @@ namespace WinForm
             if (cmbChoice.Text == "预售商品")
             {
                 panel7.Controls.Add(goodsTable);
-                goodsTable.bdsGoods.DataSource = GoodService.GetGoodByUsername(user.Username);
+                goodsTable.bdsGoods.DataSource = GoodService.GetGoodByUserId(user.UserId);
             }
             else
             {
@@ -234,6 +234,11 @@ namespace WinForm
         private void btnLogOut_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
         }
     }
 }

@@ -51,6 +51,7 @@ namespace WinForm.Service
             client.SendImage(fileName);
         }
 
+        //断开连接
         public void stopConnect()
         {
             client.stop();
