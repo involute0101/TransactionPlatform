@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm.Service;
 
 namespace WinForm
 {
@@ -15,6 +16,7 @@ namespace WinForm
         public ShopTable()
         {
             InitializeComponent();
+            bdsShop.DataSource = GoodService.GetAllGoods();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace WinForm
 
         #endregion
 
-        private System.Windows.Forms.BindingSource bdsShop;
+        public System.Windows.Forms.BindingSource bdsShop;
         private System.Windows.Forms.DataGridView dgvShop;
     }
 }

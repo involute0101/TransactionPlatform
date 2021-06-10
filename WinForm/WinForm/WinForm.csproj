@@ -136,6 +136,7 @@
     <Compile Include="Service\ClientService.cs" />
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="ShopTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
