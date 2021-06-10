@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForm.Service;
+using WinForm.Tool;
 
 namespace WinForm
 {
@@ -17,6 +18,7 @@ namespace WinForm
         public GoodsTable()
         {
             InitializeComponent();
+            bdsGoods.DataSource = GoodService.GetGoodByUserId(Int32.Parse(StaticVar.USERID));
         }
     }
 }

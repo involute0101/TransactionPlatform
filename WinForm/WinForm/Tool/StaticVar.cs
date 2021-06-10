@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinForm.Tool
 {
+    //全局变量
     public static class StaticVar
     {
         public static String USERID;        //UserId

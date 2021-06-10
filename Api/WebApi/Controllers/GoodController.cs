@@ -26,7 +26,7 @@ namespace WebApi.Controllers
             return transcationContext.Goods.ToList();
         }
 
-        //按postId查询
+        //按goodId查询
         [HttpGet("getGoodById")]
         public ActionResult<Good> GetGoodByGoodId(int goodId)
         {
@@ -37,7 +37,7 @@ namespace WebApi.Controllers
                 return NotFound();
         }
 
-        //按postName查询
+        //按goodName查询
         [HttpGet("getGoodByName")]
         public ActionResult<List<Good>> GetGoodByGoodName(string goodName)
         {
@@ -48,12 +48,11 @@ namespace WebApi.Controllers
                 return NotFound();
         }
 
-        ////根据用户名查询商品
-        [HttpGet("getGoodByUsername")]
-        public ActionResult<List<Good>> GetGoodByUsername(string username)
+        ////根据用户Id查询商品
+        [HttpGet("getGoodByUserId")]
+        public ActionResult<List<Good>> GetGoodByUserID(int userId)
         {
-            User user = transcationContext.Users.SingleOrDefault(t => t.Username == username);
-            var goods = transcationContext.Goods.Where(t => t.SellerId == user.UserId);
+            var goods = transcationContext.Goods.Where(t => t.SellerId == userId);
             if (goods != null)
                 return goods.ToList();
             else

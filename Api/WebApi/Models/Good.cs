@@ -14,7 +14,7 @@ namespace WebApi.Models
 
         public String GoodName { get; set; }
 
-        public byte[] ImageByte { get; set; }
+        public byte[] ImageByte { set; get; }
 
         public String GoodDetailDesc { get; set; }
 
@@ -23,5 +23,16 @@ namespace WebApi.Models
         public int count { get; set; }
 
         public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
+        public Good() { }
+        /*public Good(string GoodName, String Image, string GoodDetailDesc, int Price, int count)
+        {
+            this.GoodName = GoodName;
+            this.Image = Image;
+            this.GoodDetailDesc = GoodDetailDesc;
+            this.Price = Price;
+            this.count = count;
+            State = "在售";
+        }*/
+
     }
 }

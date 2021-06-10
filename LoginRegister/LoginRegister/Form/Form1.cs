@@ -51,7 +51,7 @@ namespace LoginRegister
         //          db.SaveChanges();
                 }*/
                 StaticVar.USERID = "" + user.UserId;
-                Form_Main form_Main = new Form_Main();
+                Form_Main form_Main = new Form_Main(user.Username);
                 this.Hide();
                 form_Main.ShowDialog();               
             }

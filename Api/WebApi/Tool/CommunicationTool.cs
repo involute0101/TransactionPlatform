@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.Tool
 {
+    //全局变量
     public static class CommunicationTool
     {
         public static String GOALIPPORT;      //goalIpPort

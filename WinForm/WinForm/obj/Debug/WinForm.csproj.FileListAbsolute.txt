@@ -20,7 +20,6 @@ E:\课程\软件构造基础\大作业\WinForm\WinForm\obj\Debug\WinForm.PageNew
 D:\code\C#\TransactionPlatform\WinForm\WinForm\bin\Debug\WinForm.exe.config
 D:\code\C#\TransactionPlatform\WinForm\WinForm\bin\Debug\WinForm.exe
 D:\code\C#\TransactionPlatform\WinForm\WinForm\bin\Debug\WinForm.pdb
-D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.Form_Main.resources
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.Form_Publish.resources
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.GoodsTable.resources
@@ -125,3 +124,4 @@ C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csp
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.exe
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.pdb
+D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache
