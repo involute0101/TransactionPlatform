@@ -15,7 +15,7 @@ namespace WinForm.EntityClass
 
         public String GoodName { get; set; }
 
-        public byte[] ImageByte { get; set; }
+        public List<string> Image { get; set; }
 
         public String GoodDetailDesc { get; set; }
 
@@ -25,10 +25,10 @@ namespace WinForm.EntityClass
 
         public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
         public Good() { }
-        public Good(string GoodName, byte[] ImageByte, string GoodDetailDesc, int Price, int count)
+        public Good(string GoodName, List<string> Image, string GoodDetailDesc, int Price, int count)
         {
             this.GoodName = GoodName;
-            this.ImageByte = ImageByte;
+            this.Image = Image;
             this.GoodDetailDesc = GoodDetailDesc;
             this.Price = Price;
             this.count = count;

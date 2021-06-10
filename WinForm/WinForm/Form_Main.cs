@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginRegister;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebApi.Models;
+using WinForm.Service;
 
 namespace WinForm
 {
@@ -20,12 +23,16 @@ namespace WinForm
         private PageFavorite pageFavorite = new PageFavorite();
         private PageNews pageNews = new PageNews();
         private Form_Publish publishForm;
-
+        private User user;
         public Form_Main()
         {
             InitializeComponent();
         }
-
+        public Form_Main(string Username)
+        {
+            InitializeComponent();
+            user = UserService.GetUser(Username);
+        }
         private void Form_Main_Load(object sender, EventArgs e)
         {
             btnChangeInfo.Location = new Point(this.Width - 155, 25);
@@ -33,9 +40,17 @@ namespace WinForm
             shopTable.Width = panel7.Width - 40;
             goodsTable.Height = panel7.Height - 40;
             goodsTable.Width = panel7.Width - 40;
+            goodsTable.Username = user.Username;
             btnState.Location = new Point(panel1.Width - 100, 2);
             btnLogOut.Location = new Point(panel1.Width - 30, 2);
             btnNews.Location = new Point(panel1.Width - 65, 2);
+            //6.10晚修改：显示个人信息
+            lblName.InputText = user.Username;
+            lblSex.InputText = user.Sex;
+            lblPhone.InputText = user.PhoneNumber;
+            lblMailBox.InputText = user.Email;
+            picHead.Load(user.Image);
+            //
             if (isSeller)
             {
                 cmbChoice.Text = "预售商品";
@@ -50,13 +65,15 @@ namespace WinForm
         private void SwitchTable()
         {
             panel7.Controls.Clear();
-            if (cmbChoice.Text== "预售商品")
+            if (cmbChoice.Text == "预售商品")
             {
                 panel7.Controls.Add(goodsTable);
+                goodsTable.bdsGoods.DataSource = GoodService.GetGoodByUsername(user.Username);
             }
             else
             {
                 panel7.Controls.Add(shopTable);
+                shopTable.bdsShop.ResetBindings(false);
             }
         }
 
@@ -73,13 +90,13 @@ namespace WinForm
                         this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
                         break;
                     }
-                case 1: 
+                case 1:
                     {
                         this.btnCenter.ForeColor = System.Drawing.Color.White;
                         this.btnShop.ForeColor = System.Drawing.Color.Yellow;
                         this.btnRecord.ForeColor = System.Drawing.Color.White;
                         this.btnFavorite.ForeColor = System.Drawing.Color.White;
-                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
                         break;
                     }
                 case 2:
@@ -88,7 +105,7 @@ namespace WinForm
                         this.btnShop.ForeColor = System.Drawing.Color.White;
                         this.btnRecord.ForeColor = System.Drawing.Color.Yellow;
                         this.btnFavorite.ForeColor = System.Drawing.Color.White;
-                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
                         break;
                     }
                 case 3:
@@ -97,7 +114,7 @@ namespace WinForm
                         this.btnShop.ForeColor = System.Drawing.Color.White;
                         this.btnRecord.ForeColor = System.Drawing.Color.White;
                         this.btnFavorite.ForeColor = System.Drawing.Color.Yellow;
-                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息; 
+                        this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息;
                         break;
                     }
                 case 5:
@@ -108,7 +125,7 @@ namespace WinForm
                         this.btnFavorite.ForeColor = System.Drawing.Color.White;
                         this.btnNews.ImageNormal = global::WinForm.Properties.Resources.消_息__选中_; break;
                     }
-                default:break;
+                default: break;
             }
         }
 
@@ -166,12 +183,12 @@ namespace WinForm
             btnLogOut.Location = new Point(panel1.Width - 30, 2);
             btnNews.Location = new Point(panel1.Width - 65, 2);
             btnState.Location = new Point(panel1.Width - 100, 2);
-            btnChangeInfo.Location= new Point(this.Width - 155, 25);
+            btnChangeInfo.Location = new Point(this.Width - 155, 25);
         }
 
         private void btnState_Click(object sender, EventArgs e)
         {
-            if(btnState.ischecked)
+            if (btnState.ischecked)
             {
                 cmbChoice.Text = "预售商品";
             }
@@ -184,13 +201,13 @@ namespace WinForm
 
         private void btnPublish_Click(object sender, EventArgs e)
         {
-            publishForm = new Form_Publish();
+            publishForm = new Form_Publish(user);
             publishForm.ShowDialog();
         }
 
         private void btnChangeInfo_Click(object sender, EventArgs e)
         {
-            if(modifyInfo)
+            if (modifyInfo)
             {
                 modifyInfo = false;
                 lblName.Save();
@@ -205,7 +222,18 @@ namespace WinForm
                 lblSex.Modify();
                 lblPhone.Modify();
                 lblMailBox.Modify();
+                //6.11凌晨修改：修改个人信息
+                user.Username = lblName.InputText;
+                user.Sex = lblSex.InputText;
+                user.PhoneNumber = lblPhone.InputText;
+                user.Email = lblMailBox.InputText;
+                UserService.ModifyUser(user.UserId, user);
             }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

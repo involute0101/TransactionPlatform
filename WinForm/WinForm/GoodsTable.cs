@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm.Service;
 
 namespace WinForm
 {
     public partial class GoodsTable : UserControl
     {
+        public string Username;
         public GoodsTable()
         {
             InitializeComponent();
