@@ -17,6 +17,7 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
+        //使用JWT实现TOKEN认证，增加用户安全访问权限
         private readonly TranscationContext transactionContext;
         private readonly JwtOptions _jwtOptions;
         private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler;
