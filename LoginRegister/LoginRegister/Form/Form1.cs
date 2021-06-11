@@ -21,67 +21,41 @@ namespace LoginRegister
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private async void buttonLogin_Click(object sender, EventArgs e)
         {
-            /*using (var db = new UserContext())
-            {*/
+
             //用户登录主界面
+            var token = await UserService.LoginUser(textBoxUsername.Text, textBoxPassword.Text);
+
             User user = UserService.GetUser(textBoxUsername.Text);
-
             //个人信息主页部分
-            
-            
-            //user = db.Users.SingleOrDefault(u => u.Username.Equals(textBoxUsername.Text)  && u.Password.Equals(textBoxPassword.Text) );
-            
-                if (user != null) 
-                { 
-                    Console.WriteLine("登陆成功");
-                //用户界面
-                //     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
 
-
-                /*DetailForm detailForm = new DetailForm();          
-                detailForm.user = user;
-                detailForm.Biding();
-                detailForm.ShowDialog();
-                if (detailForm.DialogResult == DialogResult.OK)//修改更新有效数据
-                {
-                    user = detailForm.user;
-                    UserService.ModifyUser(user.UserId, user);
-        //          db.SaveChanges();
-                }*/
+            if (user != null)
+            {
+                Console.WriteLine("登陆成功");
+                
                 StaticVar.USERID = "" + user.UserId;
                 Form_Main form_Main = new Form_Main(user.Username);
+               
                 this.Hide();
-                form_Main.ShowDialog();               
+                form_Main.ShowDialog();
             }
-                else
-                {
-                    Console.WriteLine("登陆失败");
-                    MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    textBoxPassword.Text = "";
-                }
-            // }
-            
-            
-
+            else
+            {
+                Console.WriteLine("登陆失败");
+                MessageBox.Show("登陆失败", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxPassword.Text = "";
+            }
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            
+
             RegisterForm register = new RegisterForm();
             register.ShowDialog();
-            if (register.DialogResult == DialogResult.OK) 
+            if (register.DialogResult == DialogResult.OK)
             {
                 UserService.RegisterUser(register.newUser);
-                
-                /*using (var db = new UserContext())
-                {
-                    //往数据库中添加新用户
-                    db.Users.Add(register.newUser);
-                    db.SaveChanges();
-                }*/
             }
         }
 

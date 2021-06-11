@@ -14,6 +14,7 @@ namespace WebApi.Models
         public String Password { get; set; }//密码
         public String Email { get; set; }//邮箱
         public byte[] ImageByte { set; get; }//存放地址用来访问服务器端图片
+        
         public User(string username, string password, string email)
         {
             Username = username;

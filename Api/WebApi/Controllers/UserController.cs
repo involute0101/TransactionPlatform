@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using WebApi.Models;
 
@@ -13,10 +18,15 @@ namespace WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly TranscationContext transactionContext;
+        private readonly JwtOptions _jwtOptions;
+        private readonly JwtSecurityTokenHandler _jwtSecurityTokenHandler;
 
-        public UserController(TranscationContext context)
+        public UserController(TranscationContext context, JwtOptions jwtOptions,
+            JwtSecurityTokenHandler jwtSecurityTokenHandler)
         {
             transactionContext = context;
+            _jwtOptions = jwtOptions;
+            _jwtSecurityTokenHandler = jwtSecurityTokenHandler;
         }
 
         [HttpGet]
@@ -27,6 +37,7 @@ namespace WebApi.Controllers
 
         //"User/getUser"
         [HttpGet("getUser")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<User> GetUser(String username)
         {
             try
@@ -83,25 +94,32 @@ namespace WebApi.Controllers
 
         //User/login?
         [HttpGet("login")]
-        public ActionResult<int> Login(String username, String password)
+        public ActionResult<string> Login(string username, string password)
         {
-            var user_temp = transactionContext.Users.FirstOrDefault(u => u.Username == username);
-            if (user_temp == null)
+            var user = transactionContext.Users.FirstOrDefault(x => x.Username.Equals(username));
+            if (user == null) return NotFound("用户找不到");
+            if (user.Password == password)//jwt使用TOKEN
             {
-                return 0;
+                var jwtToken = new JwtSecurityToken(
+                    _jwtOptions.Issuer,
+                    _jwtOptions.Audience,
+                    new[]
+                    {
+                        new Claim("USERNAME", user.Username),
+                        new Claim("USERID", user.UserId.ToString())
+                    },
+                    null, DateTime.Now.Add(TimeSpan.FromDays(3)),
+                    new SigningCredentials(_jwtOptions.SecurityKey, SecurityAlgorithms.HmacSha256));
+                string jwt = _jwtSecurityTokenHandler.WriteToken(jwtToken);
+                return Ok(jwt);
             }
-            else if (user_temp.Password == password)
-            {
-                return 1;
-            }
-            else
-            {
-                return -1;
-            }
+            return BadRequest("您的密码错误！");
+          
         }
 
         //User/modifyUser?
         [HttpPut("modifyUser")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
         public ActionResult<User> ModifyUser(int userId, User user)
         {
             if (userId != user.UserId)

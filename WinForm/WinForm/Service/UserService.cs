@@ -6,28 +6,34 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Net.Http.Json;
 using WebApi.Models;
 
-namespace LoginRegister
+namespace WinForm.Service
 {
     class UserService//用户访问服务器类 
     {
-        private static String serverAddress = "http://localhost:5001/"; //服务器地址
+        private static string serverAddress = "http://localhost:5001/"; //服务器地址
+        private static HttpClient client = new HttpClient();
 
-        public static int LoginUser(string username, string password)
+        public static async Task<string> LoginUser(string username, string password)
         {
-            string baseUrl = serverAddress+"User/login?" +
-            "userName" + username + "&&password=" + password;
-            HttpClient client = new HttpClient();
-
-            var task = client.GetStringAsync(baseUrl);
-            return Convert.ToInt32(task.Result);
+            string baseUrl = serverAddress + "User/login?" +
+            "username=" + username + "&password=" + password;
+            var respone = await client.GetAsync(baseUrl);
+            if (respone.IsSuccessStatusCode)
+            {
+                var token = await respone.Content.ReadAsStringAsync();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                return token;
+            }
+            return "";
         }
 
         public static bool RegisterUser(User user_reg)
         {
-            string baseUrl = serverAddress+"User/register?";
-            HttpClient client = new HttpClient();
+            string baseUrl = serverAddress + "User/register?";
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(user_reg), Encoding.UTF8, "application/json");
@@ -41,12 +47,12 @@ namespace LoginRegister
         public static bool RegisterUser(string username, string sex, string password,
              string email, string phone)
         {
-            string baseUrl = serverAddress+"User/register?";
-            HttpClient client = new HttpClient();
+            string baseUrl = serverAddress + "User/register?";
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            User user_reg = new User(username,sex ,phone,password, email);
+            User user_reg = new User(username, sex, phone, password, email);
 
             HttpContent content = new StringContent(JsonConvert.SerializeObject(user_reg), Encoding.UTF8, "application/json");
             var task = client.PostAsync(baseUrl, content);
@@ -59,36 +65,45 @@ namespace LoginRegister
 
         public static User GetUser(string username)
         {
-            string baseUrl = serverAddress+"User/getUser?" +
+            string baseUrl = serverAddress + "User/getUser?" +
                 "username=" + username;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var task = client.GetStringAsync(baseUrl);
-            User user = JsonConvert.DeserializeObject<User>(task.Result);
+            var task = client.GetAsync(baseUrl);
+            var response = task.Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                // 获取失败!
+                return null;
+            }
+            var user = response.Content.ReadFromJsonAsync<User>().Result;
             return user;
         }
 
-        public static User GetUser(string username,string email,string phone)
+        public static User GetUser(string username, string email, string phone)
         {
-            string baseUrl = serverAddress+"User/forget?" +
-                "username=" + username+
+            string baseUrl = serverAddress + "User/forget?" +
+                "username=" + username +
                 "&&email=" + email +
                 "&&phone=" + phone;
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var task = client.GetStringAsync(baseUrl);
-            User user = JsonConvert.DeserializeObject<User>(task.Result);
+            //client.DefaultRequestHeaders.Accept.Clear();
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            var task = client.GetAsync(baseUrl);
+            var response = task.Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                // 获取失败!
+                return null;
+            }
+            var user = response.Content.ReadFromJsonAsync<User>().Result;
             return user;
         }
 
         public static void ModifyUser(int userId, User user)
         {
-            string baseUrl = serverAddress+"User/modifyUser?" + "userId=" + userId;
-            HttpClient client = new HttpClient();
+            string baseUrl = serverAddress + "User/modifyUser?" + "userId=" + userId;
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
