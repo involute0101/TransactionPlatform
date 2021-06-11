@@ -13,8 +13,7 @@ namespace WebApi.Models
         public String PhoneNumber { get; set; }//电话号码
         public String Password { get; set; }//密码
         public String Email { get; set; }//邮箱
-        public string Image { get; set; }//存放地址用来访问服务器端图片
-
+        public byte[] ImageByte { set; get; }//存放地址用来访问服务器端图片
         public User(string username, string password, string email)
         {
             Username = username;

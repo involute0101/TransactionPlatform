@@ -43,6 +43,7 @@ namespace WinForm
             this.shopTable = new WinForm.ShopTable();
             this.goodsTable = new WinForm.GoodsTable();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.cmbChoice = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@ namespace WinForm
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNews)).BeginInit();
@@ -139,11 +139,11 @@ namespace WinForm
             // btnFavorite
             // 
             this.btnFavorite.AutoSize = true;
-            this.btnFavorite.Font = new System.Drawing.Font("幼圆", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnFavorite.ForeColor = System.Drawing.Color.White;
             this.btnFavorite.Location = new System.Drawing.Point(270, 5);
             this.btnFavorite.Name = "btnFavorite";
-            this.btnFavorite.Size = new System.Drawing.Size(46, 17);
+            this.btnFavorite.Size = new System.Drawing.Size(45, 20);
             this.btnFavorite.TabIndex = 3;
             this.btnFavorite.Text = "收藏";
             this.btnFavorite.Click += new System.EventHandler(this.btnFavorite_Click);
@@ -151,11 +151,11 @@ namespace WinForm
             // btnRecord
             // 
             this.btnRecord.AutoSize = true;
-            this.btnRecord.Font = new System.Drawing.Font("幼圆", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRecord.ForeColor = System.Drawing.Color.White;
             this.btnRecord.Location = new System.Drawing.Point(170, 5);
             this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(84, 17);
+            this.btnRecord.Size = new System.Drawing.Size(81, 20);
             this.btnRecord.TabIndex = 2;
             this.btnRecord.Text = "交易记录";
             this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
@@ -163,11 +163,11 @@ namespace WinForm
             // btnShop
             // 
             this.btnShop.AutoSize = true;
-            this.btnShop.Font = new System.Drawing.Font("幼圆", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShop.ForeColor = System.Drawing.Color.White;
             this.btnShop.Location = new System.Drawing.Point(110, 5);
             this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(46, 17);
+            this.btnShop.Size = new System.Drawing.Size(45, 20);
             this.btnShop.TabIndex = 1;
             this.btnShop.Text = "商城";
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
@@ -175,11 +175,11 @@ namespace WinForm
             // btnCenter
             // 
             this.btnCenter.AutoSize = true;
-            this.btnCenter.Font = new System.Drawing.Font("幼圆", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCenter.ForeColor = System.Drawing.Color.Yellow;
             this.btnCenter.Location = new System.Drawing.Point(10, 5);
             this.btnCenter.Name = "btnCenter";
-            this.btnCenter.Size = new System.Drawing.Size(84, 17);
+            this.btnCenter.Size = new System.Drawing.Size(81, 20);
             this.btnCenter.TabIndex = 0;
             this.btnCenter.Text = "个人中心";
             this.btnCenter.Click += new System.EventHandler(this.lblCenter_Click);
@@ -244,18 +244,28 @@ namespace WinForm
             this.panel6.Size = new System.Drawing.Size(1018, 30);
             this.panel6.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(935, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "刷新";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cmbChoice
             // 
             this.cmbChoice.BackColor = System.Drawing.Color.White;
             this.cmbChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbChoice.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cmbChoice.FormattingEnabled = true;
             this.cmbChoice.Items.AddRange(new object[] {
             "商城",
             "预售商品"});
             this.cmbChoice.Location = new System.Drawing.Point(13, 5);
             this.cmbChoice.Name = "cmbChoice";
-            this.cmbChoice.Size = new System.Drawing.Size(99, 23);
+            this.cmbChoice.Size = new System.Drawing.Size(99, 26);
             this.cmbChoice.TabIndex = 0;
             // 
             // panel4
@@ -303,10 +313,10 @@ namespace WinForm
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("幼圆", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(13, 135);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 19);
+            this.label6.Size = new System.Drawing.Size(86, 22);
             this.label6.TabIndex = 4;
             this.label6.Text = "发布商品";
             // 
@@ -388,14 +398,15 @@ namespace WinForm
             this.picHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHead.TabIndex = 0;
             this.picHead.TabStop = false;
+            this.picHead.Click += new System.EventHandler(this.picHead_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("幼圆", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(190, 145);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 19);
+            this.label5.Size = new System.Drawing.Size(67, 22);
             this.label5.TabIndex = 6;
             this.label5.Text = "邮箱：";
             // 
@@ -416,42 +427,32 @@ namespace WinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("幼圆", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(190, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.Size = new System.Drawing.Size(86, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "用户名：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("幼圆", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(190, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
+            this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "电话：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("幼圆", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(190, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(67, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "性别：";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(935, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "刷新";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Main
             // 
