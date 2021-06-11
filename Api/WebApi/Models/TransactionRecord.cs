@@ -13,6 +13,8 @@ namespace WebApi.Models
 
         public int BuyerId { get; set; }//买家
 
+        public int SalerId { get; set; }//卖家
+
         public DateTime Time { get; set; }//完成交易时间
     }
 }

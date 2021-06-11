@@ -12,11 +12,11 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly TranscationContext transcationContext;
+        private readonly TranscationContext transactionContext;
 
         public UserController(TranscationContext context)
         {
-            transcationContext = context;
+            transactionContext = context;
         }
 
         [HttpGet]
@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var user_temp = transcationContext.Users.FirstOrDefault(t => t.Username == username);
+                var user_temp = transactionContext.Users.FirstOrDefault(t => t.Username == username);
                 return user_temp;
             }
             catch (Exception e)
@@ -46,7 +46,7 @@ namespace WebApi.Controllers
         {
             try
             {
-                var user_temp = transcationContext.Users.FirstOrDefault(t => t.Username == username && t.Email == email && t.PhoneNumber == phone);
+                var user_temp = transactionContext.Users.FirstOrDefault(t => t.Username == username && t.Email == email && t.PhoneNumber == phone);
                 return user_temp;
             }
             catch (Exception e)
@@ -63,12 +63,12 @@ namespace WebApi.Controllers
             try
             {
                 //查询用户名，邮箱是否重复
-                var user_temp1 = transcationContext.Users.FirstOrDefault(t => t.Username == user.Username);
-                var user_temp2 = transcationContext.Users.FirstOrDefault(t => t.Email == user.Email);
+                var user_temp1 = transactionContext.Users.FirstOrDefault(t => t.Username == user.Username);
+                var user_temp2 = transactionContext.Users.FirstOrDefault(t => t.Email == user.Email);
                 if (user_temp1 == null && user_temp2 == null)
                 {
-                    transcationContext.Users.Add(user);
-                    transcationContext.SaveChanges();
+                    transactionContext.Users.Add(user);
+                    transactionContext.SaveChanges();
                     return user;
                 }
                 else
@@ -85,7 +85,7 @@ namespace WebApi.Controllers
         [HttpGet("login")]
         public ActionResult<int> Login(String username, String password)
         {
-            var user_temp = transcationContext.Users.FirstOrDefault(u => u.Username == username);
+            var user_temp = transactionContext.Users.FirstOrDefault(u => u.Username == username);
             if (user_temp == null)
             {
                 return 0;
@@ -110,8 +110,8 @@ namespace WebApi.Controllers
             }
             else
             {
-                transcationContext.Entry(user).State = EntityState.Modified;
-                transcationContext.SaveChanges();
+                transactionContext.Entry(user).State = EntityState.Modified;
+                transactionContext.SaveChanges();
             }
             return user;
         }

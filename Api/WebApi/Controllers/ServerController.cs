@@ -15,11 +15,11 @@ namespace WebApi.Controllers
     public class ServerController
     {
         readonly Server server = new Server(ServerPrint, "127.0.0.1", 37280);
-        private readonly TranscationContext transcationContext;
+        private readonly TranscationContext transactionContext;
 
         public ServerController(TranscationContext context)       //客户端使用需要先发送一个请求，才会构造此controller，从而启动Server
         {
-            transcationContext = context;
+            transactionContext = context;
             if (!server.started) server.start();
         }
 
@@ -41,20 +41,20 @@ namespace WebApi.Controllers
         public String ReceiveInfo([FromBody] Object body)
         {
             CommunicationEntity communication = JsonConvert.DeserializeObject<CommunicationEntity>(body.ToString());
-            var communication_temp = transcationContext.CommunicationEntities.FirstOrDefault(t => t.UserId == communication.UserId);
+            var communication_temp = transactionContext.CommunicationEntities.FirstOrDefault(t => t.UserId == communication.UserId);
             if (communication_temp == null)
             {
-                transcationContext.CommunicationEntities.Add(communication);
-                transcationContext.SaveChanges();
+                transactionContext.CommunicationEntities.Add(communication);
+                transactionContext.SaveChanges();
             }
             else
             {
                 communication_temp.ipStringPort = communication.ipStringPort;
                 communication_temp.goalUserId = communication.goalUserId;
-                transcationContext.Entry(communication_temp).State = EntityState.Modified;
-                transcationContext.SaveChanges();
+                transactionContext.Entry(communication_temp).State = EntityState.Modified;
+                transactionContext.SaveChanges();
             }
-            CommunicationEntity goaler = transcationContext.CommunicationEntities.Where(t => t.UserId == communication.goalUserId).ToList().First();
+            CommunicationEntity goaler = transactionContext.CommunicationEntities.Where(t => t.UserId == communication.goalUserId).ToList().First();
             CommunicationTool.GOALIPPORT = goaler.ipStringPort;         //保存目标IP地址
             return "success";
         }
