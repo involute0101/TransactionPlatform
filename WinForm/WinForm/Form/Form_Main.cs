@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,8 @@ namespace WinForm
         public Form_Main()
         {
             InitializeComponent();
+
+
         }
         public Form_Main(string Username)
         {
@@ -35,6 +38,7 @@ namespace WinForm
         }
         private void Form_Main_Load(object sender, EventArgs e)
         {
+
             btnChangeInfo.Location = new Point(this.Width - 155, 25);
             shopTable.Height = panel7.Height - 40;
             shopTable.Width = panel7.Width - 40;
@@ -45,6 +49,7 @@ namespace WinForm
             btnLogOut.Location = new Point(panel1.Width - 30, 2);
             btnNews.Location = new Point(panel1.Width - 65, 2);
             //6.10晚修改：显示个人信息
+            if (user.ImageByte != null) picHead.Image = Image.FromStream(new MemoryStream(user.ImageByte));
             lblName.InputText = user.Username;
             lblSex.InputText = user.Sex;
             lblPhone.InputText = user.PhoneNumber;
@@ -239,6 +244,29 @@ namespace WinForm
         private void button1_Click(object sender, EventArgs e)
         {
             shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
+        }
+
+        private void picHead_Click(object sender, EventArgs e)
+        {
+            //添加上传头像
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "选择要上传的图片";
+            ofd.Filter = "All Files(*.*)|*.*|位图(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg";
+            ofd.ShowDialog();
+            if (!File.Exists(ofd.FileName))
+            {
+                MessageBox.Show("照片为空");
+                return;
+            }
+            picHead.Load(ofd.FileName);
+            user.Image = ofd.FileName;
+
+            FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] imgBytesIn = br.ReadBytes((int)fs.Length);           //将流读入到字节数组中
+            user.ImageByte = imgBytesIn;
+
+            UserService.ModifyUser(user.UserId, user);
         }
     }
 }
