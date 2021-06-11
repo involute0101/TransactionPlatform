@@ -1,5 +1,4 @@
-﻿using LoginRegister;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +27,6 @@ namespace WinForm
         public Form_Main()
         {
             InitializeComponent();
-
 
         }
         public Form_Main(string Username)

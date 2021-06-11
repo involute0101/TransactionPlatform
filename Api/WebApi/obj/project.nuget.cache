@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lmzRDjWECbXkETE6yf/6ksiCWVNAtQ2sOH0p4qILVXed92l1pqsFA+A8d0NECFkQgvElohKK72rzxEOrD7Kaxg==",
+  "dgSpecHash": "5gSB782OAE4W5q4iZZ2DU4KNNw1DJQTJ12D+ivHD53EVL6OKyzfYLlM4wkPl91Rl0dlXAVzltzsuwSIpHI4m3Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\86188\\Documents\\mycode\\C#\\C#whole\\Api\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\86188\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\86188\\.nuget\\packages\\k4os.compression.lz4.streams\\1.1.11\\k4os.compression.lz4.streams.1.1.11.nupkg.sha512",
     "C:\\Users\\86188\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
+    "C:\\Users\\86188\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Users\\86188\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\2.0.0\\microsoft.aspnetcore.mvc.razor.extensions.2.0.0.nupkg.sha512",
     "C:\\Users\\86188\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\2.0.0\\microsoft.aspnetcore.razor.language.2.0.0.nupkg.sha512",
     "C:\\Users\\86188\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

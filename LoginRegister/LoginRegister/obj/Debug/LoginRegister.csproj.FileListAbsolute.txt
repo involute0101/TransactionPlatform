@@ -143,3 +143,15 @@ C:\Users\10414\Desktop\TransactionPlatform\LoginRegister\LoginRegister\obj\Debug
 C:\Users\10414\Desktop\TransactionPlatform\LoginRegister\LoginRegister\obj\Debug\LoginRegister.csproj.CopyComplete
 C:\Users\10414\Desktop\TransactionPlatform\LoginRegister\LoginRegister\obj\Debug\LoginRegister.exe
 C:\Users\10414\Desktop\TransactionPlatform\LoginRegister\LoginRegister\obj\Debug\LoginRegister.pdb
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Net.Http.Json.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Text.Json.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.ValueTuple.dll
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Net.Http.Json.xml
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Text.Json.xml
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\86188\Documents\mycode\C#\C#whole\LoginRegister\LoginRegister\bin\Debug\System.ValueTuple.xml
