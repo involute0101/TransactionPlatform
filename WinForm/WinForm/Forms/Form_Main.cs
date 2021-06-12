@@ -31,6 +31,7 @@ namespace WinForm
         }
         public Form_Main(string Username)
         {
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             user = UserService.GetUser(Username);
         }
@@ -239,7 +240,7 @@ namespace WinForm
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRefrash_Click(object sender, EventArgs e)
         {
             shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
         }
@@ -265,6 +266,12 @@ namespace WinForm
             user.ImageByte = imgBytesIn;
 
             UserService.ModifyUser(user.UserId, user);
+        }
+
+        private void btnLogOut_Click_1(object sender, EventArgs e)
+        {
+            FormControl.form1.Show();
+            this.Hide();
         }
     }
 }

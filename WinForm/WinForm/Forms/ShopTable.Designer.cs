@@ -66,6 +66,7 @@ namespace WinForm
             this.dgvShop.RowTemplate.Height = 27;
             this.dgvShop.Size = new System.Drawing.Size(1000, 410);
             this.dgvShop.TabIndex = 0;
+            this.dgvShop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShop_CellClick);
             // 
             // goodIdDataGridViewTextBoxColumn
             // 

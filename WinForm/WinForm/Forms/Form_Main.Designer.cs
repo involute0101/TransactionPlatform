@@ -43,7 +43,7 @@ namespace WinForm
             this.shopTable = new WinForm.ShopTable();
             this.goodsTable = new WinForm.GoodsTable();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRefrash = new WinForm.ImageBtn();
             this.cmbChoice = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@ namespace WinForm
             this.pageCenter.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -135,6 +136,7 @@ namespace WinForm
             this.btnLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnLogOut.TabIndex = 1;
             this.btnLogOut.TabStop = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
             // btnFavorite
             // 
@@ -236,7 +238,7 @@ namespace WinForm
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.btnRefrash);
             this.panel6.Controls.Add(this.cmbChoice);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 280);
@@ -244,15 +246,20 @@ namespace WinForm
             this.panel6.Size = new System.Drawing.Size(1018, 30);
             this.panel6.TabIndex = 2;
             // 
-            // button1
+            // btnRefrash
             // 
-            this.button1.Location = new System.Drawing.Point(935, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "刷新";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefrash.ChangeState = false;
+            this.btnRefrash.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRefrash.Image = global::WinForm.Properties.Resources.新东方_刷新图标;
+            this.btnRefrash.ImageChecked = null;
+            this.btnRefrash.ImageNormal = null;
+            this.btnRefrash.Location = new System.Drawing.Point(988, 0);
+            this.btnRefrash.Name = "btnRefrash";
+            this.btnRefrash.Size = new System.Drawing.Size(30, 30);
+            this.btnRefrash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefrash.TabIndex = 2;
+            this.btnRefrash.TabStop = false;
+            this.btnRefrash.Click += new System.EventHandler(this.btnRefrash_Click);
             // 
             // cmbChoice
             // 
@@ -316,7 +323,7 @@ namespace WinForm
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(13, 135);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 22);
+            this.label6.Size = new System.Drawing.Size(90, 24);
             this.label6.TabIndex = 4;
             this.label6.Text = "发布商品";
             // 
@@ -406,7 +413,7 @@ namespace WinForm
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(190, 145);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 22);
+            this.label5.Size = new System.Drawing.Size(70, 24);
             this.label5.TabIndex = 6;
             this.label5.Text = "邮箱：";
             // 
@@ -430,7 +437,7 @@ namespace WinForm
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(190, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 22);
+            this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "用户名：";
             // 
@@ -440,7 +447,7 @@ namespace WinForm
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(190, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "电话：";
             // 
@@ -450,7 +457,7 @@ namespace WinForm
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(190, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 22);
+            this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "性别：";
             // 
@@ -475,6 +482,7 @@ namespace WinForm
             this.pageCenter.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -523,7 +531,7 @@ namespace WinForm
         private ModifiedLabel lblSex;
         private ModifiedLabel lblMailBox;
         private ModifiedLabel lblPhone;
-        private System.Windows.Forms.Button button1;
+        private ImageBtn btnRefrash;
     }
 }
 

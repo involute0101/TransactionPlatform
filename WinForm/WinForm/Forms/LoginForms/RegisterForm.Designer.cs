@@ -49,7 +49,8 @@ namespace WinForm
             // 
             // groupBoxRegister
             // 
-            this.groupBoxRegister.BackColor = System.Drawing.Color.Pink;
+            this.groupBoxRegister.BackColor = System.Drawing.Color.White;
+            this.groupBoxRegister.BackgroundImage = global::WinForm.Properties.Resources.background;
             this.groupBoxRegister.Controls.Add(this.radioButtonFemale);
             this.groupBoxRegister.Controls.Add(this.radioButtonMale);
             this.groupBoxRegister.Controls.Add(this.labelSex);
@@ -78,7 +79,7 @@ namespace WinForm
             this.radioButtonFemale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButtonFemale.Location = new System.Drawing.Point(321, 86);
             this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonFemale.Size = new System.Drawing.Size(48, 22);
             this.radioButtonFemale.TabIndex = 13;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "女";
@@ -91,7 +92,7 @@ namespace WinForm
             this.radioButtonMale.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButtonMale.Location = new System.Drawing.Point(224, 86);
             this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(45, 21);
+            this.radioButtonMale.Size = new System.Drawing.Size(48, 22);
             this.radioButtonMale.TabIndex = 12;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "男";
@@ -103,7 +104,7 @@ namespace WinForm
             this.labelSex.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelSex.Location = new System.Drawing.Point(142, 86);
             this.labelSex.Name = "labelSex";
-            this.labelSex.Size = new System.Drawing.Size(46, 17);
+            this.labelSex.Size = new System.Drawing.Size(46, 18);
             this.labelSex.TabIndex = 11;
             this.labelSex.Text = "性别";
             // 
@@ -126,7 +127,7 @@ namespace WinForm
             this.labelPhoneNumber.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelPhoneNumber.Location = new System.Drawing.Point(106, 329);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(65, 17);
+            this.labelPhoneNumber.Size = new System.Drawing.Size(65, 18);
             this.labelPhoneNumber.TabIndex = 9;
             this.labelPhoneNumber.Text = "手机号";
             // 
@@ -136,7 +137,7 @@ namespace WinForm
             this.labelEmail.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelEmail.Location = new System.Drawing.Point(103, 267);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(46, 17);
+            this.labelEmail.Size = new System.Drawing.Size(46, 18);
             this.labelEmail.TabIndex = 8;
             this.labelEmail.Text = "邮箱";
             // 
@@ -146,7 +147,7 @@ namespace WinForm
             this.labelSurePassword.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelSurePassword.Location = new System.Drawing.Point(103, 203);
             this.labelSurePassword.Name = "labelSurePassword";
-            this.labelSurePassword.Size = new System.Drawing.Size(84, 17);
+            this.labelSurePassword.Size = new System.Drawing.Size(84, 18);
             this.labelSurePassword.TabIndex = 7;
             this.labelSurePassword.Text = "确认密码";
             // 
@@ -156,7 +157,7 @@ namespace WinForm
             this.labelPassword.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelPassword.Location = new System.Drawing.Point(103, 141);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(46, 17);
+            this.labelPassword.Size = new System.Drawing.Size(46, 18);
             this.labelPassword.TabIndex = 6;
             this.labelPassword.Text = "密码";
             // 
@@ -166,7 +167,7 @@ namespace WinForm
             this.labelUsername.Font = new System.Drawing.Font("仿宋", 10.28571F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelUsername.Location = new System.Drawing.Point(103, 33);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(65, 17);
+            this.labelUsername.Size = new System.Drawing.Size(65, 18);
             this.labelUsername.TabIndex = 5;
             this.labelUsername.Text = "用户名";
             // 

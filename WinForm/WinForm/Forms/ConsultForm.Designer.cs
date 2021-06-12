@@ -31,8 +31,9 @@ namespace WinForm
         {
             this.textBox_showing = new System.Windows.Forms.RichTextBox();
             this.textBox_send = new System.Windows.Forms.TextBox();
-            this.button_send = new System.Windows.Forms.Button();
+            this.button_send = new WinForm.ImageBtn();
             this.btnSendImg = new WinForm.ImageBtn();
+            ((System.ComponentModel.ISupportInitialize)(this.button_send)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,12 +58,16 @@ namespace WinForm
             // 
             // button_send
             // 
-            this.button_send.Location = new System.Drawing.Point(725, 337);
+            this.button_send.ChangeState = false;
+            this.button_send.Image = global::WinForm.Properties.Resources.发送;
+            this.button_send.ImageChecked = null;
+            this.button_send.ImageNormal = null;
+            this.button_send.Location = new System.Drawing.Point(747, 327);
             this.button_send.Name = "button_send";
-            this.button_send.Size = new System.Drawing.Size(75, 23);
-            this.button_send.TabIndex = 11;
-            this.button_send.Text = "发送信息";
-            this.button_send.UseVisualStyleBackColor = true;
+            this.button_send.Size = new System.Drawing.Size(30, 30);
+            this.button_send.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.button_send.TabIndex = 13;
+            this.button_send.TabStop = false;
             this.button_send.Click += new System.EventHandler(this.button_send_Click_1);
             // 
             // btnSendImg
@@ -84,12 +89,13 @@ namespace WinForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSendImg);
             this.Controls.Add(this.button_send);
+            this.Controls.Add(this.btnSendImg);
             this.Controls.Add(this.textBox_send);
             this.Controls.Add(this.textBox_showing);
             this.Name = "ConsultForm";
             this.Text = "ConsultForm";
+            ((System.ComponentModel.ISupportInitialize)(this.button_send)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,7 +106,7 @@ namespace WinForm
 
         private System.Windows.Forms.RichTextBox textBox_showing;
         private System.Windows.Forms.TextBox textBox_send;
-        private System.Windows.Forms.Button button_send;
         private ImageBtn btnSendImg;
+        private ImageBtn button_send;
     }
 }

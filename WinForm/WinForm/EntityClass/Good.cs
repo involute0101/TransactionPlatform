@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WinForm.EntityClass
 {
-    class Good
+    public class Good
     {
         public int GoodId { get; set; }
 

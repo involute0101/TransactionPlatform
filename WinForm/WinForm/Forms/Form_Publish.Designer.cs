@@ -37,18 +37,18 @@ namespace WinForm
             this.txtGoodPrice = new System.Windows.Forms.TextBox();
             this.txtGoodName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.btnAddImage = new WinForm.ImageBtn();
             this.panelbg = new System.Windows.Forms.Panel();
+            this.btnAddGood = new WinForm.ImageBtn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.btnAddGood = new WinForm.ImageBtn();
-            this.btnAddImage = new WinForm.ImageBtn();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelbg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddGood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddImage)).BeginInit();
+            this.panelbg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddGood)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -136,6 +136,32 @@ namespace WinForm
             this.panel1.Size = new System.Drawing.Size(540, 100);
             this.panel1.TabIndex = 4;
             // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxImage.Location = new System.Drawing.Point(406, 3);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(106, 105);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 6;
+            this.pictureBoxImage.TabStop = false;
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.BackColor = System.Drawing.Color.Pink;
+            this.btnAddImage.ChangeState = false;
+            this.btnAddImage.Image = global::WinForm.Properties.Resources.添加;
+            this.btnAddImage.ImageChecked = null;
+            this.btnAddImage.ImageNormal = null;
+            this.btnAddImage.Location = new System.Drawing.Point(358, 3);
+            this.btnAddImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(27, 26);
+            this.btnAddImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddImage.TabIndex = 4;
+            this.btnAddImage.TabStop = false;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click_1);
+            // 
             // panelbg
             // 
             this.panelbg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -148,6 +174,22 @@ namespace WinForm
             this.panelbg.Name = "panelbg";
             this.panelbg.Size = new System.Drawing.Size(540, 300);
             this.panelbg.TabIndex = 5;
+            // 
+            // btnAddGood
+            // 
+            this.btnAddGood.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnAddGood.ChangeState = false;
+            this.btnAddGood.Image = global::WinForm.Properties.Resources.发布商品;
+            this.btnAddGood.ImageChecked = null;
+            this.btnAddGood.ImageNormal = null;
+            this.btnAddGood.Location = new System.Drawing.Point(239, 259);
+            this.btnAddGood.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddGood.Name = "btnAddGood";
+            this.btnAddGood.Size = new System.Drawing.Size(40, 38);
+            this.btnAddGood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAddGood.TabIndex = 7;
+            this.btnAddGood.TabStop = false;
+            this.btnAddGood.Click += new System.EventHandler(this.btnAddGood_Click);
             // 
             // textBox1
             // 
@@ -170,53 +212,11 @@ namespace WinForm
             this.label5.TabIndex = 5;
             this.label5.Text = "商品详情：";
             // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxImage.Location = new System.Drawing.Point(406, 3);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(106, 105);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 6;
-            this.pictureBoxImage.TabStop = false;
-            // 
-            // btnAddGood
-            // 
-            this.btnAddGood.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btnAddGood.ChangeState = false;
-            this.btnAddGood.Image = global::WinForm.Properties.Resources.发布商品;
-            this.btnAddGood.ImageChecked = null;
-            this.btnAddGood.ImageNormal = null;
-            this.btnAddGood.Location = new System.Drawing.Point(239, 259);
-            this.btnAddGood.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddGood.Name = "btnAddGood";
-            this.btnAddGood.Size = new System.Drawing.Size(40, 38);
-            this.btnAddGood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAddGood.TabIndex = 7;
-            this.btnAddGood.TabStop = false;
-            this.btnAddGood.Click += new System.EventHandler(this.btnAddGood_Click);
-            // 
-            // btnAddImage
-            // 
-            this.btnAddImage.BackColor = System.Drawing.Color.Pink;
-            this.btnAddImage.ChangeState = false;
-            this.btnAddImage.Image = global::WinForm.Properties.Resources.添加;
-            this.btnAddImage.ImageChecked = null;
-            this.btnAddImage.ImageNormal = null;
-            this.btnAddImage.Location = new System.Drawing.Point(358, 3);
-            this.btnAddImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(27, 26);
-            this.btnAddImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAddImage.TabIndex = 4;
-            this.btnAddImage.TabStop = false;
-            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click_1);
-            // 
             // Form_Publish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WinForm.Properties.Resources.bg2;
+            this.BackgroundImage = global::WinForm.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 348);
             this.Controls.Add(this.panelbg);
@@ -230,11 +230,11 @@ namespace WinForm
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddImage)).EndInit();
             this.panelbg.ResumeLayout(false);
             this.panelbg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddGood)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddImage)).EndInit();
             this.ResumeLayout(false);
 
         }
