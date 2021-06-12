@@ -32,6 +32,7 @@ namespace WinForm
         {
             InitializeComponent();
             this.user = user;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnAddGood_Click(object sender, EventArgs e)

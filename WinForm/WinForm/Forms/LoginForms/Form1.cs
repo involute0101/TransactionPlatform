@@ -40,7 +40,7 @@ namespace WinForm
                 Form_Main form_Main = new Form_Main(user.Username);
                
                 this.Hide();
-                form_Main.ShowDialog();
+                form_Main.Show();
             }
             else
             {

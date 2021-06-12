@@ -98,86 +98,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\ConsultForm.cs">
+    <Compile Include="Forms\ConsultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ConsultForm.Designer.cs">
+    <Compile Include="Forms\ConsultForm.Designer.cs">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityClass\Collect.cs" />
     <Compile Include="EntityClass\CommunicationEntity.cs" />
     <Compile Include="EntityClass\Good.cs" />
     <Compile Include="EntityClass\User.cs" />
-    <Compile Include="Form\Form_Main.cs">
+    <Compile Include="Forms\FormControl.cs" />
+    <Compile Include="Forms\Form_Good.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form_Main.Designer.cs">
+    <Compile Include="Forms\Form_Good.Designer.cs">
+      <DependentUpon>Form_Good.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form_Publish.cs">
+    <Compile Include="Forms\Form_Publish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form_Publish.Designer.cs">
+    <Compile Include="Forms\Form_Publish.Designer.cs">
       <DependentUpon>Form_Publish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\GoodsTable.cs">
+    <Compile Include="Forms\GoodsTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\GoodsTable.Designer.cs">
+    <Compile Include="Forms\GoodsTable.Designer.cs">
       <DependentUpon>GoodsTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ImageBtn.cs">
+    <Compile Include="Forms\ImageBtn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form\ImageBtn.Designer.cs">
+    <Compile Include="Forms\ImageBtn.Designer.cs">
       <DependentUpon>ImageBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoginForms\ForgetPassword.cs">
+    <Compile Include="Forms\LoginForms\ForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\LoginForms\ForgetPassword.Designer.cs">
+    <Compile Include="Forms\LoginForms\ForgetPassword.Designer.cs">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoginForms\Form1.cs">
+    <Compile Include="Forms\LoginForms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\LoginForms\Form1.Designer.cs">
+    <Compile Include="Forms\LoginForms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\LoginForms\RegisterForm.cs">
+    <Compile Include="Forms\LoginForms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\LoginForms\RegisterForm.Designer.cs">
+    <Compile Include="Forms\LoginForms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\ModifiedLabel.cs">
+    <Compile Include="Forms\ModifiedLabel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\ModifiedLabel.Designer.cs">
+    <Compile Include="Forms\ModifiedLabel.Designer.cs">
       <DependentUpon>ModifiedLabel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PageNews.cs">
+    <Compile Include="Forms\PageConsult.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\PageNews.Designer.cs">
+    <Compile Include="Forms\PageConsult.Designer.cs">
+      <DependentUpon>PageConsult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PageNews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\PageNews.Designer.cs">
       <DependentUpon>PageNews.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PageShop.cs">
+    <Compile Include="Forms\PageShop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\PageShop.Designer.cs">
+    <Compile Include="Forms\PageShop.Designer.cs">
       <DependentUpon>PageShop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PageRecord.cs">
+    <Compile Include="Forms\PageRecord.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\PageRecord.Designer.cs">
+    <Compile Include="Forms\PageRecord.Designer.cs">
       <DependentUpon>PageRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\PageFavorite.cs">
+    <Compile Include="Forms\PageFavorite.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\PageFavorite.Designer.cs">
+    <Compile Include="Forms\PageFavorite.Designer.cs">
       <DependentUpon>PageFavorite.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -186,58 +199,64 @@
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
     <Compile Include="Service\UserService.cs" />
-    <Compile Include="Form\ShopTable.cs">
+    <Compile Include="Forms\ShopTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form\ShopTable.Designer.cs">
+    <Compile Include="Forms\ShopTable.Designer.cs">
       <DependentUpon>ShopTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\SwitchBtn.cs">
+    <Compile Include="Forms\SwitchBtn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form\SwitchBtn.Designer.cs">
+    <Compile Include="Forms\SwitchBtn.Designer.cs">
       <DependentUpon>SwitchBtn.cs</DependentUpon>
     </Compile>
     <Compile Include="Tool\Client.cs" />
     <Compile Include="Tool\ImageTool.cs" />
     <Compile Include="Tool\StaticVar.cs" />
-    <EmbeddedResource Include="Form\ConsultForm.resx">
+    <EmbeddedResource Include="Forms\ConsultForm.resx">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form_Main.resx">
+    <EmbeddedResource Include="Forms\Form_Good.resx">
+      <DependentUpon>Form_Good.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form_Publish.resx">
+    <EmbeddedResource Include="Forms\Form_Publish.resx">
       <DependentUpon>Form_Publish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\GoodsTable.resx">
+    <EmbeddedResource Include="Forms\GoodsTable.resx">
       <DependentUpon>GoodsTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ImageBtn.resx">
+    <EmbeddedResource Include="Forms\ImageBtn.resx">
       <DependentUpon>ImageBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\LoginForms\ForgetPassword.resx">
+    <EmbeddedResource Include="Forms\LoginForms\ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\LoginForms\Form1.resx">
+    <EmbeddedResource Include="Forms\LoginForms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\LoginForms\RegisterForm.resx">
+    <EmbeddedResource Include="Forms\LoginForms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ModifiedLabel.resx">
+    <EmbeddedResource Include="Forms\ModifiedLabel.resx">
       <DependentUpon>ModifiedLabel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PageNews.resx">
+    <EmbeddedResource Include="Forms\PageConsult.resx">
+      <DependentUpon>PageConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PageNews.resx">
       <DependentUpon>PageNews.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PageShop.resx">
+    <EmbeddedResource Include="Forms\PageShop.resx">
       <DependentUpon>PageShop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PageRecord.resx">
+    <EmbeddedResource Include="Forms\PageRecord.resx">
       <DependentUpon>PageRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\PageFavorite.resx">
+    <EmbeddedResource Include="Forms\PageFavorite.resx">
       <DependentUpon>PageFavorite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -250,10 +269,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\ShopTable.resx">
+    <EmbeddedResource Include="Forms\ShopTable.resx">
       <DependentUpon>ShopTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\SwitchBtn.resx">
+    <EmbeddedResource Include="Forms\SwitchBtn.resx">
       <DependentUpon>SwitchBtn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -305,6 +324,17 @@
     <None Include="Resource\消 息%28 选中%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resource\已购买.png" />
+    <None Include="Resource\咨询.png" />
+    <None Include="Resource\地图.png" />
+    <None Include="Resource\商 品 .png" />
+    <None Include="Resource\商 品%28选中%29.png" />
+    <None Include="Resource\咨询中.png" />
+    <Content Include="Resource\收 藏 %28选中%29.png" />
+    <Content Include="Resource\收 藏.png" />
+    <Content Include="Resource\购买.png" />
+    <None Include="Resource\发送.png" />
+    <Content Include="Resource\新东方-刷新图标.png" />
     <None Include="bin\Debug\icon\sendImageIcon.png" />
     <Content Include="Resource\sendImageIcon.png" />
   </ItemGroup>

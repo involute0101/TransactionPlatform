@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForm.Service;
@@ -14,11 +12,11 @@ using WinForm.Tool;
 
 namespace WinForm
 {
-    public partial class ConsultForm : Form
+    public partial class PageConsult : UserControl
     {
         CommunicationEntityService communicationEntityService = new CommunicationEntityService();
         ClientService clientService = new ClientService();
-        public ConsultForm()
+        public PageConsult()
         {
             InitializeComponent();
             Control.CheckForIllegalCrossThreadCalls = false;
@@ -30,7 +28,7 @@ namespace WinForm
             }
             //clientService.connectServer(ClientPrintImage,ClientPrint);
             //目标ID先为自己，进行测试
-            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT,"1","1");
+            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, "1", "1");
         }
 
         private void ClientPrint(string info)
@@ -50,7 +48,7 @@ namespace WinForm
                     textBox_showing.ScrollToCaret();
                 }
             }
-         
+
         }
 
         private void ClientPrintImage(Image img)
@@ -63,7 +61,7 @@ namespace WinForm
 
         private void button_send_Click_1(object sender, EventArgs e)
         {
-            communicationEntityService.SendInfoType("Word");            
+            communicationEntityService.SendInfoType("Word");
             clientService.connectServer(ClientPrintImage, ClientPrint);
             communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, "1", "1");
             //目标ID先为自己，进行测试           
@@ -74,7 +72,7 @@ namespace WinForm
 
         private void btnSendImg_Click(object sender, EventArgs e)
         {
-            communicationEntityService.SendInfoType("Image");           
+            communicationEntityService.SendInfoType("Image");
             clientService.connectServer(ClientPrintImage, ClientPrint);
             communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, "1", "1");
 
@@ -85,6 +83,11 @@ namespace WinForm
                 clientService.sendImage(file);
             }
             openfile.Dispose();
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
