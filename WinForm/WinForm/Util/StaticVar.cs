@@ -14,5 +14,7 @@ namespace WinForm.Tool
         public static String LOCALIPPORT;   //localIpPort
 
         public static String INFOTYPE="";      //infoType信息类型
+
+        public static String GOALUSERID = "";   //目标用户id，是商品的sellerId
     }
 }

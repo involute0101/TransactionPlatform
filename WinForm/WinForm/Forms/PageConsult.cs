@@ -28,7 +28,7 @@ namespace WinForm
             }
             //clientService.connectServer(ClientPrintImage,ClientPrint);
             //目标ID先为自己，进行测试
-            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, "1", "1");
+            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, StaticVar.USERID, StaticVar.GOALUSERID);
         }
 
         private void ClientPrint(string info)
@@ -63,7 +63,7 @@ namespace WinForm
         {
             communicationEntityService.SendInfoType("Word");
             clientService.connectServer(ClientPrintImage, ClientPrint);
-            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, "1", "1");
+            communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, StaticVar.USERID, StaticVar.GOALUSERID);
             //目标ID先为自己，进行测试           
 
             clientService.sendMessage(textBox_send.Text);

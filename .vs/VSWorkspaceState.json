@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\WinForm",
-    "\\WinForm\\WinForm",
-    "\\WinForm\\WinForm\\Form"
+    "\\WinForm\\WinForm"
   ],
-  "SelectedNode": "\\WinForm\\WinForm\\Form\\Form_Main.cs",
+  "SelectedNode": "\\WinForm\\WinForm.sln",
   "PreviewInSolutionExplorer": false
 }

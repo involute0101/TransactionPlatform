@@ -30,8 +30,12 @@ namespace WinForm
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGoodPage = new WinForm.ImageBtn();
+            this.btnConsultPage = new WinForm.ImageBtn();
+            this.btnFavorite = new WinForm.ImageBtn();
             this.lblHeadName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBuy = new WinForm.ImageBtn();
             this.lblDetail = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -40,18 +44,14 @@ namespace WinForm
             this.lblGoodId = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.picImg = new System.Windows.Forms.PictureBox();
-            this.btnBuy = new WinForm.ImageBtn();
-            this.btnGoodPage = new WinForm.ImageBtn();
-            this.btnConsultPage = new WinForm.ImageBtn();
-            this.btnFavorite = new WinForm.ImageBtn();
             this.panelChoose = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGoodPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsultPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorite)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.panelChoose.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,48 @@ namespace WinForm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 39);
             this.panel1.TabIndex = 0;
+            // 
+            // btnGoodPage
+            // 
+            this.btnGoodPage.ChangeState = false;
+            this.btnGoodPage.Image = global::WinForm.Properties.Resources.商_品_选中_;
+            this.btnGoodPage.ImageChecked = null;
+            this.btnGoodPage.ImageNormal = null;
+            this.btnGoodPage.Location = new System.Drawing.Point(672, 0);
+            this.btnGoodPage.Name = "btnGoodPage";
+            this.btnGoodPage.Size = new System.Drawing.Size(40, 40);
+            this.btnGoodPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnGoodPage.TabIndex = 3;
+            this.btnGoodPage.TabStop = false;
+            this.btnGoodPage.Click += new System.EventHandler(this.btnGoodPage_Click);
+            // 
+            // btnConsultPage
+            // 
+            this.btnConsultPage.ChangeState = false;
+            this.btnConsultPage.Image = global::WinForm.Properties.Resources.咨询;
+            this.btnConsultPage.ImageChecked = null;
+            this.btnConsultPage.ImageNormal = null;
+            this.btnConsultPage.Location = new System.Drawing.Point(718, 0);
+            this.btnConsultPage.Name = "btnConsultPage";
+            this.btnConsultPage.Size = new System.Drawing.Size(40, 40);
+            this.btnConsultPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnConsultPage.TabIndex = 2;
+            this.btnConsultPage.TabStop = false;
+            this.btnConsultPage.Click += new System.EventHandler(this.btnConsultPage_Click);
+            // 
+            // btnFavorite
+            // 
+            this.btnFavorite.ChangeState = true;
+            this.btnFavorite.Image = global::WinForm.Properties.Resources.收_藏;
+            this.btnFavorite.ImageChecked = global::WinForm.Properties.Resources.收_藏__选中_;
+            this.btnFavorite.ImageNormal = global::WinForm.Properties.Resources.收_藏;
+            this.btnFavorite.Location = new System.Drawing.Point(767, 3);
+            this.btnFavorite.Name = "btnFavorite";
+            this.btnFavorite.Size = new System.Drawing.Size(30, 30);
+            this.btnFavorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnFavorite.TabIndex = 2;
+            this.btnFavorite.TabStop = false;
+            this.btnFavorite.Click += new System.EventHandler(this.btnFavorite_Click);
             // 
             // lblHeadName
             // 
@@ -95,6 +137,19 @@ namespace WinForm
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 411);
             this.panel2.TabIndex = 1;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.ChangeState = true;
+            this.btnBuy.Image = global::WinForm.Properties.Resources.购买;
+            this.btnBuy.ImageChecked = global::WinForm.Properties.Resources.已购买;
+            this.btnBuy.ImageNormal = global::WinForm.Properties.Resources.购买;
+            this.btnBuy.Location = new System.Drawing.Point(363, 359);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(40, 40);
+            this.btnBuy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBuy.TabIndex = 1;
+            this.btnBuy.TabStop = false;
             // 
             // lblDetail
             // 
@@ -175,60 +230,6 @@ namespace WinForm
             this.picImg.TabIndex = 0;
             this.picImg.TabStop = false;
             // 
-            // btnBuy
-            // 
-            this.btnBuy.ChangeState = true;
-            this.btnBuy.Image = global::WinForm.Properties.Resources.购买;
-            this.btnBuy.ImageChecked = global::WinForm.Properties.Resources.已购买;
-            this.btnBuy.ImageNormal = global::WinForm.Properties.Resources.购买;
-            this.btnBuy.Location = new System.Drawing.Point(363, 359);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(40, 40);
-            this.btnBuy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBuy.TabIndex = 1;
-            this.btnBuy.TabStop = false;
-            // 
-            // btnGoodPage
-            // 
-            this.btnGoodPage.ChangeState = false;
-            this.btnGoodPage.Image = global::WinForm.Properties.Resources.商_品_选中_;
-            this.btnGoodPage.ImageChecked = null;
-            this.btnGoodPage.ImageNormal = null;
-            this.btnGoodPage.Location = new System.Drawing.Point(672, 0);
-            this.btnGoodPage.Name = "btnGoodPage";
-            this.btnGoodPage.Size = new System.Drawing.Size(40, 40);
-            this.btnGoodPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnGoodPage.TabIndex = 3;
-            this.btnGoodPage.TabStop = false;
-            this.btnGoodPage.Click += new System.EventHandler(this.btnGoodPage_Click);
-            // 
-            // btnConsultPage
-            // 
-            this.btnConsultPage.ChangeState = false;
-            this.btnConsultPage.Image = global::WinForm.Properties.Resources.咨询;
-            this.btnConsultPage.ImageChecked = null;
-            this.btnConsultPage.ImageNormal = null;
-            this.btnConsultPage.Location = new System.Drawing.Point(718, 0);
-            this.btnConsultPage.Name = "btnConsultPage";
-            this.btnConsultPage.Size = new System.Drawing.Size(40, 40);
-            this.btnConsultPage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnConsultPage.TabIndex = 2;
-            this.btnConsultPage.TabStop = false;
-            this.btnConsultPage.Click += new System.EventHandler(this.btnConsultPage_Click);
-            // 
-            // btnFavorite
-            // 
-            this.btnFavorite.ChangeState = true;
-            this.btnFavorite.Image = global::WinForm.Properties.Resources.收_藏;
-            this.btnFavorite.ImageChecked = global::WinForm.Properties.Resources.收_藏__选中_;
-            this.btnFavorite.ImageNormal = global::WinForm.Properties.Resources.收_藏;
-            this.btnFavorite.Location = new System.Drawing.Point(767, 3);
-            this.btnFavorite.Name = "btnFavorite";
-            this.btnFavorite.Size = new System.Drawing.Size(30, 30);
-            this.btnFavorite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnFavorite.TabIndex = 2;
-            this.btnFavorite.TabStop = false;
-            // 
             // panelChoose
             // 
             this.panelChoose.BackColor = System.Drawing.Color.Transparent;
@@ -253,12 +254,12 @@ namespace WinForm
             this.Text = "商品详情";
             this.Load += new System.EventHandler(this.Form_Good_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBuy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGoodPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsultPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnFavorite)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             this.panelChoose.ResumeLayout(false);
             this.ResumeLayout(false);
 
