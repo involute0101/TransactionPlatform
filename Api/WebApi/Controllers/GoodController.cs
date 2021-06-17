@@ -122,6 +122,7 @@ namespace WebApi.Controllers
 
             entity.GoodDetailDesc = good.GoodDetailDesc;
             entity.GoodName = good.GoodName;
+            entity.Count = good.Count;
             entity.Price = good.Price;
             entity.State = good.State;
             try
