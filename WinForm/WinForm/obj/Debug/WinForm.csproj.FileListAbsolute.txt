@@ -234,3 +234,5 @@ D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.ForgetPassword.
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.Form1.resources
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.RegisterForm.resources
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.PageConsult.resources
+C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.Form_Good.resources
+C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.PageConsult.resources
