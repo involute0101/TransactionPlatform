@@ -104,10 +104,10 @@
     <Compile Include="Forms\ConsultForm.Designer.cs">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntityClass\Collect.cs" />
-    <Compile Include="EntityClass\CommunicationEntity.cs" />
-    <Compile Include="EntityClass\Good.cs" />
-    <Compile Include="EntityClass\User.cs" />
+    <Compile Include="Entity\Collect.cs" />
+    <Compile Include="Entity\CommunicationEntity.cs" />
+    <Compile Include="Entity\Good.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Forms\FormControl.cs" />
     <Compile Include="Forms\Form_Good.cs">
       <SubType>Form</SubType>
@@ -196,6 +196,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ClientService.cs" />
+    <Compile Include="Service\CollectService.cs" />
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
     <Compile Include="Service\UserService.cs" />
@@ -211,9 +212,9 @@
     <Compile Include="Forms\SwitchBtn.Designer.cs">
       <DependentUpon>SwitchBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tool\Client.cs" />
-    <Compile Include="Tool\ImageTool.cs" />
-    <Compile Include="Tool\StaticVar.cs" />
+    <Compile Include="Util\Client.cs" />
+    <Compile Include="Util\ImageTool.cs" />
+    <Compile Include="Util\StaticVar.cs" />
     <EmbeddedResource Include="Forms\ConsultForm.resx">
       <DependentUpon>ConsultForm.cs</DependentUpon>
     </EmbeddedResource>

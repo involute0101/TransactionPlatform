@@ -407,3 +407,4 @@ C:\Users\86188\Documents\mycode\C#\C#whole\Api\WebApi\obj\Release\netcoreapp3.1\
 C:\Users\86188\Documents\mycode\C#\C#whole\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.pdb
 C:\Users\86188\Documents\mycode\C#\C#whole\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.genruntimeconfig.cache
 C:\Users\86188\Documents\mycode\C#\C#whole\Api\WebApi\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\code\C#\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

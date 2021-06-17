@@ -37,7 +37,7 @@ namespace WebApi.Controllers
         }
 
         //收藏
-        [HttpPost("collect")]
+        [HttpPost("AddCollect")]
         public ActionResult<Collect> Collect([FromBody] Object body)
         {
             Collect c = JsonConvert.DeserializeObject<Collect>(body.ToString());

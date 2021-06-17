@@ -53,7 +53,7 @@ namespace WinForm
             byte[] imgBytesIn = br.ReadBytes((int)fs.Length);           //将流读入到字节数组中
             good.ImageByte = imgBytesIn;
 
-            GoodService.AddPost(good);
+            GoodService.AddGood(good);
             MessageBox.Show("发布成功！");
             this.Close();
         }

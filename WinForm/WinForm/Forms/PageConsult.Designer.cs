@@ -62,8 +62,8 @@ namespace WinForm
             // 
             this.btnMap.ChangeState = true;
             this.btnMap.Image = global::WinForm.Properties.Resources.地图;
-            this.btnMap.ImageChecked = global::WinForm.Properties.Resources.修_改_中;
-            this.btnMap.ImageNormal = global::WinForm.Properties.Resources.修_改;
+            this.btnMap.ImageChecked = global::WinForm.Properties.Resources.地图;
+            this.btnMap.ImageNormal = global::WinForm.Properties.Resources.地图;
             this.btnMap.Location = new System.Drawing.Point(41, 300);
             this.btnMap.Name = "btnMap";
             this.btnMap.Size = new System.Drawing.Size(35, 35);
@@ -90,8 +90,8 @@ namespace WinForm
             // 
             this.btnSendImg.ChangeState = true;
             this.btnSendImg.Image = global::WinForm.Properties.Resources.sendImageIcon;
-            this.btnSendImg.ImageChecked = global::WinForm.Properties.Resources.修_改_中;
-            this.btnSendImg.ImageNormal = global::WinForm.Properties.Resources.修_改;
+            this.btnSendImg.ImageChecked = global::WinForm.Properties.Resources.sendImageIcon;
+            this.btnSendImg.ImageNormal = global::WinForm.Properties.Resources.sendImageIcon;
             this.btnSendImg.Location = new System.Drawing.Point(0, 300);
             this.btnSendImg.Name = "btnSendImg";
             this.btnSendImg.Size = new System.Drawing.Size(35, 35);

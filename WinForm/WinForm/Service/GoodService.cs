@@ -88,7 +88,7 @@ namespace WinForm.Service
         }
 
         //发布商品
-        public static bool AddPost(Good good)
+        public static bool AddGood(Good good)
         {
             string baseUrl = serverAddress + "Good/addGood?";
             HttpClient client = new HttpClient();
@@ -117,7 +117,7 @@ namespace WinForm.Service
         }
 
         //修改商品
-        public static void AlterPost(int goodId, Good good)
+        public static void AlterGood(int goodId, Good good)
         {
             string baseUrl = serverAddress + "Good/alterPost?" + "GoodId=" + goodId;
             HttpClient client = new HttpClient();
@@ -129,7 +129,6 @@ namespace WinForm.Service
             task.Wait();
             return;
         }
-
         
     }
 }

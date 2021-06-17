@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForm.EntityClass;
+using WinForm.Service;
+using WinForm.Tool;
 
 namespace WinForm
 {
@@ -24,6 +26,7 @@ namespace WinForm
         {
             this.StartPosition = FormStartPosition.CenterScreen;
             this.good = good;
+            StaticVar.GOALUSERID = "" + good.SellerId;
             InitializeComponent();
         }
 
@@ -57,6 +60,25 @@ namespace WinForm
             panelChoose.Controls.Remove(panel2);
             pageConsult.Dock = DockStyle.Fill;
             panelChoose.Controls.Add(pageConsult);
+        }
+
+        private void btnFavorite_Click(object sender, EventArgs e)
+        {
+            if (good.SellerId == Int32.Parse(StaticVar.USERID))
+            {
+                MessageBox.Show("无法收藏自己的商品喔……");
+                return;
+            }
+            List<Good> collectList = CollectService.GetCollects(Int32.Parse(StaticVar.USERID));
+            foreach (Good g in collectList)
+                if (g.GoodId == good.GoodId)
+                {
+                    MessageBox.Show("您已经收藏过该商品！");
+                    return;
+                }
+            Collect collect = new Collect(good.GoodId,good.SellerId,DateTime.Now);
+            CollectService.AddCollect(collect);
+            MessageBox.Show("收藏成功！");
         }
     }
 }
