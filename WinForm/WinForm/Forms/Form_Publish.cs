@@ -40,7 +40,7 @@ namespace WinForm
             if (txtGoodName.Text != null)
                 good.GoodName = txtGoodName.Text;
             if (txtGoodNumber.Text != null)
-                good.count = int.Parse(txtGoodNumber.Text);
+                good.Count = int.Parse(txtGoodNumber.Text);
             if (txtGoodPrice.Text != null)
                 good.Price = int.Parse(txtGoodPrice.Text);
             if (textBox1.Text != null)

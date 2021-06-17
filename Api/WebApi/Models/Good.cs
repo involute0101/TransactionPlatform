@@ -20,7 +20,7 @@ namespace WebApi.Models
 
         public int Price { get; set; }
 
-        public int count { get; set; }
+        public int Count { get; set; }
 
         public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
         public Good() { }

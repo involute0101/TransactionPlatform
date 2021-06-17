@@ -39,7 +39,7 @@ namespace WinForm
             lblState.Text = "状态：" + good.State;
             lblSellerId.Text = "卖家：" + good.SellerId.ToString();
             lblPrice.Text = "单价：" + good.Price.ToString();
-            lblCount.Text = "数量：" + good.count.ToString();
+            lblCount.Text = "数量：" + good.Count.ToString();
             lblDetail.Text = "商品详情：\n" + good.GoodDetailDesc;
         }
 
@@ -79,6 +79,17 @@ namespace WinForm
             Collect collect = new Collect(good.GoodId,good.SellerId,DateTime.Now);
             CollectService.AddCollect(collect);
             MessageBox.Show("收藏成功！");
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            if(good.SellerId == Int32.Parse(StaticVar.USERID)) { MessageBox.Show("不可以购买自己的商品");return; }
+            TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID),good.SellerId, DateTime.Now));           
+            good.Count = good.Count-1;//更改商品数量
+            if (good.Count == 0) good.State = "售罄";
+            GoodService.AlterGood(good.GoodId, good);
+            MessageBox.Show("购买成功！");
+            this.Close();
         }
     }
 }

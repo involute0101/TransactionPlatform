@@ -98,6 +98,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\TransactionRecord.cs" />
     <Compile Include="Forms\ConsultForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +200,7 @@
     <Compile Include="Service\CollectService.cs" />
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
+    <Compile Include="Service\TransactionService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="Forms\ShopTable.cs">
       <SubType>UserControl</SubType>

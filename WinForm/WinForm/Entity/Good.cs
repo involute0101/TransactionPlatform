@@ -22,7 +22,7 @@ namespace WinForm.EntityClass
 
         public int Price { get; set; }
 
-        public int count { get; set; }
+        public int Count { get; set; }
 
         public string State { get; set; }       //商品状态"在售"、"交易中"、"售罄"
         public Good() { }
@@ -32,7 +32,7 @@ namespace WinForm.EntityClass
             this.ImageByte = imageBytes;
             this.GoodDetailDesc = GoodDetailDesc;
             this.Price = Price;
-            this.count = count;
+            this.Count = count;
             State = "在售";
         }
 

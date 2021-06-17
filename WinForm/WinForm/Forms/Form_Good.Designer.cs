@@ -112,7 +112,7 @@ namespace WinForm
             // 
             // lblHeadName
             // 
-            this.lblHeadName.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblHeadName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblHeadName.ForeColor = System.Drawing.Color.White;
             this.lblHeadName.Location = new System.Drawing.Point(3, 9);
             this.lblHeadName.Name = "lblHeadName";
@@ -135,7 +135,7 @@ namespace WinForm
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 411);
+            this.panel2.Size = new System.Drawing.Size(800, 412);
             this.panel2.TabIndex = 1;
             // 
             // btnBuy
@@ -150,10 +150,11 @@ namespace WinForm
             this.btnBuy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnBuy.TabIndex = 1;
             this.btnBuy.TabStop = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // lblDetail
             // 
-            this.lblDetail.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblDetail.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblDetail.Location = new System.Drawing.Point(17, 257);
             this.lblDetail.Name = "lblDetail";
@@ -163,7 +164,7 @@ namespace WinForm
             // 
             // lblCount
             // 
-            this.lblCount.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblCount.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblCount.Location = new System.Drawing.Point(250, 220);
             this.lblCount.Name = "lblCount";
@@ -173,7 +174,7 @@ namespace WinForm
             // 
             // lblPrice
             // 
-            this.lblPrice.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblPrice.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblPrice.Location = new System.Drawing.Point(250, 180);
             this.lblPrice.Name = "lblPrice";
@@ -183,7 +184,7 @@ namespace WinForm
             // 
             // lblSellerId
             // 
-            this.lblSellerId.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblSellerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblSellerId.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblSellerId.Location = new System.Drawing.Point(250, 140);
             this.lblSellerId.Name = "lblSellerId";
@@ -193,7 +194,7 @@ namespace WinForm
             // 
             // lblState
             // 
-            this.lblState.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblState.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblState.Location = new System.Drawing.Point(250, 100);
             this.lblState.Name = "lblState";
@@ -203,7 +204,7 @@ namespace WinForm
             // 
             // lblGoodId
             // 
-            this.lblGoodId.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblGoodId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblGoodId.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblGoodId.Location = new System.Drawing.Point(250, 60);
             this.lblGoodId.Name = "lblGoodId";
@@ -213,7 +214,7 @@ namespace WinForm
             // 
             // lblName
             // 
-            this.lblName.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblName.Location = new System.Drawing.Point(250, 20);
             this.lblName.Name = "lblName";
@@ -237,7 +238,7 @@ namespace WinForm
             this.panelChoose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChoose.Location = new System.Drawing.Point(0, 39);
             this.panelChoose.Name = "panelChoose";
-            this.panelChoose.Size = new System.Drawing.Size(800, 411);
+            this.panelChoose.Size = new System.Drawing.Size(800, 412);
             this.panelChoose.TabIndex = 2;
             // 
             // Form_Good
@@ -245,7 +246,7 @@ namespace WinForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WinForm.Properties.Resources.background;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.panelChoose);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(818, 497);

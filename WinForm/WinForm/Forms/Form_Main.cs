@@ -158,6 +158,8 @@ namespace WinForm
             panel2.Controls.Add(pageRecord);
             pageChoice = 2;
             PageLabelChange();
+
+
         }
 
         private void btnFavorite_Click(object sender, EventArgs e)
