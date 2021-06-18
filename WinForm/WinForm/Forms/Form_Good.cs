@@ -53,10 +53,16 @@ namespace WinForm
 
         private void btnConsultPage_Click(object sender, EventArgs e)
         {
+            if(good.SellerId == Int32.Parse(StaticVar.USERID))
+            {
+                MessageBox.Show("您是商品的售卖者噢……");
+                return;
+            }
             btnConsultPage.Image = Properties.Resources.咨询中;
             btnGoodPage.Image = Properties.Resources.商_品_;
-            //后续修改-->若已有聊天记录则读取，不新建
-            pageConsult = new PageConsult();
+            //后续修改-->若已有聊天记录则读取，不新建 
+            //修改：聊天记录在PageConsult中读取
+            pageConsult = new PageConsult(good);
             panelChoose.Controls.Remove(panel2);
             pageConsult.Dock = DockStyle.Fill;
             panelChoose.Controls.Add(pageConsult);
