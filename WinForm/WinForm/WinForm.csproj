@@ -98,6 +98,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Comment.cs" />
     <Compile Include="Entity\TransactionRecord.cs" />
     <Compile Include="Forms\ConsultForm.cs">
       <SubType>Form</SubType>
@@ -198,6 +199,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ClientService.cs" />
     <Compile Include="Service\CollectService.cs" />
+    <Compile Include="Service\CommentService.cs" />
     <Compile Include="Service\CommunicationEntityService.cs" />
     <Compile Include="Service\GoodService.cs" />
     <Compile Include="Service\TransactionService.cs" />
@@ -216,6 +218,7 @@
     </Compile>
     <Compile Include="Util\Client.cs" />
     <Compile Include="Util\ImageTool.cs" />
+    <Compile Include="Util\Message.cs" />
     <Compile Include="Util\StaticVar.cs" />
     <EmbeddedResource Include="Forms\ConsultForm.resx">
       <DependentUpon>ConsultForm.cs</DependentUpon>
@@ -280,6 +283,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WinForm.EntityClass.Good.datasource" />
+    <None Include="Properties\DataSources\WinForm.Util.Message.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

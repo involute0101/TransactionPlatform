@@ -124,7 +124,6 @@ C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csp
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.exe
 C:\Users\10414\Desktop\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.pdb
-D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Buffers.dll
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Memory.dll
@@ -236,3 +235,4 @@ D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.RegisterForm.re
 D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.PageConsult.resources
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.Form_Good.resources
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.PageConsult.resources
+D:\code\C#\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache

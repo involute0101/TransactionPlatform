@@ -22,7 +22,6 @@ namespace WinForm.Service
         public static bool AddCollect(Collect collect)
         {
             string baseUrl = serverAddress + "Collect/AddCollect?";
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

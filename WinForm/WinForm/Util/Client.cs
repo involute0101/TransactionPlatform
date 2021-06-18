@@ -67,7 +67,7 @@ namespace WinForm.Tool
             try
             {
                 socket.Connect(new IPEndPoint(ip, port));   // 连接服务器
-                if (print != null) print("连接服务器【" + socket.RemoteEndPoint.ToString() + "】完成"); // 连接成功
+                //if (print != null) print("连接服务器【" + socket.RemoteEndPoint.ToString() + "】完成"); // 连接成功
                 localIpPort = socket.LocalEndPoint.ToString();
                 connected = true;
 
@@ -159,7 +159,8 @@ namespace WinForm.Tool
                 }
                 catch (Exception ex)
                 {
-                    if (print != null) print("连接已自动断开，" + ex.Message);
+                    //待处理
+                    //if (print != null) print("连接已自动断开，" + ex.Message);
                     //ortherSocket.Shutdown(SocketShutdown.Both);
                     //ortherSocket.Close();
                     connected = false;
@@ -258,7 +259,7 @@ namespace WinForm.Tool
         {
             Socket ortherSocket = (Socket)socket;
 
-            if (print != null) print("receiveData:");
+            //if (print != null) print("receiveData:");
 
             while (true)
             {
@@ -274,7 +275,8 @@ namespace WinForm.Tool
                 }
                 catch (Exception ex)
                 {
-                    if (print != null) print("连接已自动断开，" + ex.Message);
+                    //待处理
+                    //if (print != null) print("连接已自动断开，" + ex.Message);
                     //ortherSocket.Shutdown(SocketShutdown.Both);
                     //ortherSocket.Close();
                     connected = false;
