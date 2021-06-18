@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using WebApi.Models;
 
@@ -69,7 +72,8 @@ namespace WebApi.Controllers
 
         //"/Good/addGood"添加商品
         [HttpPost("addGood")]
-        public ActionResult<String> AddPost(Good good)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
+        public async Task<ActionResult<string>> AddPostAsync(Good good)
         {
             try 
             {
@@ -85,10 +89,16 @@ namespace WebApi.Controllers
 
         //删除商品（商家权限，关于商品全部删除）
         [HttpDelete("deletePost")]
-        public ActionResult DeletePost(int userId, int goodId)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
+        public async Task<ActionResult> DeletePostAsync(int userId, int goodId)
         {
             try
             {
+                var user = await HttpContext.GetCurrentUser(transactionContext.Users);
+                
+                Good good = transactionContext.Goods.SingleOrDefault(t => t.GoodId == goodId);
+                if (user.UserId != userId && good.SellerId!=userId) return BadRequest();//确保操作者是商品所有者
+
                 var comments = transactionContext.Comments.Where(t => t.GoodId == goodId);
                 transactionContext.Comments.RemoveRange(comments);
 
@@ -97,7 +107,7 @@ namespace WebApi.Controllers
                 transactionContext.Collects.RemoveRange(collects);
 
                 //删除商品
-                Good good = transactionContext.Goods.SingleOrDefault(t => t.GoodId == goodId);
+                
                 transactionContext.Goods.Remove(good);
                 transactionContext.SaveChanges();
             }
@@ -108,17 +118,19 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
-        //修改商品
+        //修改商品所有属性（卖家）
         [HttpPut("alterPost")]
-        public ActionResult<Good> AlterPost(int goodId, Good good)
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
+        public async Task<ActionResult<Good>> AlterPostAsync(int goodId, Good good)
         {
+            var user = await HttpContext.GetCurrentUser(transactionContext.Users);
             var goods = transactionContext.Goods.Where(t => t.GoodId == goodId);
-            if (goods == null)
-            {
-                return NotFound();
-            }
+
+            if (goods == null)return NotFound();
+
             Good entity = goods.ToList()[0] as Good;
             if (entity == null)return entity;
+            if(entity.SellerId!=user.UserId) return BadRequest();//确保操作者是商品所有者
 
             entity.GoodDetailDesc = good.GoodDetailDesc;
             entity.GoodName = good.GoodName;
@@ -136,5 +148,32 @@ namespace WebApi.Controllers
             }
             return entity;
         }
+
+        //修改商品数量和状态
+        [HttpPut("alterPostByBuyer")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
+        public async Task<ActionResult<Good>> AlterPostByBuyerAsync(int goodId, Good good)
+        {
+            var goods = transactionContext.Goods.Where(t => t.GoodId == goodId);
+            if (goods == null) return NotFound();
+            Good entity = goods.ToList()[0] as Good;
+            if (entity == null) return entity; 
+            
+            entity.Count = good.Count;
+            entity.State = good.State;
+
+            try
+            {
+                transactionContext.Goods.Update(entity);
+                transactionContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.InnerException.Message);
+            }
+            return entity;
+        }
+
+
     }
 }
