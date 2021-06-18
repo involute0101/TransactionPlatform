@@ -93,7 +93,7 @@ namespace WinForm
             TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID),good.SellerId, DateTime.Now));           
             good.Count = good.Count-1;//更改商品数量
             if (good.Count == 0) good.State = "售罄";
-            GoodService.AlterGood(good.GoodId, good);
+            GoodService.AlterGoodByBuyer(good.GoodId, good);//买家买完，修改商品数量及状态
             MessageBox.Show("购买成功！");
             this.Close();
         }
