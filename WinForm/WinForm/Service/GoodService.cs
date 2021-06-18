@@ -116,7 +116,7 @@ namespace WinForm.Service
             return;
         }
 
-        //修改商品
+        //修改商品(卖家)
         public static void AlterGood(int goodId, Good good)
         {
             string baseUrl = serverAddress + "Good/alterPost?" + "GoodId=" + goodId;
@@ -129,7 +129,19 @@ namespace WinForm.Service
             task.Wait();
             return;
         }
-        
+        //修改商品(买家)
+        public static void AlterGoodByBuyer(int goodId, Good good)
+        {
+            string baseUrl = serverAddress + "Good/alterPostByBuyer?" + "GoodId=" + goodId;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(good),
+                Encoding.UTF8, "application/json");
+            var task = client.PutAsync(baseUrl, content);
+            task.Wait();
+            return;
+        }
     }
 }
 
