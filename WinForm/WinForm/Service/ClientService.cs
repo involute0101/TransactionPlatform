@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WinForm.Tool;
 using static WinForm.Tool.Client;
 
-namespace WinForm.Service
+namespace WinForm.Service 
 {
     class ClientService
     {
