@@ -13,7 +13,7 @@ namespace WebApi.Models
         public string SellerName { get; set; }
         public string GoodName { get; set; }
         public byte[] ImageByte { set; get; }
-        public Image Image { get; set; }
+
         public string GoodDetailDesc { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }
