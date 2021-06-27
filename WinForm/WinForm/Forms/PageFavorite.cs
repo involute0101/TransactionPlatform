@@ -45,5 +45,10 @@ namespace WinForm
                     break;
             }
         }
+
+        private void btnRefrash_Click(object sender, EventArgs e)
+        {
+            goodsTable.bdsGoods.DataSource = CollectService.GetCollects(int.Parse(StaticVar.USERID));
+        }
     }
 }

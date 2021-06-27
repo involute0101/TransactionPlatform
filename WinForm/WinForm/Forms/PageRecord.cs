@@ -45,5 +45,10 @@ namespace WinForm
                     break;
             }
         }
+
+        private void btnRefrash_Click(object sender, EventArgs e)
+        {
+            bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
+        }
     }
 }
