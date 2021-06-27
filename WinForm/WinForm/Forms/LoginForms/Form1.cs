@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -25,7 +26,12 @@ namespace WinForm
 
         private async void buttonLogin_Click(object sender, EventArgs e)
         {
-
+            HttpClient client = new HttpClient();
+            UserService.client = client;
+            TransactionService.client = client;
+            GoodService.client = client;
+            CommentService.client = client;
+            CollectService.client = client;
             //用户登录主界面
             var token = await UserService.LoginUser(textBoxUsername.Text, textBoxPassword.Text);
 

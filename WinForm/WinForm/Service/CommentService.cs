@@ -16,7 +16,7 @@ namespace WinForm.Service
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
 
-        private static HttpClient client = new HttpClient();
+        public static HttpClient client;
 
         //添加聊天记录
         public static bool AddComment(Comment comment)
