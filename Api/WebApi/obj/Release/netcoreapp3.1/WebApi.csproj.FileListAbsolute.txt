@@ -517,7 +517,6 @@ C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\bin\Rele
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.csproj.ResolveComReference.cache
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
 C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.AssemblyInfo.cs

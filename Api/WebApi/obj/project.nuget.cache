@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PP/PlAXPrHS90vnW1lLeolU8DUz0AvFpFuCcCWlacsZPqDT/3RBANovLKUMqwCbvWtDHG9Bmxo4IAYdWp96ZuQ==",
+  "dgSpecHash": "hMpFVwYgBKJAlIx3e4aeBGqQYkN3U3CJGCdwohvkPcjcdaZ7xXq5paZok9DQy4nGB1Sys2cQTwjLqsq+74BoXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\10414\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\10414\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

@@ -72,7 +72,7 @@ namespace WebApi.Controllers
 
         //"/Good/addGood"添加商品
         [HttpPost("addGood")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
         public async Task<ActionResult<string>> AddPostAsync(Good good)
         {
             try 

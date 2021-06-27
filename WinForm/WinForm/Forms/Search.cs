@@ -13,10 +13,9 @@ namespace WinForm.Forms
         static public List<TransactionRecord> SearchRecordByGoodName(List<TransactionRecord> transactionRecords, string goodName)
         {
             List<TransactionRecord> results = new List<TransactionRecord>();
-            string Pattern = "^.*" + goodName + ".*";
             foreach (TransactionRecord tr in transactionRecords)
             {
-                if (Regex.IsMatch(tr.GoodName, Pattern))
+                if (Regex.IsMatch(tr.GoodName, goodName))
                     results.Add(tr);
             }
             return results;
@@ -35,10 +34,9 @@ namespace WinForm.Forms
         static public List<TransactionRecord> SearchRecordBySalerName(List<TransactionRecord> transactionRecords, string SalerName)
         {
             List<TransactionRecord> results = new List<TransactionRecord>();
-            string Pattern = "^.*" + SalerName + ".*";
             foreach (TransactionRecord tr in transactionRecords)
             {
-                if (Regex.IsMatch(tr.SalerName, Pattern))
+                if (Regex.IsMatch(tr.SalerName, SalerName))
                     results.Add(tr);
             }
             return results;
@@ -46,10 +44,10 @@ namespace WinForm.Forms
         static public List<Good> SearchGoodByGoodName(List<Good> goods, string goodName)
         {
             List<Good> results = new List<Good>();
-            string Pattern = "^.*" + goodName + ".*";
+
             foreach (Good good in goods)
             {
-                if (Regex.IsMatch(good.GoodName, Pattern))
+                if (Regex.IsMatch(good.GoodName, goodName))
                     results.Add(good);
             }
             return results;
@@ -67,10 +65,10 @@ namespace WinForm.Forms
         static public List<Good> SearchGoodBySalerName(List<Good> goods, string salerName)
         {
             List<Good> results = new List<Good>();
-            string Pattern = "^.*" + salerName + ".*";
+
             foreach (Good good in goods)
             {
-                if (Regex.IsMatch(good.SellerName, Pattern))
+                if (Regex.IsMatch(good.SellerName, salerName))
                     results.Add(good);
             }
             return results;

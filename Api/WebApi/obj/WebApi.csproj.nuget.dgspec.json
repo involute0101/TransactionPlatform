@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\10414\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\10414\\Desktop\\TransactionPlatform - 副本\\Api\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft\\Xamarin\\NuGet\\"

@@ -18,7 +18,7 @@ namespace WinForm
         public PageShop()
         {
             InitializeComponent();
-            shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
+            
         }
 
         private void panel2_SizeChanged(object sender, EventArgs e)
@@ -29,16 +29,19 @@ namespace WinForm
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch (cbxSearchOption.Items.ToString())
+            switch (cbxSearchOption.Text)
             {
                 case "商品名称":
                     shopTable.bdsShop.DataSource = Search.SearchGoodByGoodName(GoodService.GetAllGoods(), txtSearch.Text);
+                    shopTable.bdsShop.ResetBindings(false);
                     break;
                 case "商品状态":
                     shopTable.bdsShop.DataSource = Search.SearchGoodByGoodState(GoodService.GetAllGoods(), txtSearch.Text);
+                    shopTable.bdsShop.ResetBindings(false);
                     break;
                 case "卖家姓名":
                     shopTable.bdsShop.DataSource = Search.SearchGoodBySalerName(GoodService.GetAllGoods(), txtSearch.Text);
+                    shopTable.bdsShop.ResetBindings(false);
                     break;
             }
         }

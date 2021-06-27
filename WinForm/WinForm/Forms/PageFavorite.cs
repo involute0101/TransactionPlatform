@@ -29,16 +29,19 @@ namespace WinForm
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            switch (cbxSearchOption.Items.ToString())
+            switch (cbxSearchOption.Text)
             {
                 case "商品名称":
                     goodsTable.bdsGoods.DataSource = Search.SearchGoodByGoodName(CollectService.GetCollects(int.Parse(StaticVar.USERID)), txtSearch.Text);
+                    goodsTable.bdsGoods.ResetBindings(false);
                     break;
                 case "商品状态":
                     goodsTable.bdsGoods.DataSource = Search.SearchGoodByGoodState(CollectService.GetCollects(int.Parse(StaticVar.USERID)), txtSearch.Text);
+                    goodsTable.bdsGoods.ResetBindings(false);
                     break;
                 case "卖家姓名":
                     goodsTable.bdsGoods.DataSource = Search.SearchGoodBySalerName(CollectService.GetCollects(int.Parse(StaticVar.USERID)), txtSearch.Text);
+                    goodsTable.bdsGoods.ResetBindings(false);
                     break;
             }
         }
