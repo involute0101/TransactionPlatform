@@ -35,7 +35,6 @@ namespace WinForm
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.goodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goodDetailDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdsGoods = new System.Windows.Forms.BindingSource(this.components);
@@ -55,7 +54,6 @@ namespace WinForm
             this.imageDataGridViewImageColumn,
             this.goodNameDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
-            this.countDataGridViewTextBoxColumn,
             this.goodDetailDescDataGridViewTextBoxColumn,
             this.stateDataGridViewTextBoxColumn});
             this.dgvGoods.DataSource = this.bdsGoods;
@@ -70,6 +68,7 @@ namespace WinForm
             // goodIdDataGridViewTextBoxColumn
             // 
             this.goodIdDataGridViewTextBoxColumn.DataPropertyName = "GoodId";
+            this.goodIdDataGridViewTextBoxColumn.Frozen = true;
             this.goodIdDataGridViewTextBoxColumn.HeaderText = "商品编号";
             this.goodIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.goodIdDataGridViewTextBoxColumn.Name = "goodIdDataGridViewTextBoxColumn";
@@ -78,9 +77,11 @@ namespace WinForm
             // imageDataGridViewImageColumn
             // 
             this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.Frozen = true;
             this.imageDataGridViewImageColumn.HeaderText = "图片";
             this.imageDataGridViewImageColumn.MinimumWidth = 6;
             this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
             this.imageDataGridViewImageColumn.Width = 43;
             // 
             // goodNameDataGridViewTextBoxColumn
@@ -98,14 +99,6 @@ namespace WinForm
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "数量";
-            this.countDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.Width = 66;
             // 
             // goodDetailDescDataGridViewTextBoxColumn
             // 
@@ -144,11 +137,11 @@ namespace WinForm
 
         public System.Windows.Forms.BindingSource bdsGoods;
         private System.Windows.Forms.DataGridView dgvGoods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn goodDetailDescDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
     }

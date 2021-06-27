@@ -17,7 +17,7 @@ namespace WinForm.Service
     class GoodService
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
-        public static HttpClient client;
+        public static HttpClient client = new HttpClient();
         //查询全部商品
         public static List<Good> GetAllGoods()
         {
