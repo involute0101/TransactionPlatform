@@ -18,11 +18,12 @@ namespace WinForm.Service
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
         //根据id查询交易记录
+        public static HttpClient client;
         public static List<Good> GetAllRecordsById(int id)
         {
             string baseUrl = serverAddress + "TransactionRecord/getTransactionRecordByBuyer?" +
                 "buyerId=" + id;
-            HttpClient client = new HttpClient();
+            
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -42,7 +43,6 @@ namespace WinForm.Service
         public static bool AddRecord(TransactionRecord record)
         {
             string baseUrl = serverAddress + "TransactionRecord/addTransactionRecord?";
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

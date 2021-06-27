@@ -17,12 +17,11 @@ namespace WinForm.Service
     class GoodService
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
-
+        public static HttpClient client;
         //查询全部商品
         public static List<Good> GetAllGoods()
         {
             string baseUrl = serverAddress + "Good?";
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -43,7 +42,6 @@ namespace WinForm.Service
         {
             string baseUrl = serverAddress + "Good/getGoodById?" +
                 "GoodId=" + goodId;
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -57,7 +55,6 @@ namespace WinForm.Service
         {
             string baseUrl = serverAddress + "Good/getGoodByName?" +
                 "GoodName=" + goodName;
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -71,7 +68,6 @@ namespace WinForm.Service
         {
             string baseUrl = serverAddress + "Good/getGoodByUserId?" +
                 "userId=" + userId;
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -91,7 +87,6 @@ namespace WinForm.Service
         public static bool AddGood(Good good)
         {
             string baseUrl = serverAddress + "Good/addGood?";
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -109,8 +104,6 @@ namespace WinForm.Service
         public static void DeletePost(int userId, int goodId)
         {
             string baseUrl = serverAddress + "Good/deletePost?" + "userId=" + userId + "&&GoodId=" + goodId; ;
-            HttpClient client = new HttpClient();
-
             var task = client.DeleteAsync(baseUrl);
             task.Wait();
             return;
@@ -120,7 +113,6 @@ namespace WinForm.Service
         public static void AlterGood(int goodId, Good good)
         {
             string baseUrl = serverAddress + "Good/alterPost?" + "GoodId=" + goodId;
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(good),
@@ -133,7 +125,6 @@ namespace WinForm.Service
         public static void AlterGoodByBuyer(int goodId, Good good)
         {
             string baseUrl = serverAddress + "Good/alterPostByBuyer?" + "GoodId=" + goodId;
-            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(good),

@@ -14,7 +14,7 @@ namespace WinForm.Service
     class UserService//用户访问服务器类 
     {
         private static string serverAddress = "http://localhost:5001/"; //服务器地址
-        private static HttpClient client = new HttpClient();
+        public static HttpClient client;
 
         //使用TOKEN增加用户安全访问权限
         public static async Task<string> LoginUser(string username, string password)

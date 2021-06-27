@@ -15,8 +15,7 @@ namespace WinForm.Service
     class CollectService
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
-
-        private static HttpClient client = new HttpClient();
+        public static HttpClient client;
 
         //添加收藏
         public static bool AddCollect(Collect collect)
