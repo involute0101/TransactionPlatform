@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinForm.Service;
 
 namespace WinForm.EntityClass
 {
@@ -12,13 +13,13 @@ namespace WinForm.EntityClass
         public int GoodId { get; set; }
 
         public int SellerId { get; set; }
-
-        public String GoodName { get; set; }
+        public string SellerName { get; set; }
+        public string GoodName { get; set; }
 
         public byte[] ImageByte { set; get; }
         public Image Image { get; set; }
 
-        public String GoodDetailDesc { get; set; }
+        public string GoodDetailDesc { get; set; }
 
         public int Price { get; set; }
 
@@ -29,12 +30,12 @@ namespace WinForm.EntityClass
         public Good(string GoodName, byte[] imageBytes, string GoodDetailDesc, int Price, int count)
         {
             this.GoodName = GoodName;
-            this.ImageByte = imageBytes;
+            ImageByte = imageBytes;
             this.GoodDetailDesc = GoodDetailDesc;
             this.Price = Price;
-            this.Count = count;
+            Count = count;
+            SellerName = UserService.GetUserByUserId(SellerId).Username;
             State = "在售";
         }
-
     }
 }

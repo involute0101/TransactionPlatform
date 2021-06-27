@@ -47,12 +47,12 @@ namespace WinForm
                 good.GoodDetailDesc = textBox1.Text;
             good.State = "在售";
             good.SellerId = user.UserId;
-
+            good.SellerName = UserService.GetUserByUserId(int.Parse(StaticVar.USERID)).Username;
             FileStream fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
             byte[] imgBytesIn = br.ReadBytes((int)fs.Length);           //将流读入到字节数组中
             good.ImageByte = imgBytesIn;
-
+            
             GoodService.AddGood(good);
             MessageBox.Show("发布成功！");
             this.Close();

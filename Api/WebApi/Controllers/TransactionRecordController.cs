@@ -51,7 +51,16 @@ namespace WebApi.Controllers
             else
                 return goods.ToList();
         }
-
+        //买家用户Id查询所有的交易记录
+        [HttpGet("getTransactionRecordByBuyerId")]
+        public ActionResult<List<TransactionRecord>> GetDoneDealByBuyerId(int buyerId)
+        {
+            List<TransactionRecord> records = transactionContext.TransactionRecords.Where(t => t.BuyerId == buyerId).ToList();
+            if (records == null)
+                return NotFound();
+            else
+                return records;
+        }
         //卖家用户Id查询所有的交易成功商品
         [HttpPost("getTransactionRecordBySaler")]
         public ActionResult<List<Good>> GetDoneDealBySaler(int salerId)

@@ -51,7 +51,20 @@ namespace WebApi.Controllers
                 return BadRequest(e.InnerException.Message);
             }
         }
-
+        //"User/getUserByUserId"
+        [HttpGet("getUserByUserId")]
+        public ActionResult<User> GetUserByUserId(int userId)
+        {
+            try
+            {
+                var user_temp = transactionContext.Users.FirstOrDefault(t => t.UserId == userId);
+                return user_temp;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.InnerException.Message);
+            }
+        }
         //"User/forget"
         [HttpGet("forget")]
         public ActionResult<User> Forget(String username, String email, String phone)
@@ -115,7 +128,7 @@ namespace WebApi.Controllers
                 return Ok(jwt);
             }
             return BadRequest("您的密码错误！");
-          
+
         }
 
         //User/modifyUser?
@@ -134,7 +147,5 @@ namespace WebApi.Controllers
             }
             return user;
         }
-
-
     }
 }

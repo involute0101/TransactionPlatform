@@ -195,6 +195,7 @@
     <Compile Include="Forms\PageFavorite.Designer.cs">
       <DependentUpon>PageFavorite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Search.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ClientService.cs" />
@@ -283,6 +284,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WinForm.EntityClass.Good.datasource" />
+    <None Include="Properties\DataSources\WinForm.EntityClass.TransactionRecord1.datasource" />
     <None Include="Properties\DataSources\WinForm.Util.Message.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
