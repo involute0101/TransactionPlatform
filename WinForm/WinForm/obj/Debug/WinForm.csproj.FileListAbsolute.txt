@@ -121,7 +121,6 @@ C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Buff
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Memory.dll
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.ValueTuple.dll
-C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Net.Http.Json.xml
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\bin\Debug\System.Text.Encodings.Web.xml
@@ -336,3 +335,5 @@ D:\code\C#\TransactionPlatform_Back\TransactionPlatform\WinForm\WinForm\obj\Debu
 D:\code\C#\TransactionPlatform_Back\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.pdb
 C:\Users\liqiwei\Desktop\WinForm\WinForm\obj\Debug\WinForm.Form_Map.resources
 C:\Users\liqiwei\Desktop\WinForm\WinForm\obj\Debug\WinForm.Form_MoreGoods.resources
+C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.Form_Map.resources
+C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.Form_MoreGoods.resources

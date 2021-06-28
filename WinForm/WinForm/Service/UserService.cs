@@ -34,7 +34,7 @@ namespace WinForm.Service
         public static bool RegisterUser(User user_reg)
         {
             string baseUrl = serverAddress + "User/register?";
-
+            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(user_reg), Encoding.UTF8, "application/json");
@@ -49,7 +49,7 @@ namespace WinForm.Service
              string email, string phone)
         {
             string baseUrl = serverAddress + "User/register?";
-
+            HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
