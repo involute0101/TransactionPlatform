@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WinForm.Service;
 
 namespace WinForm.EntityClass
 {
@@ -12,7 +13,8 @@ namespace WinForm.EntityClass
 
         //postId和userId都是外键
         public int GoodId { get; set; }
-
+        public string GoodName { get; set; }
+        public string GoodState { get; set; }
         public int UserId { get; set; }
 
         public DateTime Time { get; set; }
@@ -22,6 +24,8 @@ namespace WinForm.EntityClass
             GoodId = goodId;
             UserId = userId;
             Time = time;
+            GoodName = GoodService.GetGoodByGoodId(GoodId).GoodName;
+            GoodState = GoodService.GetGoodByGoodId(GoodId).State;
         }
     }
 }

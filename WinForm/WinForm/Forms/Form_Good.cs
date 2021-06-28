@@ -82,7 +82,7 @@ namespace WinForm
                     MessageBox.Show("您已经收藏过该商品！");
                     return;
                 }
-            Collect collect = new Collect(good.GoodId,good.SellerId,DateTime.Now);
+            Collect collect = new Collect(good.GoodId, Int32.Parse(StaticVar.USERID), DateTime.Now);
             CollectService.AddCollect(collect);
             MessageBox.Show("收藏成功！");
         }

@@ -27,7 +27,7 @@ namespace WinForm.Entity
 
         public DateTime Time { get; set; }
 
-        public Comment(int goodId,int senderId,int receiverId, DateTime time)
+        public Comment(int goodId, int senderId, int receiverId, DateTime time)
         {
             this.GoodId = goodId;
             this.SenderId = senderId;
@@ -36,3 +36,4 @@ namespace WinForm.Entity
         }
     }
 }
+

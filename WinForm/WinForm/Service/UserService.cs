@@ -79,7 +79,21 @@ namespace WinForm.Service
             var user = response.Content.ReadFromJsonAsync<User>().Result;
             return user;
         }
+        public static User GetUserByUserId(int userId)
+        {
+            string baseUrl = serverAddress + "User/getUserByUserId?" +
+                "userId=" + userId;
 
+            var task = client.GetAsync(baseUrl);
+            var response = task.Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                // 获取失败!
+                return null;
+            }
+            var user = response.Content.ReadFromJsonAsync<User>().Result;
+            return user;
+        }
         public static User GetUser(string username, string email, string phone)
         {
             string baseUrl = serverAddress + "User/forget?" +

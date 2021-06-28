@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,6 +17,7 @@ namespace WinForm.Service
     class CollectService
     {
         private static String serverAddress = "http://localhost:5001/"; //服务器地址
+
         public static HttpClient client;
 
         //添加收藏
@@ -45,7 +48,15 @@ namespace WinForm.Service
                 // 获取失败!
                 return null;
             }
-            return response.Content.ReadFromJsonAsync<List<Good>>().Result;
+            List<Good> goods = response.Content.ReadFromJsonAsync<List<Good>>().Result;
+            foreach (var g in goods)
+            {
+                MemoryStream ms = new MemoryStream(g.ImageByte);
+
+                g.Image = ImageTool.ResizeImage(new Bitmap(ms), new Size(200, 200));
+                ms.Close();
+            }
+            return goods;
         }
     }
 }
