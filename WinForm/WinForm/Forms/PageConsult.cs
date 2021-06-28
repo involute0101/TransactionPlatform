@@ -194,6 +194,7 @@ namespace WinForm
             else comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), good.SellerId, DateTime.Now);
             comment.InfoType = "Image";
             comment.ImageByte =  ImageTool.Serialize(imageComment);
+            if (comment.ImageByte == null) { MessageBox.Show("图片不能为空！"); return; }
             CommentService.AddComment(comment);
 
             openfile.Dispose();

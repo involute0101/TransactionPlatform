@@ -52,6 +52,7 @@ namespace WinForm.Tool
         /// <returns>字节数组</returns>
         public static byte[] Serialize(Image data)     //原来是Object参数   
         {
+            if (data == null) return null;
             ImageFormat format = data.RawFormat;
             using (MemoryStream ms = new MemoryStream())
             {
