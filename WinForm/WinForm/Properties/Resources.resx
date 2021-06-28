@@ -130,8 +130,14 @@
   <data name="新东方-刷新图标" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\新东方-刷新图标.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="商 品 " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\商 品 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="地图" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\地图.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="买家" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\买家.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="消 息" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\消 息.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +148,14 @@
   <data name="bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\bg2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="退出登录" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\退出登录.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="商 品(选中)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\商 品(选中).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="收 藏 (选中)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\收 藏 (选中).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="咨询中" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\咨询中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="修 改" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\修 改.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +169,8 @@
   <data name="购买" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\购买.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="买家" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\买家.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="退出登录" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\退出登录.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="添加" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\添加.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,13 +190,7 @@
   <data name="sendImageIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\icon\sendImageIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="商 品 " type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\商 品 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="商 品(选中)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\商 品(选中).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="咨询中" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\咨询中.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="购物车-更多-商品" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\购物车-更多-商品.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

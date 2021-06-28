@@ -123,6 +123,18 @@
     <Compile Include="Forms\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Map.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Map.Designer.cs">
+      <DependentUpon>Form_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_MoreGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_MoreGoods.Designer.cs">
+      <DependentUpon>Form_MoreGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Publish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +242,12 @@
     <EmbeddedResource Include="Forms\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Map.resx">
+      <DependentUpon>Form_Map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_MoreGoods.resx">
+      <DependentUpon>Form_MoreGoods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Publish.resx">
       <DependentUpon>Form_Publish.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +351,7 @@
     <None Include="Resource\消 息%28 选中%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resource\购物车-更多-商品.png" />
     <None Include="Resource\已购买.png" />
     <None Include="Resource\咨询.png" />
     <None Include="Resource\地图.png" />

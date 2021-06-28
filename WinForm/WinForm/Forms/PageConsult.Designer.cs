@@ -31,9 +31,11 @@ namespace WinForm
         {
             this.textBox_showing = new System.Windows.Forms.RichTextBox();
             this.textBox_send = new System.Windows.Forms.TextBox();
+            this.btnMoreGoods = new WinForm.ImageBtn();
             this.btnMap = new WinForm.ImageBtn();
             this.button_send = new WinForm.ImageBtn();
             this.btnSendImg = new WinForm.ImageBtn();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMoreGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.button_send)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendImg)).BeginInit();
@@ -57,6 +59,20 @@ namespace WinForm
             this.textBox_send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_send.Size = new System.Drawing.Size(800, 76);
             this.textBox_send.TabIndex = 11;
+            // 
+            // btnMoreGoods
+            // 
+            this.btnMoreGoods.ChangeState = true;
+            this.btnMoreGoods.Image = global::WinForm.Properties.Resources.购物车_更多_商品;
+            this.btnMoreGoods.ImageChecked = global::WinForm.Properties.Resources.购物车_更多_商品;
+            this.btnMoreGoods.ImageNormal = global::WinForm.Properties.Resources.购物车_更多_商品;
+            this.btnMoreGoods.Location = new System.Drawing.Point(82, 300);
+            this.btnMoreGoods.Name = "btnMoreGoods";
+            this.btnMoreGoods.Size = new System.Drawing.Size(35, 35);
+            this.btnMoreGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMoreGoods.TabIndex = 16;
+            this.btnMoreGoods.TabStop = false;
+            this.btnMoreGoods.Click += new System.EventHandler(this.btnMoreGoods_Click);
             // 
             // btnMap
             // 
@@ -104,6 +120,7 @@ namespace WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnMoreGoods);
             this.Controls.Add(this.btnMap);
             this.Controls.Add(this.button_send);
             this.Controls.Add(this.btnSendImg);
@@ -111,6 +128,7 @@ namespace WinForm
             this.Controls.Add(this.textBox_showing);
             this.Name = "PageConsult";
             this.Size = new System.Drawing.Size(800, 411);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMoreGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.button_send)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSendImg)).EndInit();
@@ -126,5 +144,6 @@ namespace WinForm
         private ImageBtn btnSendImg;
         private ImageBtn button_send;
         private ImageBtn btnMap;
+        private ImageBtn btnMoreGoods;
     }
 }

@@ -293,6 +293,16 @@ namespace WinForm.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 购物车_更多_商品 {
+            get {
+                object obj = ResourceManager.GetObject("购物车-更多-商品", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 退出登录 {
             get {
                 object obj = ResourceManager.GetObject("退出登录", resourceCulture);

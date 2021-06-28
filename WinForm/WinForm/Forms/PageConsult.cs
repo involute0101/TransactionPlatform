@@ -201,7 +201,8 @@ namespace WinForm
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-
+            Form_Map form_Map = new Form_Map();
+            form_Map.ShowDialog();
         }
 
         /// <summary>
@@ -256,6 +257,12 @@ namespace WinForm
             timer.AutoReset = true;     //重复执行  
             timer.Start();
             timer.Elapsed += new System.Timers.ElapsedEventHandler(GetComments);
+        }
+
+        private void btnMoreGoods_Click(object sender, EventArgs e)
+        {
+            Form_MoreGoods form_MoreGoods = new Form_MoreGoods(good.SellerName, good.GoodId);
+            form_MoreGoods.ShowDialog();
         }
     }
 }
