@@ -190,7 +190,7 @@ namespace WinForm
             if (openfile.ShowDialog() == DialogResult.OK && (openfile.FileName != ""))
             {
                 string file = openfile.FileName;
-                clientService.sendImage(file);
+                //clientService.sendImage(file);
                 imageComment = Image.FromFile(file);
             }
 
@@ -204,7 +204,6 @@ namespace WinForm
             comment.ImageByte =  ImageTool.Serialize(imageComment);
             if (comment.ImageByte == null) { MessageBox.Show("图片不能为空！"); return; }
             CommentService.AddComment(comment);
-
             openfile.Dispose();
         }
 
@@ -219,18 +218,24 @@ namespace WinForm
         /// </summary>
         private void GetComments(object source, System.Timers.ElapsedEventArgs e)
         {
+            Thread thread = new Thread(new ThreadStart(threadAppendComment));
+            thread.SetApartmentState(ApartmentState.STA); //重点
+            thread.Start();
+        }
+        private void threadAppendComment()         //使用STA线程来更新聊天记录
+        {       
             int goodId = good.GoodId;
             List<Comment> comments = CommentService.GetComment(goodId, Int32.Parse(StaticVar.USERID));
-            foreach(Comment c in comments)
-            {               
-                if (c.SenderId == Int32.Parse(StaticVar.USERID) && c.Time.CompareTo(StartTime)>0)       //发送者
+            foreach (Comment c in comments)
+            {
+                if (c.SenderId == Int32.Parse(StaticVar.USERID) && c.Time.CompareTo(StartTime) > 0)       //发送者
                 {
                     textBox_showing.SelectionColor = Color.Green;
                     textBox_showing.AppendText("我: " + "[" + c.Time + "]\n");
                     textBox_showing.SelectionColor = Color.Black;
-                    if(c.InfoType.Equals("Word"))textBox_showing.AppendText(c.WordRecords);
-                    else if(c.InfoType.Equals("Image"))
-                    {
+                    if (c.InfoType.Equals("Word")) textBox_showing.AppendText(c.WordRecords);
+                    else if (c.InfoType.Equals("Image"))
+                    {                    
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
@@ -238,7 +243,7 @@ namespace WinForm
                     textBox_showing.ScrollToCaret();
                     StartTime = c.Time;     //刷新时间，避免重复读取聊天记录
                 }
-                if(c.ReceiverId == Int32.Parse(StaticVar.USERID) && c.Time.CompareTo(StartTime) > 0)       //接收者
+                if (c.ReceiverId == Int32.Parse(StaticVar.USERID) && c.Time.CompareTo(StartTime) > 0)       //接收者
                 {
                     textBox_showing.SelectionColor = Color.Green;
                     if (good.SellerId == Int32.Parse(StaticVar.USERID)) textBox_showing.AppendText("用户: " + "[" + c.Time + "]\n");
@@ -247,14 +252,13 @@ namespace WinForm
                     if (c.InfoType.Equals("Word")) textBox_showing.AppendText(c.WordRecords);
                     else if (c.InfoType.Equals("Image"))
                     {
-                        Thread.CurrentThread.SetApartmentState(ApartmentState.STA);
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
                     textBox_showing.AppendText(Environment.NewLine);
                     textBox_showing.ScrollToCaret();
-                    StartTime = c.Time;     
-                }                              
+                    StartTime = c.Time;
+                }
             }
         }
 
