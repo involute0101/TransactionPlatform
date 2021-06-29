@@ -27,7 +27,9 @@ namespace WinForm
         System.Timers.Timer timer = new System.Timers.Timer();
 
         private DateTime StartTime;
-     
+
+        private List<TransactionRecord> transactionRecords = null;
+
         //咨询商家的聊天界面
         public PageConsult(Good good)
         {
@@ -67,6 +69,12 @@ namespace WinForm
             communicationEntityService.sendIdentify(StaticVar.LOCALIPPORT, StaticVar.USERID, StaticVar.USERID);
             InitComment();
             initTimer();
+
+            //商家打开界面不显示交易记录列表
+            if(good.SellerId== Int32.Parse(StaticVar.USERID))
+            {
+                cmbRecord.Hide();
+            }
         }
 
         private void ClientPrint(string info)
@@ -264,6 +272,34 @@ namespace WinForm
         {
             Form_MoreGoods form_MoreGoods = new Form_MoreGoods(good.SellerName, good.GoodId);
             form_MoreGoods.ShowDialog();
+        }
+
+        private void cmbRecord_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(var t in transactionRecords)
+            {
+                if(t.GoodId.ToString()==cmbRecord.Text)
+                {
+                    Form_TransactionDetail form_TransactionDetail = new Form_TransactionDetail(t,true);
+                    form_TransactionDetail.ShowDialog();
+                }
+            }
+        }
+
+        private void PageConsult_Load(object sender, EventArgs e)
+        {
+             transactionRecords= TransactionService.GetAllRecordsByBuyerId(Int32.Parse(StaticVar.USERID));
+            foreach (var t in transactionRecords)
+            {
+                if (t.SalerId != good.SellerId)
+                {
+                    transactionRecords.Remove(t);
+                }
+            }
+            foreach (var t in transactionRecords)
+            {
+                cmbRecord.Items.Add(t.GoodId.ToString());
+            }
         }
     }
 }

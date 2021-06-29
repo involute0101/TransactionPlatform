@@ -382,3 +382,4 @@ D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\Win
 D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.exe
 D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.pdb
+C:\Users\liqiwei\Desktop\WinForm\WinForm\obj\Debug\WinForm.Form_TransactionDetail.resources

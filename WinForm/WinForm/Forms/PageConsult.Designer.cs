@@ -31,6 +31,7 @@ namespace WinForm
         {
             this.textBox_showing = new System.Windows.Forms.RichTextBox();
             this.textBox_send = new System.Windows.Forms.TextBox();
+            this.cmbRecord = new System.Windows.Forms.ComboBox();
             this.btnMoreGoods = new WinForm.ImageBtn();
             this.btnMap = new WinForm.ImageBtn();
             this.button_send = new WinForm.ImageBtn();
@@ -46,7 +47,7 @@ namespace WinForm
             this.textBox_showing.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox_showing.Location = new System.Drawing.Point(0, 0);
             this.textBox_showing.Name = "textBox_showing";
-            this.textBox_showing.Size = new System.Drawing.Size(800, 300);
+            this.textBox_showing.Size = new System.Drawing.Size(800, 297);
             this.textBox_showing.TabIndex = 1;
             this.textBox_showing.Text = "";
             // 
@@ -59,6 +60,17 @@ namespace WinForm
             this.textBox_send.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox_send.Size = new System.Drawing.Size(800, 76);
             this.textBox_send.TabIndex = 11;
+            // 
+            // cmbRecord
+            // 
+            this.cmbRecord.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRecord.Font = new System.Drawing.Font("幼圆", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cmbRecord.FormattingEnabled = true;
+            this.cmbRecord.Location = new System.Drawing.Point(123, 306);
+            this.cmbRecord.Name = "cmbRecord";
+            this.cmbRecord.Size = new System.Drawing.Size(88, 23);
+            this.cmbRecord.TabIndex = 17;
+            this.cmbRecord.SelectedIndexChanged += new System.EventHandler(this.cmbRecord_SelectedIndexChanged);
             // 
             // btnMoreGoods
             // 
@@ -120,6 +132,7 @@ namespace WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbRecord);
             this.Controls.Add(this.btnMoreGoods);
             this.Controls.Add(this.btnMap);
             this.Controls.Add(this.button_send);
@@ -128,6 +141,7 @@ namespace WinForm
             this.Controls.Add(this.textBox_showing);
             this.Name = "PageConsult";
             this.Size = new System.Drawing.Size(800, 411);
+            this.Load += new System.EventHandler(this.PageConsult_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnMoreGoods)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.button_send)).EndInit();
@@ -145,5 +159,6 @@ namespace WinForm
         private ImageBtn button_send;
         private ImageBtn btnMap;
         private ImageBtn btnMoreGoods;
+        private System.Windows.Forms.ComboBox cmbRecord;
     }
 }
