@@ -25,6 +25,11 @@ namespace WinForm.Entity
         public Image Image { get; set; }
         public byte[] ImageByte { set; get; }
 
+        //经度
+        public string longitude { get; set; }
+        //纬度
+        public string latitude { get; set; }
+
         public DateTime Time { get; set; }
 
         public Comment(int goodId, int senderId, int receiverId, DateTime time)

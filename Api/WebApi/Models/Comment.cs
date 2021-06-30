@@ -21,6 +21,10 @@ namespace WebApi.Models
         public string WordRecords { get; set; }
         //图片信息
         public byte[] ImageByte { set; get; }
+        //经度
+        public string longitude { get; set; }
+        //纬度
+        public string latitude { get; set; }
 
         public DateTime Time { get; set; }
 

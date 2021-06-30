@@ -50,6 +50,7 @@ namespace WinForm
             this.textBox_showing.Size = new System.Drawing.Size(800, 297);
             this.textBox_showing.TabIndex = 1;
             this.textBox_showing.Text = "";
+            this.textBox_showing.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.textBox_showing_LinkClicked);
             // 
             // textBox_send
             // 

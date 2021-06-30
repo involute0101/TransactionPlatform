@@ -58,5 +58,21 @@ namespace WinForm.Service
 
             return messages;
         }
+
+        /// <summary>
+        /// 根据commentID查询聊天记录
+        /// </summary>
+        /// <param name="commentid"></param>
+        /// <returns></returns>
+        public static Comment getCommentById(int commentid)
+        {
+            string baseUrl = serverAddress + "Comment/getCommentById?comId=" + commentid;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var task = client.GetStringAsync(baseUrl);
+            Comment comment = JsonConvert.DeserializeObject<Comment>(task.Result);
+            return comment;
+        }
     }
 }

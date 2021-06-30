@@ -132,6 +132,7 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
                 }
                 if (c.ReceiverId == Int32.Parse(StaticVar.USERID))
                 {
@@ -146,6 +147,7 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
                 }
                 textBox_showing.AppendText(Environment.NewLine);
                 textBox_showing.ScrollToCaret();
@@ -209,8 +211,26 @@ namespace WinForm
 
         private void btnMap_Click(object sender, EventArgs e)
         {
-            Form_Map form_Map = new Form_Map();
+            Form_Map form_Map = new Form_Map(this);
             form_Map.ShowDialog();
+        }
+
+        /// <summary>
+        /// 发送定位
+        /// </summary>
+        /// <param name="MapLng"></param>
+        /// <param name="MapLat"></param>
+        public void sendMap(string MapLng, string MapLat)
+        {
+            Comment comment;
+            if (good.SellerId == Int32.Parse(StaticVar.USERID))         //商家
+            {
+                comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), SenderId, DateTime.Now);
+            }
+            else comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), good.SellerId, DateTime.Now);
+            comment.InfoType = "Location";
+            comment.longitude = MapLng; comment.latitude = MapLat;
+            CommentService.AddComment(comment);
         }
 
         /// <summary>
@@ -239,6 +259,7 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId);}
                     textBox_showing.AppendText(Environment.NewLine);
                     textBox_showing.ScrollToCaret();
                     StartTime = c.Time;     //刷新时间，避免重复读取聊天记录
@@ -255,6 +276,7 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
                     textBox_showing.AppendText(Environment.NewLine);
                     textBox_showing.ScrollToCaret();
                     StartTime = c.Time;
@@ -304,6 +326,14 @@ namespace WinForm
             {
                 cmbRecord.Items.Add(t.GoodId.ToString());
             }
+        }
+
+        private void textBox_showing_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            int commentId = Int32.Parse(e.LinkText.Substring(e.LinkText.LastIndexOf("/")+1));
+            Comment comment = CommentService.getCommentById(commentId);
+            Form_Map map = new Form_Map(comment.longitude, comment.latitude);
+            map.ShowDialog();
         }
     }
 }

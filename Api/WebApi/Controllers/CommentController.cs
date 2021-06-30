@@ -45,7 +45,7 @@ namespace WebApi.Controllers
                 List<Comment> comments = transactionContext.Comments.
                     Where(c => c.GoodId == goodId && (c.SenderId == userId || c.ReceiverId == userId)).ToList();
                 if (comments == null) return NoContent();
-                else return comments;
+                return comments;
             }
             catch (Exception e)
             {
@@ -68,7 +68,7 @@ namespace WebApi.Controllers
                     messages.Add(m);
                 }
                 if (messages == null) return NoContent();
-                else return messages;
+                return messages;
             }
             catch (Exception e)
             {
@@ -76,5 +76,20 @@ namespace WebApi.Controllers
             }
         }
 
+        [HttpGet("getCommentById")]
+        public ActionResult<Comment> GetCommentById(int comId)
+        {
+            try
+            {
+                Comment comment = transactionContext.Comments.
+                        Where(c => c.CommentId == comId).ToList().First();
+                if (comment == null) return NoContent();
+                return comment;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.InnerException.Message);
+            }
+        }
     }
 }
