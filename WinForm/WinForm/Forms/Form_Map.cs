@@ -33,6 +33,7 @@ namespace WinForm
             this.consultForm = consultForm;
             timerShow.Enabled = false;
             btnSend.Show();
+            btnRefresh.Hide();
         }
 
         public Form_Map(string x, string y)
@@ -44,6 +45,7 @@ namespace WinForm
             InitializeComponent();
             timerShow.Enabled = true;
             btnSend.Hide();
+            btnRefresh.Show();
         }
 
         private void Form_Map_Load(object sender, EventArgs e)
@@ -74,6 +76,11 @@ namespace WinForm
         {
             wbsMap.Document.InvokeScript("setLocation", new object[] { double.Parse(MapLng), double.Parse(MapLat) });
             timerShow.Stop();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            wbsMap.Document.InvokeScript("setLocation", new object[] { double.Parse(MapLng), double.Parse(MapLat) });
         }
     }
 }
