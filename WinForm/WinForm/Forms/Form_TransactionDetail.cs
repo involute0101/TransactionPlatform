@@ -14,14 +14,16 @@ namespace WinForm
     public partial class Form_TransactionDetail : Form
     {
         private TransactionRecord transactionRecord = null;
+        private PageConsult consultForm;
         public Form_TransactionDetail()
         {
             InitializeComponent();
         }
 
-        public Form_TransactionDetail(TransactionRecord transactionRecord,bool sender)
+        public Form_TransactionDetail(TransactionRecord transactionRecord,bool sender,PageConsult consultForm)
         {
             this.transactionRecord = transactionRecord;
+            this.consultForm = consultForm;
             InitializeComponent();
             if (sender == true)
             {
@@ -45,7 +47,8 @@ namespace WinForm
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            //发送
+            consultForm.sendTransactionDetail(transactionRecord.TransactionRecordId);
+            this.Close();
         }
     }
 }

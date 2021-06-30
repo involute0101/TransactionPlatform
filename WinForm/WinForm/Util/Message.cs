@@ -8,6 +8,7 @@ namespace WinForm.Util
 {
     public class Message
     {
+        public string GoodName { get; set; }
         public int GoodId { get; set; }
         public int SenderId { get; set; }
         public DateTime Time { get; set; }

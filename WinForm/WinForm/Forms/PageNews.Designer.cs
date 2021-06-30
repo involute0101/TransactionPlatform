@@ -37,10 +37,10 @@ namespace WinForm
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvNews = new System.Windows.Forms.DataGridView();
-            this.goodIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsNews = new System.Windows.Forms.BindingSource(this.components);
+            this.goodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bdsNews = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNews)).BeginInit();
@@ -92,7 +92,7 @@ namespace WinForm
             this.dgvNews.BackgroundColor = System.Drawing.Color.White;
             this.dgvNews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.goodIdDataGridViewTextBoxColumn,
+            this.goodNameDataGridViewTextBoxColumn,
             this.senderIdDataGridViewTextBoxColumn,
             this.timeDataGridViewTextBoxColumn});
             this.dgvNews.DataSource = this.bdsNews;
@@ -105,18 +105,22 @@ namespace WinForm
             this.dgvNews.TabIndex = 0;
             this.dgvNews.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNews_CellClick);
             // 
-            // goodIdDataGridViewTextBoxColumn
+            // bdsNews
             // 
-            this.goodIdDataGridViewTextBoxColumn.DataPropertyName = "GoodId";
-            this.goodIdDataGridViewTextBoxColumn.HeaderText = "GoodId";
-            this.goodIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.goodIdDataGridViewTextBoxColumn.Name = "goodIdDataGridViewTextBoxColumn";
-            this.goodIdDataGridViewTextBoxColumn.Width = 125;
+            this.bdsNews.DataSource = typeof(WinForm.Util.Message);
+            // 
+            // goodNameDataGridViewTextBoxColumn
+            // 
+            this.goodNameDataGridViewTextBoxColumn.DataPropertyName = "GoodName";
+            this.goodNameDataGridViewTextBoxColumn.HeaderText = "尚品名称";
+            this.goodNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.goodNameDataGridViewTextBoxColumn.Name = "goodNameDataGridViewTextBoxColumn";
+            this.goodNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // senderIdDataGridViewTextBoxColumn
             // 
             this.senderIdDataGridViewTextBoxColumn.DataPropertyName = "SenderId";
-            this.senderIdDataGridViewTextBoxColumn.HeaderText = "SenderId";
+            this.senderIdDataGridViewTextBoxColumn.HeaderText = "发送者id";
             this.senderIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.senderIdDataGridViewTextBoxColumn.Name = "senderIdDataGridViewTextBoxColumn";
             this.senderIdDataGridViewTextBoxColumn.Width = 125;
@@ -124,14 +128,10 @@ namespace WinForm
             // timeDataGridViewTextBoxColumn
             // 
             this.timeDataGridViewTextBoxColumn.DataPropertyName = "Time";
-            this.timeDataGridViewTextBoxColumn.HeaderText = "Time";
+            this.timeDataGridViewTextBoxColumn.HeaderText = "时间";
             this.timeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             this.timeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // bdsNews
-            // 
-            this.bdsNews.DataSource = typeof(WinForm.Util.Message);
             // 
             // PageNews
             // 
@@ -148,7 +148,7 @@ namespace WinForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvNews)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNews)).EndInit();
             this.ResumeLayout(false);
-          
+
         }
 
         #endregion
@@ -159,10 +159,8 @@ namespace WinForm
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvNews;
         private System.Windows.Forms.BindingSource bdsNews;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goodIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goodNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn senderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
-
-        
     }
 }

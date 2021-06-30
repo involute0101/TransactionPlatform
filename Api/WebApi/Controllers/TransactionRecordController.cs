@@ -74,5 +74,26 @@ namespace WebApi.Controllers
             else
                 return goods.ToList();
         }
+
+        /// <summary>
+        /// 根据交易记录ID查询
+        /// </summary>
+        /// <param name="tranId"></param>
+        /// <returns></returns>
+        [HttpGet("getTransactionById")]
+        public ActionResult<TransactionRecord> GetTransactionRecordById(int tranId)
+        {
+            try
+            {
+                TransactionRecord record = transactionContext.TransactionRecords.
+                    Where(t => t.TransactionRecordId == tranId).ToList().First();
+                if (record == null) return NoContent();
+                return record;
+            }catch(Exception ex)
+            {
+                return BadRequest(ex.InnerException.Message);
+            }
+            
+        }
     }
 }

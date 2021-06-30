@@ -64,7 +64,8 @@ namespace WebApi.Controllers
                     Where(c => c.ReceiverId == userId).Select(c => new { c.GoodId, c.SenderId, c.Time }).Distinct().ToList();
                 foreach(var r in results)
                 {
-                    Message m = new Message(r.GoodId, r.SenderId, r.Time);
+                    Good good = transactionContext.Goods.Where(g => g.GoodId == r.GoodId).ToList().First();
+                    Message m = new Message(good.GoodName, r.GoodId, r.SenderId, r.Time);
                     messages.Add(m);
                 }
                 if (messages == null) return NoContent();

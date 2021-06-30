@@ -26,9 +26,11 @@ namespace WinForm.Entity
         public byte[] ImageByte { set; get; }
 
         //经度
-        public string longitude { get; set; }
+        public string Longitude { get; set; }
         //纬度
-        public string latitude { get; set; }
+        public string Latitude { get; set; }
+        //交易记录id
+        public int TransactionId { get; set; }
 
         public DateTime Time { get; set; }
 

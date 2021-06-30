@@ -52,6 +52,12 @@ namespace WinForm.Service
 
             return records;
         }
+
+        /// <summary>
+        /// 添加交易记录
+        /// </summary>
+        /// <param name="record"></param>
+        /// <returns></returns>
         public static bool AddRecord(TransactionRecord record)
         {
             string baseUrl = serverAddress + "TransactionRecord/addTransactionRecord?";
@@ -66,6 +72,22 @@ namespace WinForm.Service
                 return false;
             else
                 return true;
+        }
+
+        /// <summary>
+        /// 根据id查询交易记录
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static TransactionRecord GetTransactionRecordById(int id)
+        {
+            string baseUrl = serverAddress + "TransactionRecord/getTransactionById?tranId="+id;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var task = client.GetStringAsync(baseUrl);
+            TransactionRecord record = JsonConvert.DeserializeObject<TransactionRecord>(task.Result);
+            return record;
         }
     }
 }

@@ -132,7 +132,10 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
-                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText
+                            ("定位信息：" + "http://localhost:5001/Map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Transaction")){textBox_showing.AppendText
+                               ("订单信息：" + "http://localhost:5001/Transaction/" + c.CommentId);}
                 }
                 if (c.ReceiverId == Int32.Parse(StaticVar.USERID))
                 {
@@ -147,7 +150,10 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
-                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText
+                            ("定位信息：" + "http://localhost:5001/Map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Transaction")){textBox_showing.AppendText
+                            ("订单信息：" + "http://localhost:5001/Transaction/" + c.CommentId);}
                 }
                 textBox_showing.AppendText(Environment.NewLine);
                 textBox_showing.ScrollToCaret();
@@ -229,7 +235,23 @@ namespace WinForm
             }
             else comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), good.SellerId, DateTime.Now);
             comment.InfoType = "Location";
-            comment.longitude = MapLng; comment.latitude = MapLat;
+            comment.Longitude = MapLng; comment.Latitude = MapLat;
+            CommentService.AddComment(comment);
+        }
+
+        /// <summary>
+        /// 发送交易记录信息
+        /// </summary>
+        /// <param name="transactionId"></param>
+        public void sendTransactionDetail(int transactionId)
+        {
+            Comment comment;
+            if (good.SellerId == Int32.Parse(StaticVar.USERID))         //商家
+            {
+                comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), SenderId, DateTime.Now);
+            }
+            else comment = new Comment(good.GoodId, Int32.Parse(StaticVar.USERID), good.SellerId, DateTime.Now);
+            comment.InfoType = "Transaction";comment.TransactionId = transactionId;
             CommentService.AddComment(comment);
         }
 
@@ -259,7 +281,10 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
-                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId);}
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText
+                            ("定位信息：" + "http://localhost:5001/Map/" + c.CommentId);}
+                    else if (c.InfoType.Equals("Transaction")) { textBox_showing.AppendText
+                            ("订单信息：" + "http://localhost:5001/Transaction/" + c.CommentId); }
                     textBox_showing.AppendText(Environment.NewLine);
                     textBox_showing.ScrollToCaret();
                     StartTime = c.Time;     //刷新时间，避免重复读取聊天记录
@@ -276,7 +301,10 @@ namespace WinForm
                         Clipboard.SetDataObject((Image)ImageTool.Deserialize(c.ImageByte));
                         textBox_showing.Paste(DataFormats.GetFormat(DataFormats.Bitmap));
                     }
-                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText("定位信息：" + "http://localhost:5001/map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Location")) { textBox_showing.AppendText
+                            ("定位信息：" + "http://localhost:5001/Map/" + c.CommentId); }
+                    else if (c.InfoType.Equals("Transaction")){textBox_showing.AppendText
+                            ("订单信息：" + "http://localhost:5001/Transaction/" + c.CommentId);}
                     textBox_showing.AppendText(Environment.NewLine);
                     textBox_showing.ScrollToCaret();
                     StartTime = c.Time;
@@ -306,7 +334,7 @@ namespace WinForm
             {
                 if(t.GoodId.ToString()==cmbRecord.Text)
                 {
-                    Form_TransactionDetail form_TransactionDetail = new Form_TransactionDetail(t,true);
+                    Form_TransactionDetail form_TransactionDetail = new Form_TransactionDetail(t,true,this);
                     form_TransactionDetail.ShowDialog();
                 }
             }
@@ -330,10 +358,24 @@ namespace WinForm
 
         private void textBox_showing_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            int commentId = Int32.Parse(e.LinkText.Substring(e.LinkText.LastIndexOf("/")+1));
-            Comment comment = CommentService.getCommentById(commentId);
-            Form_Map map = new Form_Map(comment.longitude, comment.latitude);
-            map.ShowDialog();
+            string subString = e.LinkText.Substring(0, e.LinkText.LastIndexOf("/"));
+            string type =subString.Substring(subString.LastIndexOf("/")+1);
+            if(type.Equals("Map"))
+            {
+                int commentId = Int32.Parse(e.LinkText.Substring(e.LinkText.LastIndexOf("/")+1));
+                Comment comment = CommentService.getCommentById(commentId);
+                Form_Map map = new Form_Map(comment.Longitude, comment.Latitude);
+                map.ShowDialog();
+            }
+            else if(type.Equals("Transaction"))
+            {
+                int commentId = Int32.Parse(e.LinkText.Substring(e.LinkText.LastIndexOf("/") + 1));
+                Comment comment = CommentService.getCommentById(commentId);
+                TransactionRecord record = TransactionService.GetTransactionRecordById(comment.TransactionId);
+                Form_TransactionDetail detail = new Form_TransactionDetail(record, false, this);
+                detail.ShowDialog();
+            }
+            
         }
     }
 }
