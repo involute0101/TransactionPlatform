@@ -40,7 +40,7 @@ namespace WinForm
                 .{6,30}                         #至少6个字符，最多30个字符
                 ", RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace);                       
             bool pwdIsMatch = regex.IsMatch(textBoxPassword.Text);
-            if (!pwdIsMatch) { textBoxPassword.Text = "";MessageBox.Show("错误密码", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);return false;  }
+            if (!pwdIsMatch) { textBoxPassword.Text = "";MessageBox.Show("密码不符合规范", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);return false;  }
             if (!textBoxPassword.Text.Equals(textBoxSurePassword.Text)) 
             {
                 textBoxSurePassword.Text = "";

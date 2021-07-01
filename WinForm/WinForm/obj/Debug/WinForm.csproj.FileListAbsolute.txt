@@ -348,3 +348,4 @@ D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\Win
 C:\Users\liqiwei\Desktop\WinForm\WinForm\obj\Debug\WinForm.Form_TransactionDetail.resources
 D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.Form_TransactionDetail.resources
 C:\Users\86188\Documents\mycode\C#\C#whole\WinForm\WinForm\obj\Debug\WinForm.Form_TransactionDetail.resources
+D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.csprojAssemblyReference.cache

@@ -39,7 +39,12 @@ namespace WinForm.Service
             }
             return goods;
         }
-        //根据id查询交易记录
+
+        /// <summary>
+        /// 根据买家id查询交易记录
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<TransactionRecord> GetAllRecordsByBuyerId(int id)
         {
             string baseUrl = serverAddress + "TransactionRecord/getTransactionRecordByBuyerId?" +
@@ -50,6 +55,22 @@ namespace WinForm.Service
             var task = client.GetStringAsync(baseUrl);
             List<TransactionRecord> records = JsonConvert.DeserializeObject<List<TransactionRecord>>(task.Result);
 
+            return records;
+        }
+
+        /// <summary>
+        /// 根据用户id查询交易记录，作为买家或者卖家
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static List<TransactionRecord> GetAllTransactionByUserId(int id)
+        {
+            string baseUrl = serverAddress + "TransactionRecord/getTransactionRecordByUserId?" +
+                "userId=" + id;
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var task = client.GetStringAsync(baseUrl);
+            List<TransactionRecord> records = JsonConvert.DeserializeObject<List<TransactionRecord>>(task.Result);
             return records;
         }
 

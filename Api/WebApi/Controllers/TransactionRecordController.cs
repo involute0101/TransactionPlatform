@@ -51,17 +51,39 @@ namespace WebApi.Controllers
             else
                 return goods.ToList();
         }
-        //买家用户Id查询所有的交易记录
+
+        /// <summary>
+        /// 买家用户Id查询所有的交易记录
+        /// </summary>
+        /// <param name="buyerId"></param>
+        /// <returns></returns>
         [HttpGet("getTransactionRecordByBuyerId")]
         public ActionResult<List<TransactionRecord>> GetDoneDealByBuyerId(int buyerId)
         {
             List<TransactionRecord> records = transactionContext.TransactionRecords.Where(t => t.BuyerId == buyerId).ToList();
-            if (records == null)
-                return NotFound();
-            else
-                return records;
+            if (records == null)return NotFound();
+            return records;
         }
-        //卖家用户Id查询所有的交易成功商品
+
+        /// <summary>
+        /// 根据用户id查询交易记录（买方或卖方）
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [HttpGet("getTransactionRecordByUserId")]
+        public ActionResult<List<TransactionRecord>> GetTransactionRecordByUserId(int userId)
+        {
+            List<TransactionRecord> records = transactionContext.TransactionRecords.
+                Where(t => t.BuyerId == userId || t.SalerId == userId).ToList();
+            if (records == null) return NotFound();
+            return records;
+        }
+
+        /// <summary>
+        /// 卖家用户Id查询所有的交易成功商品
+        /// </summary>
+        /// <param name="salerId"></param>
+        /// <returns></returns>
         [HttpPost("getTransactionRecordBySaler")]
         public ActionResult<List<Good>> GetDoneDealBySaler(int salerId)
         {

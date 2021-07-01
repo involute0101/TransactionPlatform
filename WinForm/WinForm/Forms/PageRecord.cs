@@ -18,7 +18,7 @@ namespace WinForm
         public PageRecord()
         {
             InitializeComponent();
-            bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
+            bdsRecord.DataSource = TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID));
         }
 
         private void panel2_SizeChanged(object sender, EventArgs e)
@@ -32,15 +32,15 @@ namespace WinForm
             switch (cbxSearchOption.Text)
             {
                 case "商品编号":
-                    bdsRecord.DataSource = Search.SearchRecordByGoodId(TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID)), int.Parse(txtSearch.Text));
+                    bdsRecord.DataSource = Search.SearchRecordByGoodId(TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID)), int.Parse(txtSearch.Text));
                     bdsRecord.ResetBindings(false);
                     break;
                 case "商品名称":
-                    bdsRecord.DataSource = Search.SearchRecordByGoodName(TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID)), txtSearch.Text);
+                    bdsRecord.DataSource = Search.SearchRecordByGoodName(TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID)), txtSearch.Text);
                     bdsRecord.ResetBindings(false);
                     break;
                 case "卖家姓名":
-                    bdsRecord.DataSource = Search.SearchRecordBySalerName(TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID)), txtSearch.Text);
+                    bdsRecord.DataSource = Search.SearchRecordBySalerName(TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID)), txtSearch.Text);
                     bdsRecord.ResetBindings(false);
                     break;
             }
@@ -48,12 +48,12 @@ namespace WinForm
 
         private void btnRefrash_Click(object sender, EventArgs e)
         {
-            bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
+            bdsRecord.DataSource = TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID));
         }
 
         public void RefreshRecord()
         {
-            bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
+            bdsRecord.DataSource = TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID));
         }
     }
 }
