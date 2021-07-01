@@ -13,5 +13,6 @@ namespace WinForm
         public static Form_Main form_Main { get; set; }
         public static PageFavorite pageFavorite { get; set; }
         public static PageRecord pageRecord { get; set; }
+        public static Form_Good form_Good { get; set; }
     }
 }

@@ -112,6 +112,12 @@
     <Compile Include="Entity\Good.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Forms\FormControl.cs" />
+    <Compile Include="Forms\Form_Buyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Buyer.Designer.cs">
+      <DependentUpon>Form_Buyer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Good.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     <Compile Include="Util\StaticVar.cs" />
     <EmbeddedResource Include="Forms\ConsultForm.resx">
       <DependentUpon>ConsultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Buyer.resx">
+      <DependentUpon>Form_Buyer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Good.resx">
       <DependentUpon>Form_Good.cs</DependentUpon>

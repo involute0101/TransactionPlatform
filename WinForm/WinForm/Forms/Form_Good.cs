@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinForm.EntityClass;
+using WinForm.Forms;
 using WinForm.Service;
 using WinForm.Tool;
 
@@ -21,6 +22,7 @@ namespace WinForm
         public Form_Good()
         {
             InitializeComponent();
+            FormControl.form_Good = this;
         }
 
         public Form_Good(Good good)
@@ -42,6 +44,7 @@ namespace WinForm
             lblPrice.InputText = good.Price.ToString();
             lblCount.InputText = good.Count.ToString();
             lblDetail.InputText = "商品详情：\n" + good.GoodDetailDesc;
+            FormControl.form_Good = this;
         }
 
         private void btnGoodPage_Click(object sender, EventArgs e)
@@ -88,18 +91,19 @@ namespace WinForm
             FormControl.pageFavorite.RefreshFavorite();
             MessageBox.Show("收藏成功！");
         }
+        public void RefreshGood(string count,string state)
+        {
+            lblCount.InputText = count;
+            lblState.InputText = state;
 
+        }
         private void btnBuy_Click(object sender, EventArgs e)
         {
+
             if(good.SellerId == Int32.Parse(StaticVar.USERID)) { MessageBox.Show("不可以购买自己的商品");return; }
-            if (good.Count>0) good.Count = good.Count - 1;//更改商品数量
-            else return;
-            TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID),good.SellerId, DateTime.Now));
-            FormControl.pageRecord.RefreshRecord();
-            if (good.Count == 0) good.State = "售罄";
-            GoodService.AlterGoodByBuyer(good.GoodId, good);//买家买完，修改商品数量及状态
-            MessageBox.Show("购买成功！");
-            this.Close();
+            Form_Buyer form_Buyer = new Form_Buyer(good);
+            form_Buyer.Show();
+            FormControl.form_Main.Refreshshop();
         }
 
         private void btnChangeInfo_Click(object sender, EventArgs e)

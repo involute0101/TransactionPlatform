@@ -955,3 +955,4 @@ D:\code\C#\TransactionPlatform\TransactionPlatform\Api\WebApi\obj\Release\netcor
 D:\code\C#\TransactionPlatform\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.dll
 D:\code\C#\TransactionPlatform\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.pdb
 D:\code\C#\TransactionPlatform\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.genruntimeconfig.cache
+C:\Users\10414\source\repos\involute0101\TransactionPlatform\Api\WebApi\obj\Release\netcoreapp3.1\WebApi.csprojAssemblyReference.cache

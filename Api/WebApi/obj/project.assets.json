@@ -9756,20 +9756,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\86188\\.nuget\\packages\\": {}
+    "C:\\Users\\10414\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\86188\\Documents\\mycode\\C#\\C#whole\\Api\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\86188\\Documents\\mycode\\C#\\C#whole\\Api\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\86188\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\86188\\Documents\\mycode\\C#\\C#whole\\Api\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\10414\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\10414\\source\\repos\\involute0101\\TransactionPlatform\\Api\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\86188\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\10414\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

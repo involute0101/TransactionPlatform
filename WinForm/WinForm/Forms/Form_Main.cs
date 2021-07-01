@@ -223,20 +223,22 @@ namespace WinForm
                 lblSex.Save();
                 lblPhone.Save();
                 lblMailBox.Save();
-            }
-            else
-            {
-                modifyInfo = true;
-                lblName.Modify();
-                lblSex.Modify();
-                lblPhone.Modify();
-                lblMailBox.Modify();
-                //6.11凌晨修改：修改个人信息
                 user.Username = lblName.InputText;
                 user.Sex = lblSex.InputText;
                 user.PhoneNumber = lblPhone.InputText;
                 user.Email = lblMailBox.InputText;
                 UserService.ModifyUser(user.UserId, user);
+            }
+            else
+            {
+                
+                lblName.Modify();
+                lblSex.Modify();
+                lblPhone.Modify();
+                lblMailBox.Modify();
+                modifyInfo = true;
+                //6.11凌晨修改：修改个人信息
+
             }
         }
 
