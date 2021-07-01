@@ -84,6 +84,7 @@ namespace WinForm
                 }
             Collect collect = new Collect(good.GoodId, Int32.Parse(StaticVar.USERID), DateTime.Now);
             CollectService.AddCollect(collect);
+            FormControl.pageFavorite.RefreshFavorite();
             MessageBox.Show("收藏成功！");
         }
 
@@ -92,7 +93,8 @@ namespace WinForm
             if(good.SellerId == Int32.Parse(StaticVar.USERID)) { MessageBox.Show("不可以购买自己的商品");return; }
             if (good.Count>0) good.Count = good.Count - 1;//更改商品数量
             else return;
-            TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID),good.SellerId, DateTime.Now));   
+            TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID),good.SellerId, DateTime.Now));
+            FormControl.pageRecord.RefreshRecord();
             if (good.Count == 0) good.State = "售罄";
             GoodService.AlterGoodByBuyer(good.GoodId, good);//买家买完，修改商品数量及状态
             MessageBox.Show("购买成功！");

@@ -55,6 +55,7 @@ namespace WinForm
             
             GoodService.AddGood(good);
             MessageBox.Show("发布成功！");
+            FormControl.form_Main.Refreshshop();
             this.Close();
         }
 

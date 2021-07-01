@@ -50,5 +50,10 @@ namespace WinForm
         {
             bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
         }
+
+        public void RefreshRecord()
+        {
+            bdsRecord.DataSource = TransactionService.GetAllRecordsByBuyerId(int.Parse(StaticVar.USERID));
+        }
     }
 }

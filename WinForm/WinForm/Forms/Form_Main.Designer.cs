@@ -274,6 +274,7 @@ namespace WinForm
             this.cmbChoice.Name = "cmbChoice";
             this.cmbChoice.Size = new System.Drawing.Size(99, 26);
             this.cmbChoice.TabIndex = 0;
+            this.cmbChoice.SelectedIndexChanged += new System.EventHandler(this.cmbChoice_SelectedIndexChanged);
             // 
             // panel4
             // 

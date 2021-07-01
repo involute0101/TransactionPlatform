@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm.EntityClass;
 using WinForm.Forms;
 using WinForm.Service;
 using WinForm.Tool;
@@ -18,7 +19,7 @@ namespace WinForm
         public PageShop()
         {
             InitializeComponent();
-            
+            shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
         }
 
         private void panel2_SizeChanged(object sender, EventArgs e)
@@ -44,6 +45,16 @@ namespace WinForm
                     shopTable.bdsShop.ResetBindings(false);
                     break;
             }
+        }
+
+        public void RefreshShop(List<Good> list)
+        {
+            shopTable.bdsShop.DataSource = list;
+        }
+
+        private void btnRefrash_Click(object sender, EventArgs e)
+        {
+            shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
         }
     }
 }

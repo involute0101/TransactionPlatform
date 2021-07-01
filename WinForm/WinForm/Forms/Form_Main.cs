@@ -64,6 +64,9 @@ namespace WinForm
                 cmbChoice.Text = "商城";
             }
             SwitchTable();
+            FormControl.form_Main = this;
+            FormControl.pageFavorite = this.pageFavorite;
+            FormControl.pageRecord = this.pageRecord;
         }
 
         private void SwitchTable()
@@ -247,6 +250,12 @@ namespace WinForm
             shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
         }
 
+        public void Refreshshop()
+        {
+            shopTable.bdsShop.DataSource = GoodService.GetAllGoods();
+            pageShop.RefreshShop(GoodService.GetAllGoods());
+        }
+
         private void picHead_Click(object sender, EventArgs e)
         {
             //添加上传头像
@@ -274,6 +283,11 @@ namespace WinForm
         {
             FormControl.form1.Show();
             this.Hide();
+        }
+
+        private void cmbChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SwitchTable();
         }
     }
 }

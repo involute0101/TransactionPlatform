@@ -50,5 +50,10 @@ namespace WinForm
         {
             goodsTable.bdsGoods.DataSource = CollectService.GetCollects(int.Parse(StaticVar.USERID));
         }
+
+        public void RefreshFavorite()
+        {
+            goodsTable.bdsGoods.DataSource = CollectService.GetCollects(int.Parse(StaticVar.USERID));
+        }
     }
 }
