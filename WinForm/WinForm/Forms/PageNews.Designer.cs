@@ -37,19 +37,22 @@ namespace WinForm
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvNews = new System.Windows.Forms.DataGridView();
-            this.bdsNews = new System.Windows.Forms.BindingSource(this.components);
             this.goodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bdsNews = new System.Windows.Forms.BindingSource(this.components);
+            this.btnRefrash = new WinForm.ImageBtn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNews)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnRefrash);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -105,10 +108,6 @@ namespace WinForm
             this.dgvNews.TabIndex = 0;
             this.dgvNews.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNews_CellClick);
             // 
-            // bdsNews
-            // 
-            this.bdsNews.DataSource = typeof(WinForm.Util.Message);
-            // 
             // goodNameDataGridViewTextBoxColumn
             // 
             this.goodNameDataGridViewTextBoxColumn.DataPropertyName = "GoodName";
@@ -133,6 +132,25 @@ namespace WinForm
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             this.timeDataGridViewTextBoxColumn.Width = 125;
             // 
+            // bdsNews
+            // 
+            this.bdsNews.DataSource = typeof(WinForm.Util.Message);
+            // 
+            // btnRefrash
+            // 
+            this.btnRefrash.ChangeState = false;
+            this.btnRefrash.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRefrash.Image = global::WinForm.Properties.Resources.新东方_刷新图标;
+            this.btnRefrash.ImageChecked = null;
+            this.btnRefrash.ImageNormal = null;
+            this.btnRefrash.Location = new System.Drawing.Point(970, 0);
+            this.btnRefrash.Name = "btnRefrash";
+            this.btnRefrash.Size = new System.Drawing.Size(30, 35);
+            this.btnRefrash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefrash.TabIndex = 3;
+            this.btnRefrash.TabStop = false;
+            this.btnRefrash.Click += new System.EventHandler(this.btnRefrash_Click);
+            // 
             // PageNews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -147,6 +165,7 @@ namespace WinForm
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNews)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +181,6 @@ namespace WinForm
         private System.Windows.Forms.DataGridViewTextBoxColumn goodNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn senderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeDataGridViewTextBoxColumn;
+        private ImageBtn btnRefrash;
     }
 }

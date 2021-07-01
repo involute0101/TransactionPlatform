@@ -45,5 +45,10 @@ namespace WinForm
             }
 
         }
+
+        private void btnRefrash_Click(object sender, EventArgs e)
+        {
+            bdsNews.DataSource = CommentService.GetMessage(Int32.Parse(StaticVar.USERID));
+        }
     }
 }
