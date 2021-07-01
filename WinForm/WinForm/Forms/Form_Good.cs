@@ -17,6 +17,7 @@ namespace WinForm
     {
         private PageConsult pageConsult;
         private Good good = new Good();
+        private bool modifyGood = false;
         public Form_Good()
         {
             InitializeComponent();
@@ -32,15 +33,15 @@ namespace WinForm
 
         private void Form_Good_Load(object sender, EventArgs e)
         {
-            lblHeadName.Text = good.GoodName;
+            lblHeadName.InputText = good.GoodName;
             picImg.Image = good.Image;
-            lblName.Text = "姓名：" + good.GoodName;
-            lblGoodId.Text = "编号：" + good.GoodId.ToString();
-            lblState.Text = "状态：" + good.State;
-            lblSellerId.Text = "卖家：" + good.SellerId.ToString();
-            lblPrice.Text = "单价：" + good.Price.ToString();
-            lblCount.Text = "数量：" + good.Count.ToString();
-            lblDetail.Text = "商品详情：\n" + good.GoodDetailDesc;
+            lblName.InputText =  good.GoodName;
+            lblGoodId.Text = good.GoodId.ToString();
+            lblState.InputText = good.State;
+            lblSellerId.Text =good.SellerId.ToString();
+            lblPrice.InputText = good.Price.ToString();
+            lblCount.InputText = good.Count.ToString();
+            lblDetail.InputText = "商品详情：\n" + good.GoodDetailDesc;
         }
 
         private void btnGoodPage_Click(object sender, EventArgs e)
@@ -99,6 +100,39 @@ namespace WinForm
             GoodService.AlterGoodByBuyer(good.GoodId, good);//买家买完，修改商品数量及状态
             MessageBox.Show("购买成功！");
             this.Close();
+        }
+
+        private void btnChangeInfo_Click(object sender, EventArgs e)
+        {
+            if (this.good.SellerId != int.Parse(StaticVar.USERID)) 
+            { MessageBox.Show("不允许修改！"); return; }
+
+            if (modifyGood)
+            {
+                modifyGood = false;
+                lblName.Save();
+                lblState.Save();
+                lblPrice.Save();
+                lblCount.Save();
+                lblDetail.Save();
+                good.GoodName = lblName.InputText;
+                good.State = lblState.InputText;
+                good.Price = int.Parse(lblPrice.InputText);
+                good.Count = int.Parse(lblPrice.InputText);
+                GoodService.AlterGood(good.GoodId, good);
+            }
+            else
+            {
+                int newPrice,newCount;
+                lblName.Modify();
+                lblState.Modify();
+                lblPrice.Modify();
+                lblCount.Modify();
+                lblDetail.Modify();
+                if (!int.TryParse(lblPrice.InputText, out newPrice)) { MessageBox.Show("错误价格！"); return; }
+                if (!int.TryParse(lblCount.InputText,out newCount)) { MessageBox.Show("错误数量！"); return; }
+                modifyGood = true;
+            }
         }
     }
 }
