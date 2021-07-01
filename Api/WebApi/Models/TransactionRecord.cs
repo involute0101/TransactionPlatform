@@ -8,11 +8,17 @@ namespace WebApi.Models
     public class TransactionRecord
     {
         public int TransactionRecordId { get; set; }
-        public int GoodId { get; set; }//商品
+        //商品id
+        public int GoodId { get; set; }
+        //商品名称
         public string GoodName { get; set; }
-        public int BuyerId { get; set; }//买家
-        public int SalerId { get; set; }//卖家
+        //买家id
+        public int BuyerId { get; set; }
+        //卖家id
+        public int SalerId { get; set; }
+        //销售者名称
         public string SalerName { get; set; }
-        public DateTime Time { get; set; }//完成交易时间
+        //完成交易时间
+        public DateTime Time { get; set; }
     }
 }

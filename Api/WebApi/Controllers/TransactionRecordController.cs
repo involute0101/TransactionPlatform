@@ -20,7 +20,11 @@ namespace WebApi.Controllers
             transactionContext = context;
         }
 
-        //记录交易成功的商品
+        /// <summary>
+        /// 记录交易成功的商品
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
         [HttpPost("addTransactionRecord")]
         public ActionResult<TransactionRecord> AddDoneDeal([FromBody] Object body)
         {
@@ -38,7 +42,11 @@ namespace WebApi.Controllers
         }
 
 
-        //买家用户Id查询所有的交易成功商品
+        /// <summary>
+        /// 买家用户Id查询所有的交易成功商品
+        /// </summary>
+        /// <param name="buyerId"></param>
+        /// <returns></returns>
         [HttpPost("getTransactionRecordByBuyer")]
         public ActionResult<List<Good>> GetDoneDealByBuyer(int buyerId)
         {
@@ -46,10 +54,8 @@ namespace WebApi.Controllers
             List<TransactionRecord> records = transactionContext.TransactionRecords.Where(t => t.BuyerId == buyerId).ToList();
             List<Good> goods = new List<Good>();
             records.ForEach(record => goods.Add(transactionContext.Goods.SingleOrDefault(g => g.GoodId == record.GoodId)));
-            if (goods == null)
-                return NotFound();
-            else
-                return goods.ToList();
+            if (goods == null)return NotFound();
+            return goods.ToList();
         }
 
         /// <summary>
@@ -91,10 +97,8 @@ namespace WebApi.Controllers
             List<TransactionRecord> records = transactionContext.TransactionRecords.Where(t => t.SalerId == salerId).ToList();
             List<Good> goods = new List<Good>();
             records.ForEach(record => goods.Add(transactionContext.Goods.SingleOrDefault(g => g.GoodId == record.GoodId)));
-            if (goods == null)
-                return NotFound();
-            else
-                return goods.ToList();
+            if (goods == null)return NotFound();
+            return goods.ToList();
         }
 
         /// <summary>

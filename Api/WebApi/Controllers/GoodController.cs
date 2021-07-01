@@ -22,14 +22,21 @@ namespace WebApi.Controllers
             transactionContext = context;
         }
 
-        // "/Good"
+        /// <summary>
+        /// 得到所有商品
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<Good>> GetAllGoods()
         {
             return transactionContext.Goods.ToList();
         }
 
-        //按goodId查询
+        /// <summary>
+        /// 按goodId查询
+        /// </summary>
+        /// <param name="goodId"></param>
+        /// <returns></returns>
         [HttpGet("getGoodById")]
         public ActionResult<Good> GetGoodByGoodId(int goodId)
         {
@@ -42,38 +49,44 @@ namespace WebApi.Controllers
             {
                 return BadRequest(e.InnerException.Message);
             }
-            if (good == null)
-                return NotFound();
-            else
-                return good;
+            if (good == null)return NotFound();
+            return good;
         }
 
-        //按goodName查询
+        /// <summary>
+        /// 按goodName查询
+        /// </summary>
+        /// <param name="goodName"></param>
+        /// <returns></returns>
         [HttpGet("getGoodByName")]
         public ActionResult<List<Good>> GetGoodByGoodName(string goodName)
         {
             var goods = transactionContext.Goods.Where(t => t.GoodName == goodName);
-            if (goods == null)
-                return NotFound();
-            else
-                return goods.ToList();
+            if (goods == null)return NotFound();
+            return goods.ToList();
         }
 
-        ////根据用户Id查询商品
+        /// <summary>
+        /// 根据用户Id查询商品
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [HttpGet("getGoodByUserId")]
         public ActionResult<List<Good>> GetGoodByUserID(int userId)
         {
             var goods = transactionContext.Goods.Where(t => t.SellerId == userId);
-            if (goods == null)
-                return NotFound();
-            else
-                return goods.ToList();
+            if (goods == null)return NotFound();
+            return goods.ToList();
         }
 
-        //"/Good/addGood"添加商品
+        /// <summary>
+        /// "/Good/addGood"添加商品
+        /// </summary>
+        /// <param name="good"></param>
+        /// <returns></returns>
         [HttpPost("addGood")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
-        public async Task<ActionResult<string>> AddPostAsync(Good good)
+        public async Task<ActionResult<string>> AddGoodAsync(Good good)
         {
             try 
             {
@@ -87,10 +100,15 @@ namespace WebApi.Controllers
             return "success";
         }
 
-        //删除商品（商家权限，关于商品全部删除）
-        [HttpDelete("deletePost")]
+        /// <summary>
+        /// 删除商品（商家权限，关于商品全部删除）
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="goodId"></param>
+        /// <returns></returns>
+        [HttpDelete("deleteGood")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
-        public async Task<ActionResult> DeletePostAsync(int userId, int goodId)
+        public async Task<ActionResult> DeleteGoodAsync(int userId, int goodId)
         {
             try
             {
@@ -118,10 +136,15 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
-        //修改商品所有属性（卖家）
-        [HttpPut("alterPost")]
+        /// <summary>
+        /// 修改商品所有属性（卖家）
+        /// </summary>
+        /// <param name="goodId"></param>
+        /// <param name="good"></param>
+        /// <returns></returns>
+        [HttpPut("alterGood")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
-        public async Task<ActionResult<Good>> AlterPostAsync(int goodId, Good good)
+        public async Task<ActionResult<Good>> AlterGoodAsync(int goodId, Good good)
         {
             var user = await HttpContext.GetCurrentUser(transactionContext.Users);
             var goods = transactionContext.Goods.Where(t => t.GoodId == goodId);
@@ -149,10 +172,15 @@ namespace WebApi.Controllers
             return entity;
         }
 
-        //修改商品数量和状态
-        [HttpPut("alterPostByBuyer")]
+        /// <summary>
+        /// 修改商品数量和状态
+        /// </summary>
+        /// <param name="goodId"></param>
+        /// <param name="good"></param>
+        /// <returns></returns>
+        [HttpPut("alterGoodByBuyer")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
-        public async Task<ActionResult<Good>> AlterPostByBuyerAsync(int goodId, Good good)
+        public async Task<ActionResult<Good>> AlterGoodByBuyerAsync(int goodId, Good good)
         {
             var goods = transactionContext.Goods.Where(t => t.GoodId == goodId);
             if (goods == null) return NotFound();
@@ -173,7 +201,5 @@ namespace WebApi.Controllers
             }
             return entity;
         }
-
-
     }
 }

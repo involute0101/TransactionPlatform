@@ -103,7 +103,7 @@ namespace WinForm.Service
         //删除商品
         public static void DeletePost(int userId, int goodId)
         {
-            string baseUrl = serverAddress + "Good/deletePost?" + "userId=" + userId + "&&GoodId=" + goodId; ;
+            string baseUrl = serverAddress + "Good/deleteGood?" + "userId=" + userId + "&&GoodId=" + goodId; ;
             var task = client.DeleteAsync(baseUrl);
             task.Wait();
             return;
@@ -112,7 +112,7 @@ namespace WinForm.Service
         //修改商品(卖家)
         public static void AlterGood(int goodId, Good good)
         {
-            string baseUrl = serverAddress + "Good/alterPost?" + "GoodId=" + goodId;
+            string baseUrl = serverAddress + "Good/alterGood?" + "GoodId=" + goodId;
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(good),
@@ -124,7 +124,7 @@ namespace WinForm.Service
         //修改商品(买家)
         public static void AlterGoodByBuyer(int goodId, Good good)
         {
-            string baseUrl = serverAddress + "Good/alterPostByBuyer?" + "GoodId=" + goodId;
+            string baseUrl = serverAddress + "Good/alterGoodByBuyer?" + "GoodId=" + goodId;
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpContent content = new StringContent(JsonConvert.SerializeObject(good),

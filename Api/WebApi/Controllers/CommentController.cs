@@ -20,7 +20,12 @@ namespace WebApi.Controllers
             transactionContext = context;
         }
 
-        [HttpPost("addComment")]//添加聊天记录
+        /// <summary>
+        /// 添加聊天记录
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
+        [HttpPost("addComment")]
         public ActionResult<Comment> AddComment([FromBody] Object body)
         {
             Comment comment = JsonConvert.DeserializeObject<Comment>(body.ToString());
@@ -37,7 +42,13 @@ namespace WebApi.Controllers
             return comment;
         }
 
-        [HttpGet("getComment")]//根据商品Id查询其相关的聊天记录
+        /// <summary>
+        /// 根据商品Id查询其相关的聊天记录
+        /// </summary>
+        /// <param name="goodId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        [HttpGet("getComment")]
         public ActionResult<List<Comment>> GetComment(int goodId,int userId)
         {
             try
@@ -53,7 +64,11 @@ namespace WebApi.Controllers
             }
         }
 
-        //查询用户的聊天消息
+        /// <summary>
+        /// 查询用户的聊天消息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [HttpGet("getMessage")]
         public ActionResult<List<Message>> GetMessage(int userId)
         {
@@ -77,6 +92,11 @@ namespace WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// 根据聊天记录id查询聊天记录
+        /// </summary>
+        /// <param name="comId"></param>
+        /// <returns></returns>
         [HttpGet("getCommentById")]
         public ActionResult<Comment> GetCommentById(int comId)
         {

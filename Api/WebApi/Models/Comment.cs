@@ -8,8 +8,7 @@ namespace WebApi.Models
     public class Comment
     {
         public int CommentId { get; set; }
-
-        //商品
+        //商品id
         public int GoodId { get; set; }
         //发送者id
         public int SenderId { get; set; }
@@ -25,9 +24,9 @@ namespace WebApi.Models
         public string Longitude { get; set; }
         //纬度
         public string Latitude { get; set; }
-        
+        //交易记录id
         public int TransactionId { get; set; }
-
+        //聊天记录时间
         public DateTime Time { get; set; }
 
         public Comment()

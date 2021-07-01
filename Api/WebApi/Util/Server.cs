@@ -16,23 +16,39 @@ namespace WebApi
 {
     public class Server
     {
-        public string ipString = "127.0.0.1";   // 服务器端ip
-        public int port = 37280;                // 服务器端口
+        // 服务器端ip
+        public string ipString = "127.0.0.1";
+        // 服务器端口
+        public int port = 37280;                
 
         public Socket socket;
-        public Print print;                     // 运行时的信息输出方法
+        // 运行时的信息输出方法
+        public Print print;
+        // 存储连接到服务器的客户端信息
+        public Dictionary<string, Socket> clients = new Dictionary<string, Socket>();
+        // 标识当前是否启动了服务
+        public bool started = false;
 
-        public Dictionary<string, Socket> clients = new Dictionary<string, Socket>();   // 存储连接到服务器的客户端信息
-        public bool started = false;            // 标识当前是否启动了服务
-
-        public Server(Print print = null, string ipString = null, int port = -1) //传入数字的构造函数
+        /// <summary>
+        /// 传入数字的构造函数
+        /// </summary>
+        /// <param name="print"></param>
+        /// <param name="ipString"></param>
+        /// <param name="port"></param>
+        public Server(Print print = null, string ipString = null, int port = -1) 
         {
             this.print = print;
             if (ipString != null) this.ipString = ipString;
             if (port >= 0) this.port = port;
         }
 
-        public Server(Print print = null, string ipString = null, string port = "-1")    //传入字符串的构造函数
+        /// <summary>
+        /// 传入字符串的构造函数
+        /// </summary>
+        /// <param name="print"></param>
+        /// <param name="ipString"></param>
+        /// <param name="port"></param>
+        public Server(Print print = null, string ipString = null, string port = "-1")    
         {
             this.print = print;
             if (ipString != null) this.ipString = ipString;
@@ -41,10 +57,12 @@ namespace WebApi
             if (port_int >= 0) this.port = port_int;
         }
 
-        /// Print用于输出Server的输出信息
+        // Print用于输出Server的输出信息
         public delegate void Print(string info);
 
+        /// <summary>
         /// 启动服务
+        /// </summary>
         public void start()
         {
             try
@@ -73,7 +91,10 @@ namespace WebApi
             }
         }
 
+        /// <summary>
         /// 监听客户端的连接
+        /// </summary>
+        /// <param name="obj"></param>
         private void listenClientConnect(object obj)
         {
             Socket socket = (Socket)obj;
@@ -94,7 +115,11 @@ namespace WebApi
             }
         }
 
+        /// <summary>
         /// 发送信息
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="id"></param>
         public void Send(string info, string id)
         {
             if (clients.ContainsKey(id))
@@ -115,7 +140,11 @@ namespace WebApi
             }
         }
 
+        /// <summary>
         /// 通过socket发送数据data
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <param name="data"></param>
         private void Send(Socket socket, string data)
         {
             if (socket != null && data != null && !data.Equals(""))
@@ -125,7 +154,10 @@ namespace WebApi
             }
         }
 
+        /// <summary>
         /// 接收通过socket发送过来的数据
+        /// </summary>
+        /// <param name="obj"></param>
         private void receiveData(object obj)
         {
             Socket socket = (Socket)obj;
@@ -162,7 +194,11 @@ namespace WebApi
             }
         }
 
+        /// <summary>
         /// 从socket接收数据
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <returns></returns>
         private string Receive(Socket socket)
         {
             string data = "";
@@ -179,7 +215,10 @@ namespace WebApi
             return data;
         }
 
-        //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        /// <summary>
+        /// 接收图片
+        /// </summary>
+        /// <param name="obj"></param>
         public void receiveImage(Object obj)
         {
             Socket socket = (Socket)obj;
@@ -219,7 +258,11 @@ namespace WebApi
             }
         }
 
-        //发送图片，字节数组
+        /// <summary>
+        /// 发送图片，字节数组
+        /// </summary>
+        /// <param name="img"></param>
+        /// <param name="id"></param>
         public void sendImage(Image img,string id)
         {
             byte[] imgByte = Serialize(img);
@@ -244,7 +287,11 @@ namespace WebApi
             }
         }
 
-        //接收图片字节数组
+        /// <summary>
+        /// 接收图片字节数组
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <returns></returns>
         public Image receiveImageBytes(Socket socket)
         {
             Image image = null;
@@ -259,7 +306,11 @@ namespace WebApi
             return image;
         }
 
-        //序列化对象
+        /// <summary>
+        /// 序列化对象->字节数组
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public byte[] Serialize(object data)
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -268,7 +319,11 @@ namespace WebApi
             return rems.GetBuffer();
         }
 
-        //将字节反序列化成object
+        /// <summary>
+        /// 将字节反序列化成object
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public object Deserialize(byte[] data)
         {
             Object obj = null;

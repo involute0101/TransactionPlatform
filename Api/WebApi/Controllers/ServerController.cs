@@ -26,17 +26,24 @@ namespace WebApi.Controllers
         //服务器端输出方式
         private static void ServerPrint(string info)
         {
-            Console.WriteLine("收到：" + info);
+            
         }
 
-        //唤醒服务器
+        /// <summary>
+        /// //唤醒服务器
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("notify")]
-        public String startInfo()
+        public String StartInfo()
         {
             return "Start success";
         }
 
-        //认证用户身份，保存IP地址和端口
+        /// <summary>
+        /// 认证用户身份，保存IP地址和端口
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
         [HttpPost("identify")]
         public String ReceiveInfo([FromBody] Object body)
         {
@@ -59,12 +66,17 @@ namespace WebApi.Controllers
             return "success";
         }
 
-        //发送的聊天信息类型
+        /// <summary>
+        /// 发送的聊天信息类型
+        /// </summary>
+        /// <param name="infotype"></param>
+        /// <returns></returns>
         [HttpGet("infoType")]
-        public String informationType(String infotype)
+        public String InformationType(String infotype)
         {
             CommunicationTool.INFOTYPE = infotype;
-            server.stop();server.start();
+            server.stop();                       //切换聊天通道，处理不同的聊天信息
+            server.start();
             return CommunicationTool.INFOTYPE;
         }
 

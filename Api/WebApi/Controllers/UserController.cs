@@ -31,12 +31,16 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult get()
+        public ActionResult Get()
         {
             return NoContent();
         }
 
-        //"User/getUser"
+        /// <summary>
+        /// 根据用户名查询用户
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
         [HttpGet("getUser")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<User> GetUser(String username)
@@ -51,7 +55,12 @@ namespace WebApi.Controllers
                 return BadRequest(e.InnerException.Message);
             }
         }
-        //"User/getUserByUserId"
+
+        /// <summary>
+        /// 根据用户id查询用户
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [HttpGet("getUserByUserId")]
         public ActionResult<User> GetUserByUserId(int userId)
         {
@@ -65,7 +74,14 @@ namespace WebApi.Controllers
                 return BadRequest(e.InnerException.Message);
             }
         }
-        //"User/forget"
+
+        /// <summary>
+        /// 忘记密码接口
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="email"></param>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         [HttpGet("forget")]
         public ActionResult<User> Forget(String username, String email, String phone)
         {
@@ -80,8 +96,11 @@ namespace WebApi.Controllers
             }
         }
 
-        //注册
-        //User/register
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost("register")]
         public ActionResult<User> Register(User user)
         {
@@ -96,8 +115,7 @@ namespace WebApi.Controllers
                     transactionContext.SaveChanges();
                     return user;
                 }
-                else
-                    return NotFound("该用户已存在!");
+                return NotFound("该用户已存在!");
             }
             catch (Exception e)
             {
@@ -106,7 +124,12 @@ namespace WebApi.Controllers
         }
 
 
-        //User/login?
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [HttpGet("login")]
         public ActionResult<string> Login(string username, string password)
         {
@@ -131,7 +154,12 @@ namespace WebApi.Controllers
 
         }
 
-        //User/modifyUser?
+        /// <summary>
+        /// 修改用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPut("modifyUser")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]//添加权限设置
         public ActionResult<User> ModifyUser(int userId, User user)
@@ -140,11 +168,8 @@ namespace WebApi.Controllers
             {
                 return BadRequest("Id cannot be modified!");
             }
-            else
-            {
-                transactionContext.Entry(user).State = EntityState.Modified;
-                transactionContext.SaveChanges();
-            }
+            transactionContext.Entry(user).State = EntityState.Modified;
+            transactionContext.SaveChanges();
             return user;
         }
     }

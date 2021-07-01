@@ -19,7 +19,11 @@ namespace WebApi.Controllers
             transactionContext = context;
         }
 
-        //根据userId查找所有收藏商品
+        /// <summary>
+        /// 根据userId查找所有收藏商品
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [HttpGet("getCollectGoods")]
         public ActionResult<List<Good>> GetCollectByUserId(int userId)
         {
@@ -36,7 +40,11 @@ namespace WebApi.Controllers
             }
         }
 
-        //收藏
+        /// <summary>
+        /// 收藏
+        /// </summary>
+        /// <param name="body"></param>
+        /// <returns></returns>
         [HttpPost("AddCollect")]
         public ActionResult<Collect> Collect([FromBody] Object body)
         {
@@ -53,7 +61,11 @@ namespace WebApi.Controllers
             return c;
         }
 
-        //取消收藏
+        /// <summary>
+        /// 取消收藏
+        /// </summary>
+        /// <param name="collectId"></param>
+        /// <returns></returns>
         [HttpDelete("deleteCollect")]
         public ActionResult DeleteCollect(int collectId)
         {
