@@ -192,7 +192,7 @@ namespace WinForm
             this.lblDetail.Location = new System.Drawing.Point(17, 257);
             this.lblDetail.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.lblDetail.Name = "lblDetail";
-            this.lblDetail.Size = new System.Drawing.Size(759, 92);
+            this.lblDetail.Size = new System.Drawing.Size(759, 94);
             this.lblDetail.TabIndex = 7;
             // 
             // lblCount

@@ -54,12 +54,12 @@ namespace WebApi
                     x.SaveToken = true;
                     x.TokenValidationParameters = new TokenValidationParameters
                     {
-                        ValidateIssuerSigningKey = true,
+                        ValidateIssuerSigningKey = true, //验证私钥
                         IssuerSigningKey = jwtOptions.SecurityKey,
                         ValidIssuer = jwtOptions.Issuer,
                         ValidAudience = jwtOptions.Audience,
-                        ValidateIssuer = false,
-                        ValidateAudience = false
+                        ValidateIssuer = false,//是否验证提供者
+                        ValidateAudience = false//是否验证订阅者
                     };
                 });
         }
