@@ -45,8 +45,6 @@ namespace WinForm
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnRefrash = new WinForm.ImageBtn();
             this.cmbChoice = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,7 +69,6 @@ namespace WinForm
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPublish)).BeginInit();
@@ -202,7 +199,6 @@ namespace WinForm
             this.pageCenter.BackColor = System.Drawing.Color.Transparent;
             this.pageCenter.Controls.Add(this.panel7);
             this.pageCenter.Controls.Add(this.panel6);
-            this.pageCenter.Controls.Add(this.panel4);
             this.pageCenter.Controls.Add(this.panel3);
             this.pageCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageCenter.Location = new System.Drawing.Point(0, 0);
@@ -216,9 +212,9 @@ namespace WinForm
             this.panel7.Controls.Add(this.shopTable);
             this.panel7.Controls.Add(this.goodsTable);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 310);
+            this.panel7.Location = new System.Drawing.Point(0, 230);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1018, 452);
+            this.panel7.Size = new System.Drawing.Size(1018, 532);
             this.panel7.TabIndex = 3;
             // 
             // shopTable
@@ -241,7 +237,7 @@ namespace WinForm
             this.panel6.Controls.Add(this.btnRefrash);
             this.panel6.Controls.Add(this.cmbChoice);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 280);
+            this.panel6.Location = new System.Drawing.Point(0, 200);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1018, 30);
             this.panel6.TabIndex = 2;
@@ -275,26 +271,6 @@ namespace WinForm
             this.cmbChoice.Size = new System.Drawing.Size(99, 26);
             this.cmbChoice.TabIndex = 0;
             this.cmbChoice.SelectedIndexChanged += new System.EventHandler(this.cmbChoice_SelectedIndexChanged);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 200);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1018, 80);
-            this.panel4.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "待定功能区";
             // 
             // panel3
             // 
@@ -484,8 +460,6 @@ namespace WinForm
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrash)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -517,8 +491,6 @@ namespace WinForm
         private ImageBtn btnLogOut;
         private ImageBtn btnNews;
         private ImageBtn btnState;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
         private ImageBtn btnChangeInfo;
         private System.Windows.Forms.Label label1;
         private ImageBtn btnPublish;

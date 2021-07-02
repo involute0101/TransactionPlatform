@@ -51,5 +51,13 @@ namespace WinForm
             this.Controls.Clear();
             this.Controls.Add(label);
         }
+
+        public void ChangeSize(int width,int height)
+        {
+            label.AutoSize = false;
+            label.Size = new Size(width, height);
+            textBox.Multiline = true;
+            textBox.Size = new Size(width, height);
+        }
     }
 }

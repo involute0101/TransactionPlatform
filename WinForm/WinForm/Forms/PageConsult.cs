@@ -332,7 +332,7 @@ namespace WinForm
         {
             foreach(var t in transactionRecords)
             {
-                if(t.GoodId.ToString()==cmbRecord.Text)
+                if(t.TransactionRecordId.ToString()==cmbRecord.Text)
                 {
                     Form_TransactionDetail form_TransactionDetail = new Form_TransactionDetail(t,true,this);
                     form_TransactionDetail.ShowDialog();
@@ -352,7 +352,7 @@ namespace WinForm
             }
             foreach (var t in transactionRecords)
             {
-                cmbRecord.Items.Add(t.GoodId.ToString());
+                cmbRecord.Items.Add(t.TransactionRecordId.ToString());
             }
         }
 

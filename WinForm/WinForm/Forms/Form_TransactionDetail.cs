@@ -37,6 +37,7 @@ namespace WinForm
 
         private void Form_TransacationDetail_Load(object sender, EventArgs e)
         {
+            this.Text = "商品明细："+this.transactionRecord.TransactionRecordId.ToString();
             lblGoodId.Text ="商品ID："+  transactionRecord.GoodId.ToString();
             lblGoodName.Text = "商品名称：" + transactionRecord.GoodName;
             lblBuyerId.Text = "买家ID：" + transactionRecord.BuyerId.ToString();

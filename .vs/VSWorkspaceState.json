@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Api",
-    "\\Api\\WebApi",
-    "\\WinForm"
+    ""
   ],
-  "SelectedNode": "\\WinForm\\WinForm.sln",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

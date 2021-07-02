@@ -43,8 +43,21 @@ namespace WinForm
             lblSellerId.Text =good.SellerId.ToString();
             lblPrice.InputText = good.Price.ToString();
             lblCount.InputText = good.Count.ToString();
-            lblDetail.InputText = "商品详情：\n" + good.GoodDetailDesc;
+            lblDetail.InputText = good.GoodDetailDesc;
             FormControl.form_Good = this;
+            lblDetail.ChangeSize(lblDetail.Width, lblDetail.Height);
+            List<TransactionRecord> transactionRecord= TransactionService.GetAllTransactionByUserId(int.Parse(StaticVar.USERID));
+            if (good.SellerId != int.Parse(StaticVar.USERID))
+            {
+                btnChangeInfo.Hide();
+                foreach (TransactionRecord t in transactionRecord)
+                {
+                    if (t.GoodId == good.GoodId)
+                    {
+                        btnFavorite.Image = btnFavorite.ImageChecked;
+                    }
+                }
+            }
         }
 
         private void btnGoodPage_Click(object sender, EventArgs e)
@@ -76,6 +89,7 @@ namespace WinForm
         {
             if (good.SellerId == Int32.Parse(StaticVar.USERID))
             {
+                btnFavorite.Image = btnFavorite.ImageNormal;
                 MessageBox.Show("无法收藏自己的商品喔……");
                 return;
             }
@@ -100,7 +114,11 @@ namespace WinForm
         private void btnBuy_Click(object sender, EventArgs e)
         {
 
-            if(good.SellerId == Int32.Parse(StaticVar.USERID)) { MessageBox.Show("不可以购买自己的商品");return; }
+            if(good.SellerId == Int32.Parse(StaticVar.USERID)) 
+            {
+                MessageBox.Show("不可以购买自己的商品");
+                return; 
+            }
             Form_Buyer form_Buyer = new Form_Buyer(good);
             form_Buyer.Show();
             FormControl.form_Main.Refreshshop();
@@ -109,7 +127,10 @@ namespace WinForm
         private void btnChangeInfo_Click(object sender, EventArgs e)
         {
             if (this.good.SellerId != int.Parse(StaticVar.USERID)) 
-            { MessageBox.Show("不允许修改！"); return; }
+            {
+                MessageBox.Show("不允许修改！");
+                return; 
+            }
 
             if (modifyGood)
             {
