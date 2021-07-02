@@ -28,7 +28,15 @@ namespace WinForm.Forms
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            good.Count = good.Count - int.Parse(cbxAmount.SelectedItem.ToString());//更改商品数量
+            if(cbxAmount.SelectedItem!=null)good.Count = good.Count - int.Parse(cbxAmount.SelectedItem.ToString());
+            else
+            {
+                int number = 0;
+                try { number = Int32.Parse(cbxAmount.Text); }
+                catch (FormatException fe) { MessageBox.Show("输入数量无效");return; }
+                if (number > good.Count) { MessageBox.Show("购买数量超过最大数量噢……"); return; }
+                good.Count -= number;
+            }
             if (good.Count == 0) good.State = "售罄";
             TransactionService.AddRecord(new TransactionRecord(good.GoodId, Int32.Parse(StaticVar.USERID), good.SellerId, DateTime.Now));
             FormControl.pageRecord.RefreshRecord();

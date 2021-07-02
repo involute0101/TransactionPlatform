@@ -376,3 +376,4 @@ C:\Users\liqiwei\Desktop\11\WinForm\WinForm\obj\Debug\WinForm.csproj.CoreCompile
 C:\Users\liqiwei\Desktop\11\WinForm\WinForm\obj\Debug\WinForm.csproj.CopyComplete
 C:\Users\liqiwei\Desktop\11\WinForm\WinForm\obj\Debug\WinForm.exe
 C:\Users\liqiwei\Desktop\11\WinForm\WinForm\obj\Debug\WinForm.pdb
+D:\code\C#\TransactionPlatform\TransactionPlatform\WinForm\WinForm\obj\Debug\WinForm.Forms.Form_Buyer.resources
