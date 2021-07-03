@@ -44,6 +44,7 @@ namespace WinForm
             this.textBoxSurePassword = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxRegister.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@ namespace WinForm
             // 
             this.groupBoxRegister.BackColor = System.Drawing.Color.White;
             this.groupBoxRegister.BackgroundImage = global::WinForm.Properties.Resources.background;
+            this.groupBoxRegister.Controls.Add(this.label1);
             this.groupBoxRegister.Controls.Add(this.radioButtonFemale);
             this.groupBoxRegister.Controls.Add(this.radioButtonMale);
             this.groupBoxRegister.Controls.Add(this.labelSex);
@@ -208,6 +210,16 @@ namespace WinForm
             this.textBoxUsername.Size = new System.Drawing.Size(193, 25);
             this.textBoxUsername.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(224, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "密码不得少于6位";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -239,5 +251,6 @@ namespace WinForm
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.Label labelSex;
+        private System.Windows.Forms.Label label1;
     }
 }

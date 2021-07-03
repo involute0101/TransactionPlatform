@@ -40,7 +40,10 @@ namespace WinForm
             mailMessage.From = new MailAddress("wkklavis@163.com");
             mailMessage.To.Add(user.Email);
             mailMessage.Subject = "验证邮件";
-            mailMessage.Body = "您的密码是："+user.Password;
+            mailMessage.Body = "检测到您正在申请找回密码，请按照一下步骤完成您的申请：\n " +
+                "若该操作非您本人操作，请忽略本条邮件:\n" +
+                "为了确保您的账户安全，我们需要确保是您本人在申请找回密码.\n" +
+                "您的密码是："+user.Password;
             SmtpClient smtpClient = new SmtpClient();
             smtpClient.Credentials = new System.Net.NetworkCredential("wkklavis@163.com", "TUMQJCXFBKNACYUG");
             smtpClient.Host = "smtp.163.com";

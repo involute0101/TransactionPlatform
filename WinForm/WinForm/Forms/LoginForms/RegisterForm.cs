@@ -18,7 +18,7 @@ namespace WinForm
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            
         }
 
         public User newUser;
